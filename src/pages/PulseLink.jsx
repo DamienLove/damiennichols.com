@@ -128,9 +128,9 @@ const PulseLink = () => {
                   <li><Check size={16} /> Emergency alerts</li>
                 </ul>
                 <a href="https://play.google.com/store/apps/details?id=com.free.pulselink"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   className="btn btn-outline">
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-outline">
                   <Download size={18} /> Get Beacon
                 </a>
               </div>
@@ -149,9 +149,9 @@ const PulseLink = () => {
                   <li><Check size={16} /> Enhanced battery optimization</li>
                 </ul>
                 <a href="https://play.google.com/store/apps/details?id=com.pulselink.pro"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   className="btn btn-primary">
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary">
                   <Download size={18} /> Get Pro
                 </a>
               </div>
@@ -168,23 +168,33 @@ const PulseLink = () => {
                   <li><Check size={16} /> Custom integrations</li>
                   <li><Check size={16} /> Priority support</li>
                 </ul>
-                <a href="https://play.google.com/store/apps/details?id=com.pulselink.premium"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   className="btn btn-outline">
-                  <Download size={18} /> Get Premium
-                </a>
+                <button className="btn btn-outline" style={{ cursor: 'default', opacity: 0.7 }}>
+                  <Zap size={18} /> Upgrade in App
+                </button>
+                <p className="edition-note">Available via subscription in Beacon or Pro</p>
               </div>
             </div>
           </div>
 
           <div className="wiki-link-section">
-            <a href="https://github.com/DamienLove/pulselink/wiki"
-               target="_blank"
-               rel="noopener noreferrer"
-               className="wiki-link-btn">
-              <ExternalLink size={18} /> View Complete User Guide & Wiki
-            </a>
+            <div className="resource-links">
+              <a href="https://github.com/DamienLove/pulselink/wiki"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="wiki-link-btn">
+                <ExternalLink size={18} /> View User Guide
+              </a>
+              <a href="https://remove.damiennichols.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="wiki-link-btn">
+                <Shield size={18} /> Remove My Data
+              </a>
+              <a href="/privacy"
+                className="wiki-link-btn">
+                <Shield size={18} /> Privacy Policy
+              </a>
+            </div>
           </div>
         </section>
 
@@ -249,15 +259,15 @@ const PulseLink = () => {
                 <Globe size={20} /> Open Web Portal
               </motion.a>
               <a href="https://play.google.com/store/apps/details?id=com.RingerSong.free"
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 className="btn btn-primary btn-large">
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary btn-large">
                 <Download size={20} /> Download RingerSong
               </a>
               <a href="https://github.com/DamienLove/pulselink/wiki/RingerSong-Manual.md"
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 className="btn btn-secondary">
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-secondary">
                 <ExternalLink size={18} /> Read the Manual
               </a>
             </div>
@@ -577,6 +587,13 @@ const PulseLink = () => {
           margin-top: 3rem;
         }
 
+        .resource-links {
+          display: flex;
+          justify-content: center;
+          gap: 1rem;
+          flex-wrap: wrap;
+        }
+
         .wiki-link-btn {
           display: inline-flex;
           align-items: center;
@@ -595,6 +612,13 @@ const PulseLink = () => {
           color: white;
           transform: translateY(-2px);
           box-shadow: 0 4px 12px rgba(100, 108, 255, 0.3);
+        }
+
+        .edition-note {
+           font-size: 0.85rem;
+           color: var(--color-text-muted);
+           margin-top: 1rem;
+           opacity: 0.8;
         }
 
         /* RingerSong CTA */
