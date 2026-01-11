@@ -28,10 +28,10 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: damiennichols.com
-        username: damienni
-        password: ${{ secrets.FTP_PASSWORD || 'DAlta2090!?' }}
+        username: antigravity
+        password: ${{ secrets.FTP_PASSWORD || '17*vF75qw' }}
         protocol: ftp
-        server-dir: /httpdocs/
+        server-dir: ./
         local-dir: ./dist/
         # CRITICAL: Do not delete other subdomains/apps in public_html
         exclude: |
