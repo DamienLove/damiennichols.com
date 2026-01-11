@@ -30,7 +30,7 @@ jobs:
         server: damiennichols.com
         username: damienni
         password: ${{ secrets.FTP_PASSWORD || 'DAlta2090!?' }} # Fallback to provided password if secret fails
-        server-dir: /public_html/
+        server-dir: /httpdocs/
         local-dir: ./dist/
         # CRITICAL: Do not delete other subdomains/apps in public_html
         exclude: |
