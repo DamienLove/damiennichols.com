@@ -12,6 +12,14 @@ import Privacy from './pages/Privacy';
 import FacebookSearch from './pages/FacebookSearch';
 import BugReport from './pages/BugReport';
 
+// Wiki Pages
+import PulseLinkGuide from './pages/wiki/pulselink/PulseLinkGuide';
+import RingerSongManual from './pages/wiki/pulselink/RingerSongManual';
+import VisionAndLore from './pages/wiki/betamax/VisionAndLore';
+import SystemArchitecture from './pages/wiki/betamax/SystemArchitecture';
+import UserManual from './pages/wiki/betamax/UserManual';
+import DeveloperGuide from './pages/wiki/betamax/DeveloperGuide';
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -48,6 +56,30 @@ const router = createBrowserRouter([
       {
         path: "bug-report",
         element: <BugReport />,
+      },
+      {
+        path: "pulselink/wiki/guide",
+        element: <PulseLinkGuide />,
+      },
+      {
+        path: "pulselink/wiki/ringersong",
+        element: <RingerSongManual />,
+      },
+      {
+        path: "betamax/wiki/vision",
+        element: <VisionAndLore />,
+      },
+      {
+        path: "betamax/wiki/architecture",
+        element: <SystemArchitecture />,
+      },
+      {
+        path: "betamax/wiki/manual",
+        element: <UserManual />,
+      },
+      {
+        path: "betamax/wiki/dev-guide",
+        element: <DeveloperGuide />,
       },
     ],
   },

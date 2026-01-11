@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Gamepad2, Users, Terminal, Cpu, BookOpen, Check, ExternalLink, Clock } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const BetaMax = () => {
   return (
@@ -100,18 +101,18 @@ const BetaMax = () => {
         <div className="wiki-links">
           <h3><BookOpen className="inline-icon" /> Documentation & Lore</h3>
           <div className="link-grid">
-            <a href="https://github.com/DamienLove/beta-max-core/wiki/Vision-and-Lore" target="_blank" rel="noopener noreferrer" className="wiki-link-btn">
+            <Link to="/betamax/wiki/vision" className="wiki-link-btn">
               <ExternalLink size={18} /> Vision & Lore
-            </a>
-            <a href="https://github.com/DamienLove/beta-max-core/wiki/System-Architecture" target="_blank" rel="noopener noreferrer" className="wiki-link-btn">
+            </Link>
+            <Link to="/betamax/wiki/architecture" className="wiki-link-btn">
               <ExternalLink size={18} /> Architecture
-            </a>
-            <a href="https://github.com/DamienLove/beta-max-core/wiki/User-Manual" target="_blank" rel="noopener noreferrer" className="wiki-link-btn">
+            </Link>
+            <Link to="/betamax/wiki/manual" className="wiki-link-btn">
               <ExternalLink size={18} /> User Manual
-            </a>
-            <a href="https://github.com/DamienLove/beta-max-core/wiki/Developer-Guide" target="_blank" rel="noopener noreferrer" className="wiki-link-btn">
+            </Link>
+            <Link to="/betamax/wiki/dev-guide" className="wiki-link-btn">
               <ExternalLink size={18} /> Dev Guide
-            </a>
+            </Link>
           </div>
         </div>
 

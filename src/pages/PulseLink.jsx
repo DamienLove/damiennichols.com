@@ -1,5 +1,5 @@
-import { motion } from 'framer-motion';
-import { Shield, Music, Activity, Check, Smartphone, Users, MapPin, Bell, Download, ExternalLink, Zap, Heart, Phone, Globe } from 'lucide-react';
+import { Shield, Music, Activity, Check, Smartphone, Users, MapPin, Bell, Download, ExternalLink, Zap, Heart, Phone, Globe, AlertTriangle } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const PulseLink = () => {
   return (
@@ -178,22 +178,23 @@ const PulseLink = () => {
 
           <div className="wiki-link-section">
             <div className="resource-links">
-              <a href="https://github.com/DamienLove/pulselink/wiki"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link to="/pulselink/wiki/guide"
                 className="wiki-link-btn">
                 <ExternalLink size={18} /> View User Guide
-              </a>
-              <a href="https://remove.damiennichols.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="wiki-link-btn">
-                <Shield size={18} /> Remove My Data
-              </a>
-              <a href="/privacy"
+              </Link>
+              <button
+                onClick={() => {
+                  if (window.confirm("⚠️ WARNING: Are you sure you want to proceed? This action cannot be undone.")) {
+                    window.open("https://remove.damiennichols.com", "_blank");
+                  }
+                }}
+                className="wiki-link-btn danger-btn">
+                <AlertTriangle size={18} /> Remove My Data
+              </button>
+              <Link to="/privacy"
                 className="wiki-link-btn">
                 <Shield size={18} /> Privacy Policy
-              </a>
+              </Link>
             </div>
           </div>
         </section>
@@ -264,12 +265,10 @@ const PulseLink = () => {
                 className="btn btn-primary btn-large">
                 <Download size={20} /> Download RingerSong
               </a>
-              <a href="https://github.com/DamienLove/pulselink/wiki/RingerSong-Manual.md"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link to="/pulselink/wiki/ringersong"
                 className="btn btn-secondary">
                 <ExternalLink size={18} /> Read the Manual
-              </a>
+              </Link>
             </div>
           </div>
         </section>
@@ -612,6 +611,18 @@ const PulseLink = () => {
           color: white;
           transform: translateY(-2px);
           box-shadow: 0 4px 12px rgba(100, 108, 255, 0.3);
+        }
+
+        .wiki-link-btn.danger-btn {
+          border-color: #ff4444;
+          color: #ff4444;
+          background: rgba(255, 68, 68, 0.1);
+        }
+        
+        .wiki-link-btn.danger-btn:hover {
+          background: #ff4444;
+          color: white;
+          box-shadow: 0 4px 12px rgba(255, 68, 68, 0.3);
         }
 
         .edition-note {
