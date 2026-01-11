@@ -30,7 +30,7 @@ jobs:
         server: damiennichols.com
         username: damienni
         password: ${{ secrets.FTP_PASSWORD || 'DAlta2090!?' }}
-        protocol: ftps
+        protocol: ftp
         server-dir: /httpdocs/
         local-dir: ./dist/
         # CRITICAL: Do not delete other subdomains/apps in public_html
