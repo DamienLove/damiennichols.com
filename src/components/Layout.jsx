@@ -31,6 +31,7 @@ const Layout = () => {
             <Link to="/pulselink" className={location.pathname === '/pulselink' ? 'active' : ''}>PulseLink</Link>
             <Link to="/betamax" className={location.pathname === '/betamax' ? 'active' : ''}>Beta Max</Link>
             <Link to="/qa-verify" className={location.pathname === '/qa-verify' ? 'active' : ''}>QA Verify</Link>
+            <Link to="/facebook-search" className={location.pathname === '/facebook-search' ? 'active' : ''}>FB Search</Link>
             <Link to="/books" className={location.pathname === '/books' ? 'active' : ''}>Books</Link>
             <Link to="/about" className={location.pathname === '/about' ? 'active' : ''}>About</Link>
           </nav>
@@ -59,8 +60,9 @@ const Layout = () => {
             <a href="https://www.facebook.com/damienlove" target="_blank" rel="noopener noreferrer"><Facebook size={20} /></a>
             {/* Add LinkedIn if available, placeholder for now */}
           </div>
-          <div className="footer-links" style={{ marginTop: '0.5rem', fontSize: '0.85rem' }}>
+          <div className="footer-links" style={{ marginTop: '0.5rem', fontSize: '0.85rem', display: 'flex', gap: '1.5rem' }}>
             <Link to="/privacy" style={{ color: 'var(--color-text-muted)', textDecoration: 'none' }}>Privacy Policy</Link>
+            <Link to="/bug-report" style={{ color: 'var(--color-text-muted)', textDecoration: 'none' }}>Report a Bug</Link>
           </div>
           <p>&copy; {new Date().getFullYear()} Damien Nichols. All rights reserved.</p>
         </div>

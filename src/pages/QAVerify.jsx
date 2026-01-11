@@ -1,74 +1,132 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle, GitBranch, Terminal, ExternalLink } from 'lucide-react';
+import { CheckCircle, GitBranch, Terminal, ExternalLink, Globe } from 'lucide-react';
 
 const QAVerify = () => {
-    return (
-        <div className="page-container qa-page">
-            <section className="page-hero">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    className="hero-content"
-                >
-                    <h1>QA Verify & Track</h1>
-                    <p className="subtitle">Sanity for Developers. Clarity for Testers.</p>
-                </motion.div>
-            </section>
+  return (
+    <div className="page-container qa-page">
+      <section className="page-hero">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="hero-content"
+        >
+          <motion.h1
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            QA Verify & Track
+          </motion.h1>
+          <motion.p
+            className="subtitle"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            Sanity for Developers. Clarity for Testers.
+          </motion.p>
+          <motion.div
+            className="portal-cta"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.5 }}
+          >
+            <motion.a
+              href="https://test.damiennichols.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-portal-qa"
+              whileHover={{ scale: 1.05, boxShadow: '0 8px 30px rgba(18, 214, 34, 0.4)' }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Globe size={20} /> Open Web Portal
+            </motion.a>
+          </motion.div>
+        </motion.div>
+      </section>
 
-            <div className="content-wrapper">
-                <div className="highlight-grid">
-                    <div className="highlight-item">
-                        <h2>Why?</h2>
-                        <p>Built out of need, QA Verify & Track streamlines the bug verification process. Stop wasting valuable dev time tracking what's open or manually entering comments.</p>
-                    </div>
-                    <div className="highlight-item">
-                        <h2>What?</h2>
-                        <p>A cross-platform QA assistant that manages repos, issues, and PRs via GitHub & Firebase. Keeps verification tied to specific build numbers.</p>
-                    </div>
-                </div>
+      <div className="content-wrapper">
+        <div className="highlight-grid">
+          <div className="highlight-item">
+            <h2>Why?</h2>
+            <p>Built out of need, QA Verify & Track streamlines the bug verification process. Stop wasting valuable dev time tracking what's open or manually entering comments.</p>
+          </div>
+          <div className="highlight-item">
+            <h2>What?</h2>
+            <p>A cross-platform QA assistant that manages repos, issues, and PRs via GitHub & Firebase. Keeps verification tied to specific build numbers.</p>
+          </div>
+        </div>
 
-                <section className="tech-details">
-                    <h3>Key Capabilities</h3>
-                    <div className="tech-list">
-                        <div className="tech-item">
-                            <CheckCircle size={24} className="icon-green" />
-                            <div>
-                                <h4>Build-Aware Filtering</h4>
-                                <p>Issues are automatically hidden if they are tagged as closed in a previous build. Focus only on what's relevant to the current version.</p>
-                            </div>
-                        </div>
-                        <div className="tech-item">
-                            <GitBranch size={24} className="icon-green" />
-                            <div>
-                                <h4>PR Workflow</h4>
-                                <p>View, approve, close, and merge Pull Requests directly. Resolve conflicts by updating branches with a click.</p>
-                            </div>
-                        </div>
-                        <div className="tech-item">
-                            <Terminal size={24} className="icon-green" />
-                            <div>
-                                <h4>GitHub Integration</h4>
-                                <p>Manage multiple repos, store PATs securely, and perform quick actions like "Quick Issue" filing.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <div className="links-section">
-                    <a href="https://github.com/DamienLove/QA-Verify-Track/wiki/QA-Verify-and-Track" target="_blank" rel="noopener noreferrer" className="wiki-btn">
-                        <ExternalLink size={18} /> Visit Project Wiki
-                    </a>
-                </div>
+        <section className="tech-details">
+          <h3>Key Capabilities</h3>
+          <div className="tech-list">
+            <div className="tech-item">
+              <CheckCircle size={24} className="icon-green" />
+              <div>
+                <h4>Build-Aware Filtering</h4>
+                <p>Issues are automatically hidden if they are tagged as closed in a previous build. Focus only on what's relevant to the current version.</p>
+              </div>
             </div>
+            <div className="tech-item">
+              <GitBranch size={24} className="icon-green" />
+              <div>
+                <h4>GitHub Integration</h4>
+                <p>Full two-way sync. View PRs, approve/merge, resolve conflicts, and manage issues directly.</p>
+              </div>
+            </div>
+            <div className="tech-item">
+              <Terminal size={24} className="icon-green" />
+              <div>
+                <h4>AI Analysis</h4>
+                <p>Gemini-powered summaries for complex issue threads and bug reports.</p>
+              </div>
+            </div>
+            <div className="tech-item">
+              <CheckCircle size={24} className="icon-green" />
+              <div>
+                <h4>Quick Issue</h4>
+                <p>Fast overlay to file issues without leaving your context.</p>
+              </div>
+            </div>
+          </div>
+        </section>
 
-            <style>{`
+        <div className="links-section">
+          <a href="https://github.com/DamienLove/QA-Verify-Track/wiki/QA-Verify-and-Track" target="_blank" rel="noopener noreferrer" className="wiki-btn">
+            <ExternalLink size={18} /> Visit Project Wiki
+          </a>
+        </div>
+      </div >
+
+      <style>{`
         .qa-page {
           --qa-green: #12d622;
         }
 
         .page-hero h1 {
           color: var(--qa-green);
+        }
+
+        .portal-cta {
+          margin-top: 2rem;
+        }
+
+        .btn-portal-qa {
+          padding: 1rem 2rem;
+          font-size: 1.1rem;
+          background: linear-gradient(135deg, var(--qa-green), #34e644);
+          color: #000;
+          border: none;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.75rem;
+          font-weight: 600;
+          box-shadow: 0 4px 20px rgba(18, 214, 34, 0.3);
+          border-radius: 8px;
+        }
+
+        .btn-portal-qa:hover {
+          color: #000;
         }
 
         .highlight-grid {
@@ -160,8 +218,8 @@ const QAVerify = () => {
           }
         }
       `}</style>
-        </div>
-    );
+    </div >
+  );
 };
 
 export default QAVerify;

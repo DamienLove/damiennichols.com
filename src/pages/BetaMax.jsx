@@ -1,62 +1,123 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Gamepad2, Users, Layers, Zap } from 'lucide-react';
+import { Gamepad2, Users, Terminal, Cpu, BookOpen, Check, ExternalLink, Clock } from 'lucide-react';
 
 const BetaMax = () => {
-    return (
-        <div className="page-container betamax-page">
-            <section className="page-hero retro-hero">
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    className="hero-content"
-                >
-                    <div className="retro-logo">BETA MAX</div>
-                    <p className="subtitle">Tomorrow's Features, Today.</p>
-                </motion.div>
-            </section>
+  return (
+    <div className="page-container betamax-page">
+      <section className="page-hero retro-hero">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          className="hero-content"
+        >
+          <motion.div
+            className="retro-logo"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2, type: "spring" }}
+          >
+            BETA MAX
+          </motion.div>
+          <motion.p
+            className="subtitle"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+          >
+            Tomorrow's Features, Today.
+          </motion.p>
+          <motion.div
+            className="coming-soon-badge"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+          >
+            <Clock size={20} />
+            <span>Web Portal Coming Soon</span>
+          </motion.div>
+        </motion.div>
+      </section>
 
-            <div className="content-wrapper">
-                <div className="intro-card">
-                    <h2><Gamepad2 className="inline-icon" /> Gamify Your QA Process</h2>
-                    <p>
-                        Beta Max is a retro-futuristic beta testing platform designed for power users, developers, and technical enthusiasts.
-                        It bridges the gap between software creators ("Architects") and quality assurance testers ("Scouts") by turning bug hunting into an engaging experience.
-                    </p>
-                </div>
+      <div className="content-wrapper">
+        <div className="intro-card">
+          <h2><Gamepad2 className="inline-icon" /> QC Gamified</h2>
+          <p className="lead-text">
+            Beta Max is a retro-futuristic platform that transforms QA into a reputation-based economy.
+          </p>
+          <p>
+            An interface for <strong>Architects</strong> (Developers) to build worlds and <strong>Scouts</strong> (Testers) to explore them.
+            Squash Anomalies, earn badges, and climb the leaderboard.
+          </p>
+        </div>
 
-                <div className="grid-features">
-                    <div className="feature-card">
-                        <Users size={32} className="card-icon" />
-                        <h3>Roles</h3>
-                        <p><strong>Architects:</strong> Creators who build the worlds.</p>
-                        <p><strong>Scouts:</strong> Testers who explore and verify.</p>
-                    </div>
+        {/* Feature Grid */}
+        <div className="grid-features">
 
-                    <div className="feature-card">
-                        <Layers size={32} className="card-icon" />
-                        <h3>Vision & Lore</h3>
-                        <p>Immerse yourself in a platform that feels less like work and more like a mission. Level up, earn badges, and improve software quality.</p>
-                    </div>
+          {/* Key Concepts */}
+          <div className="feature-card">
+            <Users size={32} className="card-icon" />
+            <h3>Key Concepts</h3>
+            <ul className="feature-list">
+              <li><Check size={16} /> <strong>Recruit:</strong> Join as a Scout to hunt bugs or an Architect to manage builds.</li>
+              <li><Check size={16} /> <strong>The Deck:</strong> Your central mission control hub.</li>
+              <li><Check size={16} /> <strong>Reputation:</strong> Earn prestige for every verified Anomaly.</li>
+            </ul>
+          </div>
 
-                    <div className="feature-card">
-                        <Zap size={32} className="card-icon" />
-                        <h3>Platform</h3>
-                        <p>Cross-platform support for seamless testing on Web and Mobile. Integrated reporting and tracking.</p>
-                    </div>
-                </div>
+          {/* System Architecture */}
+          <div className="feature-card">
+            <Cpu size={32} className="card-icon" />
+            <h3>System Architecture</h3>
+            <ul className="feature-list">
+              <li><Check size={16} /> <strong>Query Core:</strong> High-performance data handling.</li>
+              <li><Check size={16} /> <strong>Stack:</strong> Native Android & React Portal.</li>
+              <li><Check size={16} /> <strong>Backend:</strong> Firebase Realtime Database & Firestore.</li>
+            </ul>
+          </div>
 
-                <div className="wiki-links hover-glow">
-                    <h3>Documentation</h3>
-                    <div className="link-grid">
-                        <a href="https://github.com/DamienLove/beta-max-core/wiki/Vision-and-Lore" target="_blank" rel="noopener noreferrer">Vision & Why</a>
-                        <a href="https://github.com/DamienLove/beta-max-core/wiki/Developer-Guide" target="_blank" rel="noopener noreferrer">Developer Guide</a>
-                        <a href="https://github.com/DamienLove/beta-max-core/wiki/User-Manual" target="_blank" rel="noopener noreferrer">User Manual</a>
-                    </div>
-                </div>
-            </div>
+          {/* Vision & Lore */}
+          <div className="feature-card">
+            <BookOpen size={32} className="card-icon" />
+            <h3>Vision & Lore</h3>
+            <p>
+              A cyberpunk reality where code is law. Engage with the system via "The Terminal" or the graphical "Deck".
+              Execute the "Scorched Earth" protocol to reset your environment.
+            </p>
+          </div>
 
-            <style>{`
+          {/* Terminal */}
+          <div className="feature-card">
+            <Terminal size={32} className="card-icon" />
+            <h3>The Terminal</h3>
+            <p>
+              For power users who prefer the command line. Execute queries, manage builds, and override protocols directly from the CLI.
+            </p>
+          </div>
+
+        </div>
+
+        {/* Wiki Links */}
+        <div className="wiki-links">
+          <h3><BookOpen className="inline-icon" /> Documentation & Lore</h3>
+          <div className="link-grid">
+            <a href="https://github.com/DamienLove/beta-max-core/wiki/Vision-and-Lore" target="_blank" rel="noopener noreferrer" className="wiki-link-btn">
+              <ExternalLink size={18} /> Vision & Lore
+            </a>
+            <a href="https://github.com/DamienLove/beta-max-core/wiki/System-Architecture" target="_blank" rel="noopener noreferrer" className="wiki-link-btn">
+              <ExternalLink size={18} /> Architecture
+            </a>
+            <a href="https://github.com/DamienLove/beta-max-core/wiki/User-Manual" target="_blank" rel="noopener noreferrer" className="wiki-link-btn">
+              <ExternalLink size={18} /> User Manual
+            </a>
+            <a href="https://github.com/DamienLove/beta-max-core/wiki/Developer-Guide" target="_blank" rel="noopener noreferrer" className="wiki-link-btn">
+              <ExternalLink size={18} /> Dev Guide
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <style>{`
         .betamax-page {
           --retro-primary: #ff0055;
           --retro-secondary: #00ffff;
@@ -66,30 +127,70 @@ const BetaMax = () => {
         .retro-hero {
           background: linear-gradient(45deg, #2b001f, #001f2b);
           border-bottom: 2px solid var(--retro-secondary);
-          height: 60vh;
+          height: 50vh;
           display: flex;
           align-items: center;
           justify-content: center;
           text-align: center;
+          position: relative;
+          overflow: hidden;
+        }
+        
+        .retro-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: 
+                linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
+                linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
         }
 
         .retro-logo {
           font-family: 'Courier New', monospace;
-          font-size: 5rem;
+          font-size: 4rem;
           font-weight: 900;
           letter-spacing: -2px;
-          text-shadow: 3px 3px 0px var(--retro-primary), -3px -3px 0px var(--retro-secondary);
+          text-shadow: 2px 2px 0px var(--retro-primary), -2px -2px 0px var(--retro-secondary);
           color: white;
           margin-bottom: 1rem;
         }
 
-        .intro-card {
-          background: rgba(255,255,255,0.05);
-          padding: 2rem;
-          border-radius: 12px;
-          border-left: 4px solid var(--retro-primary);
-          margin-bottom: 3rem;
+        .coming-soon-badge {
+          margin-top: 2rem;
+          display: inline-flex;
+          align-items: center;
+          gap: 0.75rem;
+          padding: 0.75rem 1.5rem;
+          background: rgba(255, 0, 85, 0.2);
+          border: 2px solid var(--retro-primary);
+          border-radius: 25px;
+          color: var(--retro-primary);
+          font-weight: 600;
+          font-size: 1rem;
+          animation: glow-pulse 2s ease-in-out infinite;
         }
+
+        @keyframes glow-pulse {
+          0%, 100% {
+            box-shadow: 0 0 10px rgba(255, 0, 85, 0.5);
+          }
+          50% {
+            box-shadow: 0 0 20px rgba(255, 0, 85, 0.8), 0 0 30px rgba(255, 0, 85, 0.4);
+          }
+        }
+        
+        .intro-card {
+            background: rgba(0,0,0,0.6);
+            border: 1px solid var(--retro-primary);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+        }
+        
+        .intro-card h2 { color: var(--retro-secondary); margin-bottom: 1rem; }
+        .intro-card p { font-size: 1.1rem; color: #ccc; }
 
         .grid-features {
           display: grid;
@@ -99,56 +200,81 @@ const BetaMax = () => {
         }
 
         .feature-card {
-          background: #0f0f1a;
+          background: #0a0a12;
           border: 1px solid #333;
-          padding: 1.5rem;
-          border-radius: 8px;
-          transition: transform 0.3s;
+          padding: 2rem;
+          border-radius: 12px;
+          transition: transform 0.2s;
         }
         
         .feature-card:hover {
-          transform: translateY(-5px);
-          border-color: var(--retro-secondary);
+            border-color: var(--retro-secondary);
+            transform: translateY(-5px);
         }
 
         .card-icon {
+          color: var(--retro-primary);
+          margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
           color: var(--retro-secondary);
           margin-bottom: 1rem;
         }
 
-        .wiki-links {
-          text-align: center;
-          padding: 2rem;
-          background: rgba(0, 255, 255, 0.05);
-          border-radius: 12px;
+        .feature-list {
+          list-style: none;
+          padding: 0;
         }
+
+        .feature-list li {
+          display: flex;
+          gap: 0.5rem;
+          align-items: flex-start;
+          margin-bottom: 0.8rem;
+          color: #aaa;
+        }
+        
+        .feature-list li strong { color: #fff; }
+
+        .wiki-links {
+             background: rgba(0, 255, 255, 0.05);
+             padding: 2rem;
+             border-radius: 12px;
+             text-align: center;
+        }
+        
+        .wiki-links h3 { color: var(--retro-secondary); margin-bottom: 1.5rem; }
 
         .link-grid {
           display: flex;
-          justify-content: center;
-          gap: 2rem;
-          margin-top: 1rem;
           flex-wrap: wrap;
+          justify-content: center;
+          gap: 1rem;
         }
 
-        .link-grid a {
+        .wiki-link-btn {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.8rem 1.5rem;
+          background: rgba(0,0,0,0.5);
+          border: 1px solid var(--retro-secondary);
           color: var(--retro-secondary);
           text-decoration: none;
-          font-weight: bold;
-          border-bottom: 1px dashed var(--retro-secondary);
-        }
-        
-        .link-grid a:hover {
-          color: var(--retro-primary);
-          border-color: var(--retro-primary);
+          border-radius: 6px;
+          transition: all 0.2s;
         }
 
-        @media (max-width: 768px) {
-          .retro-logo { font-size: 3rem; }
+        .wiki-link-btn:hover {
+          background: var(--retro-secondary);
+          color: #000;
         }
+
+        .inline-icon { display: inline; vertical-align: bottom; margin-right: 0.5rem; }
       `}</style>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default BetaMax;

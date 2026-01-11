@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir /s /b c:Projectsdamiennichols-sitedamiennichols.compublic*.pdf)",
+      "Bash(npm run build:*)",
+      "Bash(npm run preview:*)"
+    ]
+  }
+}

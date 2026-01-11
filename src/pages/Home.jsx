@@ -1,74 +1,127 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Smartphone, BookOpen, Search, Shield } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
-    return (
-        <div className="home-page">
-            {/* Hero Section */}
-            <section className="hero">
-                <div className="hero-content">
-                    <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.1 }}
-                    >
-                        Damien Nichols
-                    </motion.h1>
-                    <motion.p
-                        className="hero-subtitle"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                    >
-                        Innovator. Author. Software Engineer.
-                    </motion.p>
-                    <motion.div
-                        className="hero-cta"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.3 }}
-                    >
-                        <Link to="/pulselink" className="btn btn-primary">Explore Apps <ArrowRight size={18} /></Link>
-                        <Link to="/books" className="btn btn-secondary">Read Books <BookOpen size={18} /></Link>
-                    </motion.div>
-                </div>
+  return (
+    <div className="home-page">
+      {/* Hero Section */}
+      <section className="hero">
+        <div className="hero-content">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+          >
+            Damien Nichols
+          </motion.h1>
+          <motion.p
+            className="hero-subtitle"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+          >
+            Software Engineer. Author. Creator.
+          </motion.p>
+          <motion.p
+            className="hero-description"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.25 }}
+          >
+            Building innovative apps that solve real problems and crafting stories that challenge reality.
+          </motion.p>
+          <motion.div
+            className="hero-cta"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
+            <Link to="/pulselink" className="btn btn-primary">Explore Apps <ArrowRight size={18} /></Link>
+            <Link to="/books" className="btn btn-secondary">Read Books <BookOpen size={18} /></Link>
+          </motion.div>
+        </div>
 
-                {/* Abstract Background Elements */}
-                <div className="hero-bg-glow"></div>
-            </section>
+        {/* Abstract Background Elements */}
+        <div className="hero-bg-glow"></div>
+      </section>
 
-            {/* Highlights Section */}
-            <section className="highlights">
-                <div className="container">
-                    <Link to="/pulselink" className="highlight-card">
-                        <Shield size={40} className="icon" />
-                        <h3>PulseLink Application Suite</h3>
-                        <p>Your personal safety companion and offline utility tools. Featuring PulseLink, Beacon, and RingerSong.</p>
-                    </Link>
+      {/* Highlights Section */}
+      <section className="highlights">
+        <div className="container">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+          >
+            <Link to="/pulselink" className="highlight-card safety">
+              <Shield size={40} className="icon" />
+              <h3>PulseLink Suite</h3>
+              <p>Voice-activated safety companion with discreet emergency alerts and progressive streaming ringtones.</p>
+              <span className="card-tag">Safety & Utility</span>
+            </Link>
+          </motion.div>
 
-                    <Link to="/betamax" className="highlight-card">
-                        <Smartphone size={40} className="icon" />
-                        <h3>Beta Max</h3>
-                        <p>Tomorrow's Features, Today. A gamified QA platform connecting Architects and Scouts.</p>
-                    </Link>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <Link to="/betamax" className="highlight-card retro">
+              <Smartphone size={40} className="icon" />
+              <h3>Beta Max</h3>
+              <p>Tomorrow's Features, Today. Gamified QA platform where bug hunting meets cyberpunk aesthetics.</p>
+              <span className="card-tag">Retro-Futuristic</span>
+            </Link>
+          </motion.div>
 
-                    <Link to="/qa-verify" className="highlight-card">
-                        <Search size={40} className="icon" />
-                        <h3>QA Verify & Track</h3>
-                        <p>Streamlined bug verification and tracking for efficient development workflows.</p>
-                    </Link>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.3 }}
+          >
+            <Link to="/qa-verify" className="highlight-card dev">
+              <Search size={40} className="icon" />
+              <h3>QA Verify & Track</h3>
+              <p>Build-aware bug tracking that saves dev time. GitHub integration with AI-powered analysis.</p>
+              <span className="card-tag">Developer Tool</span>
+            </Link>
+          </motion.div>
 
-                    <Link to="/books" className="highlight-card">
-                        <BookOpen size={40} className="icon" />
-                        <h3>Universe Connected</h3>
-                        <p>Immerse yourself in the Universe Connected series. Sci-fi, adventure, and romance.</p>
-                    </Link>
-                </div>
-            </section>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+          >
+            <Link to="/facebook-search" className="highlight-card social">
+              <Search size={40} className="icon" />
+              <h3>Facebook Search</h3>
+              <p>Advanced search tools for Facebook discovery. Find people, content, and trends with powerful filters.</p>
+              <span className="card-tag">Social Search</span>
+            </Link>
+          </motion.div>
 
-            <style>{`
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+          >
+            <Link to="/books" className="highlight-card books">
+              <BookOpen size={40} className="icon" />
+              <h3>Universe Connected</h3>
+              <p>Mind-bending sci-fi saga. Reality-bending fiction across interconnected universes.</p>
+              <span className="card-tag">Coming 2026</span>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      <style>{`
         .home-page {
           width: 100%;
         }
@@ -107,7 +160,15 @@ const Home = () => {
           font-size: 1.5rem;
           color: var(--color-text-muted);
           max-width: 600px;
+          margin: 0 auto 1rem;
+        }
+
+        .hero-description {
+          font-size: 1.1rem;
+          color: var(--color-text-muted);
+          max-width: 700px;
           margin: 0 auto 2.5rem;
+          line-height: 1.6;
         }
 
         .hero-cta {
@@ -169,16 +230,71 @@ const Home = () => {
           padding: 2rem;
           border-radius: 16px;
           text-align: left;
-          transition: transform 0.3s, border-color 0.3s;
+          transition: all 0.3s ease;
           display: flex;
           flex-direction: column;
           gap: 1rem;
           cursor: pointer;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .highlight-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          height: 3px;
+          background: var(--color-primary);
+          transform: scaleX(0);
+          transition: transform 0.3s ease;
         }
 
         .highlight-card:hover {
-          transform: translateY(-5px);
+          transform: translateY(-8px);
           border-color: var(--color-primary);
+          box-shadow: 0 12px 32px rgba(100, 108, 255, 0.2);
+        }
+
+        .highlight-card:hover::before {
+          transform: scaleX(1);
+        }
+
+        .highlight-card.safety .icon {
+          color: #646cff;
+        }
+
+        .highlight-card.retro .icon {
+          color: #00ffff;
+        }
+
+        .highlight-card.retro::before {
+          background: linear-gradient(90deg, #ff0055, #00ffff);
+        }
+
+        .highlight-card.dev .icon {
+          color: #12d622;
+        }
+
+        .highlight-card.dev::before {
+          background: #12d622;
+        }
+
+        .highlight-card.books .icon {
+          color: #ffd93d;
+        }
+
+        .highlight-card.books::before {
+          background: linear-gradient(90deg, #ff6b6b, #ffd93d);
+        }
+
+        .highlight-card.social .icon {
+          color: #3b82f6;
+        }
+
+        .highlight-card.social::before {
+          background: linear-gradient(90deg, #3b82f6, #8b5cf6);
         }
 
         .highlight-card .icon {
@@ -187,9 +303,10 @@ const Home = () => {
         }
 
         .highlight-card h3 {
-          font-size: 1.25rem;
+          font-size: 1.35rem;
           margin: 0;
           color: var(--color-text);
+          font-weight: 700;
         }
 
         .highlight-card p {
@@ -197,6 +314,40 @@ const Home = () => {
           font-size: 0.95rem;
           line-height: 1.6;
           margin: 0;
+          flex: 1;
+        }
+
+        .card-tag {
+          display: inline-block;
+          background: rgba(100, 108, 255, 0.2);
+          color: var(--color-primary);
+          padding: 0.3rem 0.75rem;
+          border-radius: 12px;
+          font-size: 0.75rem;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          align-self: flex-start;
+        }
+
+        .highlight-card.retro .card-tag {
+          background: rgba(0, 255, 255, 0.2);
+          color: #00ffff;
+        }
+
+        .highlight-card.dev .card-tag {
+          background: rgba(18, 214, 34, 0.2);
+          color: #12d622;
+        }
+
+        .highlight-card.books .card-tag {
+          background: rgba(255, 217, 61, 0.2);
+          color: #ffd93d;
+        }
+
+        .highlight-card.social .card-tag {
+          background: rgba(59, 130, 246, 0.2);
+          color: #3b82f6;
         }
 
         @media (max-width: 768px) {
@@ -208,8 +359,8 @@ const Home = () => {
           }
         }
       `}</style>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Home;
