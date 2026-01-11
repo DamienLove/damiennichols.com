@@ -1,16 +1,53 @@
-# React + Vite
+# Damien Nichols - Personal Site
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The official portfolio and marketing website for Damien Nichols. showcases the PulseLink Suite, Beta Max, QA Verify & Track, and the Universe Connected book series.
 
-Currently, two official plugins are available:
+## Project Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Built with **React (Vite)** + **Vanilla CSS** (Premium Dark Theme).
 
-## React Compiler
+- `src/pages/`: Individual route components.
+- `src/components/`: Reusable UI components (Layout, Hero).
+- `public/`: Static assets (Resume, PDF manuscripts).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Local Development
 
-## Expanding the ESLint configuration
+1. **Install Dependencies**:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+    ```bash
+    npm install
+    ```
+
+2. **Run Development Server**:
+
+    ```bash
+    npm run dev
+    ```
+
+3. **Build for Production**:
+
+    ```bash
+    npm run build
+    ```
+
+## Deployment
+
+This project is configured to deploy automatically to **damiennichols.com** via GitHub Actions.
+
+- **Workflow**: `.github/workflows/deploy.yml`
+- **Trigger**: Push to `main` branch.
+- **Method**: FTP Sync to `public_html`.
+- **Safety**: The workflow is configured to **exclude** existing subdomains (`app`, `pulselink`, `remove`, `test`) to prevent overwriting other applications hosted on the same server.
+
+## Privacy Policy
+
+The privacy policy is available at `/privacy` and covers:
+
+- PulseLink / Beacon
+- QA Verify & Track
+- Beta Max
+- General Site Usage
+
+## License
+
+All rights reserved. Damien Nichols.
