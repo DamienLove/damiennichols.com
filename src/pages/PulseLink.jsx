@@ -118,7 +118,7 @@ const PulseLink = () => {
             <div className="editions-grid">
               <div className="edition-card">
                 <div className="edition-header">
-                  <h4>Beacon</h4>
+                  <h4>PulseLink</h4>
                   <span className="price">Free</span>
                 </div>
                 <ul className="edition-features">
@@ -131,7 +131,7 @@ const PulseLink = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="btn btn-outline">
-                  <Download size={18} /> Get Beacon
+                  <Download size={18} /> Get PulseLink
                 </a>
               </div>
 

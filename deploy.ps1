@@ -16,13 +16,13 @@ foreach ($f in $files) {
 }
 
 Write-Host "Uploading assets..."
-$assets = @('index-BcH3hUxn.css', 'index-CXgLCL4y.js')
-foreach ($a in $assets) {
-    $localFile = Join-Path $base "assets\$a"
-    if (Test-Path $localFile) {
-        Write-Host "Uploading assets/$a..."
-        curl.exe -u "$($user):$($pass)" -T "$localFile" "ftp://damiennichols.com/assets/$a"
-    }
+$assets = Get-ChildItem -Path (Join-Path $base "assets")
+foreach ($file in $assets) {
+    if ($file.PsIsContainer) { continue }
+    $a = $file.Name
+    $localFile = $file.FullName
+    Write-Host "Uploading assets/$a..."
+    curl.exe -u "$($user):$($pass)" -T "$localFile" "ftp://damiennichols.com/assets/$a"
 }
 
 Write-Host "Deployment complete!"
