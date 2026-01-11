@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { Shield, Music, Activity, Check, Smartphone, Users, MapPin, Bell, Download, ExternalLink, Zap, Heart, Phone, Globe, AlertTriangle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
