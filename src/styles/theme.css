@@ -1,0 +1,40 @@
+:root {
+    /* Colors - Premium Dark Theme */
+    --color-background: #0a0a0a;
+    --color-surface: #1a1a1a;
+    --color-surface-hover: #252525;
+    --color-text: #e0e0e0;
+    --color-text-muted: #a0a0a0;
+    --color-primary: #646cff;
+    /* Example violet */
+    --color-primary-hover: #535bf2;
+    --color-accent: #00bcd4;
+    /* Cyan accent */
+    --color-border: #333333;
+
+    /* HSL variations for glassmorphism */
+    --glass-bg: hsla(0, 0%, 10%, 0.7);
+    --glass-border: hsla(0, 0%, 100%, 0.1);
+
+    /* Typography */
+    --font-family-body: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+    --font-family-heading: 'Outfit', 'Inter', system-ui, sans-serif;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 4rem;
+    --spacing-xl: 8rem;
+
+    /* Shadows */
+    --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    --shadow-glow: 0 0 20px rgba(100, 108, 255, 0.3);
+}
+
+@media (prefers-color-scheme: light) {
+    /* We are enforcing dark mode for premium feel per user request ("Premium Designs", "dark modes"), 
+      but providing light mode variables just in case, though overriding root to dark by default in index.css */
+    /* keeping same for now to enforce dark theme look */
+}
