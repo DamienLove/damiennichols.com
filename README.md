@@ -38,6 +38,7 @@ This project is configured to deploy automatically to **damiennichols.com** via 
 - **Trigger**: Push to `main` branch.
 - **Method**: FTP Sync to `public_html`.
 - **Safety**: The workflow is configured to **exclude** existing subdomains (`app`, `pulselink`, `remove`, `test`) to prevent overwriting other applications hosted on the same server.
+- **Node.js Config**: Includes `public/app.js` (deployed to root) to act as a startup file for hosting environments that enforce Node.js.
 
 ## Privacy Policy
 
