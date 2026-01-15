@@ -5,13 +5,14 @@ import { Link } from 'react-router-dom';
 const PulseLink = () => {
   return (
     <div className="page-container pulselink-page">
-      <section className="page-hero">
+      <section className="hero-section page-hero">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="hero-content"
         >
           <motion.h1
+            className="hero-title text-gradient-pulse"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
@@ -19,7 +20,7 @@ const PulseLink = () => {
             PulseLink Suite
           </motion.h1>
           <motion.p
-            className="subtitle"
+            className="hero-subtitle"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
@@ -32,9 +33,9 @@ const PulseLink = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
           >
-            <span className="badge">Android</span>
-            <span className="badge">Safety</span>
-            <span className="badge">Music</span>
+            <span className="badge badge-outline">Android</span>
+            <span className="badge badge-outline">Safety</span>
+            <span className="badge badge-outline">Music</span>
           </motion.div>
           <motion.div
             className="portal-cta"
@@ -58,66 +59,66 @@ const PulseLink = () => {
 
       <div className="content-wrapper">
         {/* Value Proposition */}
-        <section className="value-prop">
-          <h2>Your Safety, Your Peace of Mind</h2>
-          <p className="lead">
+        <section className="value-prop section-spacing">
+          <h2 className="section-title">Your Safety, Your Peace of Mind</h2>
+          <p className="lead text-muted">
             The PulseLink Suite combines powerful safety features with innovative mobile utilities.
             Whether you need emergency alerts or a better ringtone experience, we've got you covered.
           </p>
         </section>
 
         {/* PulseLink & Beacon Section */}
-        <section className="app-section pulselink-main" id="pulselink">
+        <section className="app-section pulselink-main section-spacing" id="pulselink">
           <div className="app-header">
             <Shield size={48} className="app-icon" />
             <div>
               <h2>PulseLink & Beacon</h2>
-              <p className="app-tagline">Your Discreet Safety Companion</p>
+              <p className="app-tagline text-muted">Your Discreet Safety Companion</p>
             </div>
           </div>
 
           <div className="feature-showcase">
-            <div className="showcase-main">
-              <h3>Built for Your Safety</h3>
-              <p>
+            <div className="showcase-main glass-card">
+              <h3 className="text-primary">Built for Your Safety</h3>
+              <p className="text-muted">
                 PulseLink is designed to be your invisible safety net. In situations where you can't safely use your phone,
                 PulseLink activates through <strong>voice triggers</strong>—discreet phrases that only you know.
                 Your trusted contacts receive instant alerts with your real-time location, ensuring help is always just a word away.
               </p>
             </div>
 
-            <div className="features-grid">
-              <div className="feature-item">
+            <div className="grid-cols-2 features-grid">
+              <div className="feature-item glass-card">
                 <Bell size={32} className="feature-icon" />
                 <h4>Voice Triggers</h4>
-                <p>Activate emergency protocols hands-free with custom discreet phrases. Your phone listens even when the screen is off.</p>
+                <p className="text-muted">Activate emergency protocols hands-free with custom discreet phrases. Your phone listens even when the screen is off.</p>
               </div>
 
-              <div className="feature-item">
+              <div className="feature-item glass-card">
                 <Users size={32} className="feature-icon" />
                 <h4>Trusted Contacts</h4>
-                <p>Build your personal safety network. Automatically notify your chosen contacts when you need help.</p>
+                <p className="text-muted">Build your personal safety network. Automatically notify your chosen contacts when you need help.</p>
               </div>
 
-              <div className="feature-item">
+              <div className="feature-item glass-card">
                 <MapPin size={32} className="feature-icon" />
                 <h4>Real-Time Location</h4>
-                <p>Continuous GPS tracking and location updates sent directly to your trusted contacts during emergencies.</p>
+                <p className="text-muted">Continuous GPS tracking and location updates sent directly to your trusted contacts during emergencies.</p>
               </div>
 
-              <div className="feature-item">
+              <div className="feature-item glass-card">
                 <Activity size={32} className="feature-icon" />
                 <h4>Always Listening</h4>
-                <p>Advanced background monitoring ensures PulseLink is ready when you need it, without draining your battery.</p>
+                <p className="text-muted">Advanced background monitoring ensures PulseLink is ready when you need it, without draining your battery.</p>
               </div>
             </div>
           </div>
 
           {/* Edition Comparison */}
-          <div className="editions-section">
+          <div className="editions-section section-spacing">
             <h3>Choose Your Edition</h3>
-            <div className="editions-grid">
-              <div className="edition-card">
+            <div className="editions-grid grid-cols-3">
+              <div className="edition-card glass-card">
                 <div className="edition-header">
                   <h4>PulseLink</h4>
                   <span className="price">Free</span>
@@ -136,7 +137,7 @@ const PulseLink = () => {
                 </a>
               </div>
 
-              <div className="edition-card featured">
+              <div className="edition-card featured glass-card">
                 <div className="edition-badge">Popular</div>
                 <div className="edition-header">
                   <h4>Pro</h4>
@@ -157,7 +158,7 @@ const PulseLink = () => {
                 </a>
               </div>
 
-              <div className="edition-card">
+              <div className="edition-card glass-card">
                 <div className="edition-header">
                   <h4>Premium</h4>
                   <span className="price">Ultimate</span>
@@ -201,54 +202,54 @@ const PulseLink = () => {
         </section>
 
         {/* RingerSong Section */}
-        <section className="app-section ringersong-main" id="ringersong">
+        <section className="app-section ringersong-main section-spacing" id="ringersong">
           <div className="app-header">
             <Music size={48} className="app-icon music-icon" />
             <div>
               <h2>RingerSong</h2>
-              <p className="app-tagline">Your Ringtone, Reinvented</p>
+              <p className="app-tagline text-muted">Your Ringtone, Reinvented</p>
             </div>
           </div>
 
           <div className="feature-showcase">
-            <div className="showcase-main">
-              <h3>Progressive Streaming Ringtones</h3>
-              <p>
+            <div className="showcase-main glass-card">
+              <h3 className="music-text">Progressive Streaming Ringtones</h3>
+              <p className="text-muted">
                 Tired of hearing the same 30-second loop every time someone calls? <strong>RingerSong</strong> revolutionizes
                 the ringtone experience with progressive streaming. Your ringtone plays the first 30 seconds of your chosen song,
                 then the next 30 seconds the next time, and so on. Every call is a fresh musical experience.
               </p>
             </div>
 
-            <div className="features-grid">
-              <div className="feature-item">
+            <div className="grid-cols-2 features-grid">
+              <div className="feature-item glass-card">
                 <Music size={32} className="feature-icon music" />
                 <h4>Streaming Integration</h4>
-                <p>Works seamlessly with Spotify, YouTube Music, and other major streaming services. Use your existing playlists.</p>
+                <p className="text-muted">Works seamlessly with Spotify, YouTube Music, and other major streaming services. Use your existing playlists.</p>
               </div>
 
-              <div className="feature-item">
+              <div className="feature-item glass-card">
                 <Zap size={32} className="feature-icon music" />
                 <h4>Progressive Playback</h4>
-                <p>Never hear the same loop twice. RingerSong remembers where you left off and continues from there.</p>
+                <p className="text-muted">Never hear the same loop twice. RingerSong remembers where you left off and continues from there.</p>
               </div>
 
-              <div className="feature-item">
+              <div className="feature-item glass-card">
                 <Phone size={32} className="feature-icon music" />
                 <h4>Smart Caller ID</h4>
-                <p>Identify spam calls and unknown numbers instantly. Know who's calling before you pick up.</p>
+                <p className="text-muted">Identify spam calls and unknown numbers instantly. Know who's calling before you pick up.</p>
               </div>
 
-              <div className="feature-item">
+              <div className="feature-item glass-card">
                 <Heart size={32} className="feature-icon music" />
                 <h4>Custom Playlists</h4>
-                <p>Organize your tracks, create mood-based ringtone playlists, and manage playback settings with ease.</p>
+                <p className="text-muted">Organize your tracks, create mood-based ringtone playlists, and manage playback settings with ease.</p>
               </div>
             </div>
           </div>
 
-          <div className="ringersong-cta">
-            <h3>Experience Music, One Call at a Time</h3>
+          <div className="ringersong-cta glass-card">
+            <h3 className="music-text">Experience Music, One Call at a Time</h3>
             <div className="cta-buttons">
               <motion.a
                 href="https://pulselink.damiennichols.com"
@@ -275,9 +276,9 @@ const PulseLink = () => {
         </section>
 
         {/* Final CTA */}
-        <section className="final-cta">
+        <section className="final-cta section-spacing">
           <h3>Ready to Upgrade Your Mobile Experience?</h3>
-          <p>Join thousands of users who trust the PulseLink Suite for safety and innovation.</p>
+          <p className="text-muted">Join thousands of users who trust the PulseLink Suite for safety and innovation.</p>
           <div className="cta-buttons">
             <a href="/pulselink/promo" className="btn btn-primary btn-large">
               Learn More <ExternalLink size={18} />
@@ -287,34 +288,16 @@ const PulseLink = () => {
       </div>
 
       <style>{`
-        .page-container {
-          width: 100%;
-          min-height: 100vh;
-          padding-bottom: 4rem;
-        }
-
+        /* Hero Overrides */
         .page-hero {
-          height: 50vh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
           background: radial-gradient(circle at center, #1a1a2e 0%, #000 100%);
-          text-align: center;
-          position: relative;
+          height: 50vh;
         }
 
-        .page-hero h1 {
-          font-size: 3.5rem;
-          margin-bottom: 0.5rem;
+        .text-gradient-pulse {
           background: linear-gradient(to right, #646cff, #00bcd4);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
-        }
-
-        .subtitle {
-          font-size: 1.25rem;
-          color: var(--color-text-muted);
-          margin-bottom: 2rem;
         }
 
         .badges {
@@ -324,68 +307,18 @@ const PulseLink = () => {
           flex-wrap: wrap;
         }
 
-        .badge {
-          background: rgba(255, 255, 255, 0.1);
-          padding: 0.25rem 0.75rem;
-          border-radius: 20px;
-          font-size: 0.85rem;
-          color: var(--color-text-muted);
-          border: 1px solid rgba(255, 255, 255, 0.05);
-        }
-
         .portal-cta {
           margin-top: 2rem;
         }
 
         .btn-portal {
-          padding: 1rem 2rem;
-          font-size: 1.1rem;
           background: linear-gradient(135deg, var(--color-primary), #00bcd4);
           color: white;
           border: none;
-          display: inline-flex;
-          align-items: center;
-          gap: 0.75rem;
-          font-weight: 600;
-          box-shadow: 0 4px 20px rgba(100, 108, 255, 0.3);
-        }
-
-        .btn-portal:hover {
-          color: white;
-        }
-
-        .content-wrapper {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 2rem;
-        }
-
-        /* Value Proposition */
-        .value-prop {
-          text-align: center;
-          padding: 3rem 2rem;
-          margin-bottom: 3rem;
-        }
-
-        .value-prop h2 {
-          font-size: 2.5rem;
-          margin-bottom: 1rem;
-          background: linear-gradient(to right, var(--color-primary), #00bcd4);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
-
-        .value-prop .lead {
-          font-size: 1.2rem;
-          color: var(--color-text-muted);
-          max-width: 800px;
-          margin: 0 auto;
-          line-height: 1.8;
         }
 
         /* App Sections */
         .app-section {
-          margin-bottom: 5rem;
           background: var(--color-surface);
           border: 1px solid var(--color-border);
           border-radius: 16px;
@@ -403,14 +336,15 @@ const PulseLink = () => {
           padding-bottom: 1.5rem;
         }
 
-        .app-header h2 {
-          margin: 0;
+        @media (max-width: 768px) {
+          .app-header {
+             flex-direction: column;
+             text-align: center;
+          }
         }
 
-        .app-tagline {
-          color: var(--color-text-muted);
-          font-size: 1.1rem;
-          margin: 0.5rem 0 0 0;
+        .app-header h2 {
+          margin: 0;
         }
 
         .app-icon {
@@ -418,53 +352,21 @@ const PulseLink = () => {
           flex-shrink: 0;
         }
 
-        .music-icon {
+        .music-icon, .music-text, .feature-icon.music {
           color: #ff6b6b;
         }
 
         /* Feature Showcase */
-        .feature-showcase {
-          margin-bottom: 3rem;
-        }
-
         .showcase-main {
-          background: rgba(100, 108, 255, 0.05);
           padding: 2rem;
-          border-radius: 12px;
           border-left: 4px solid var(--color-primary);
           margin-bottom: 2rem;
-        }
-
-        .showcase-main h3 {
-          color: var(--color-primary);
-          margin-bottom: 1rem;
-        }
-
-        .showcase-main p {
-          line-height: 1.8;
-          color: var(--color-text-muted);
-        }
-
-        /* Features Grid */
-        .features-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 2rem;
+          background: rgba(100, 108, 255, 0.05); /* Slight tint override */
         }
 
         .feature-item {
           text-align: center;
           padding: 1.5rem;
-          background: rgba(255, 255, 255, 0.02);
-          border-radius: 12px;
-          border: 1px solid var(--color-border);
-          transition: all 0.3s ease;
-        }
-
-        .feature-item:hover {
-          transform: translateY(-5px);
-          border-color: var(--color-primary);
-          box-shadow: 0 8px 24px rgba(100, 108, 255, 0.15);
         }
 
         .feature-icon {
@@ -472,27 +374,7 @@ const PulseLink = () => {
           margin-bottom: 1rem;
         }
 
-        .feature-icon.music {
-          color: #ff6b6b;
-        }
-
-        .feature-item h4 {
-          margin: 0 0 0.75rem 0;
-          color: var(--color-text);
-        }
-
-        .feature-item p {
-          color: var(--color-text-muted);
-          font-size: 0.95rem;
-          line-height: 1.6;
-          margin: 0;
-        }
-
         /* Editions Section */
-        .editions-section {
-          margin: 3rem 0;
-        }
-
         .editions-section h3 {
           text-align: center;
           font-size: 2rem;
@@ -500,20 +382,11 @@ const PulseLink = () => {
           color: var(--color-primary);
         }
 
-        .editions-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-          gap: 2rem;
-        }
-
         .edition-card {
-          background: rgba(255, 255, 255, 0.03);
-          border: 2px solid var(--color-border);
-          border-radius: 16px;
-          padding: 2rem;
-          text-align: center;
-          transition: all 0.3s ease;
-          position: relative;
+           display: flex;
+           flex-direction: column;
+           height: 100%;
+           border-width: 2px;
         }
 
         .edition-card.featured {
@@ -521,10 +394,9 @@ const PulseLink = () => {
           background: radial-gradient(circle at top, rgba(100, 108, 255, 0.1), rgba(255, 255, 255, 0.03));
           transform: scale(1.05);
         }
-
-        .edition-card:hover {
-          transform: translateY(-10px) scale(1.02);
-          box-shadow: 0 12px 32px rgba(100, 108, 255, 0.2);
+        
+        @media (max-width: 768px) {
+           .edition-card.featured { transform: scale(1); }
         }
 
         .edition-badge {
@@ -560,6 +432,7 @@ const PulseLink = () => {
           padding: 0;
           margin: 0 0 2rem 0;
           text-align: left;
+           flex: 1;
         }
 
         .edition-features li {
@@ -570,15 +443,11 @@ const PulseLink = () => {
           color: var(--color-text-muted);
         }
 
-        .btn-outline {
-          background: transparent;
-          border: 2px solid var(--color-primary);
-          color: var(--color-primary);
-        }
-
-        .btn-outline:hover {
-          background: var(--color-primary);
-          color: white;
+        .edition-note {
+           font-size: 0.85rem;
+           margin-top: 1rem;
+           opacity: 0.8;
+           color: var(--color-text-muted);
         }
 
         /* Wiki Link Section */
@@ -605,6 +474,7 @@ const PulseLink = () => {
           color: var(--color-primary);
           font-weight: 600;
           transition: all 0.3s ease;
+          cursor: pointer;
         }
 
         .wiki-link-btn:hover {
@@ -626,25 +496,39 @@ const PulseLink = () => {
           box-shadow: 0 4px 12px rgba(255, 68, 68, 0.3);
         }
 
-        .edition-note {
-           font-size: 0.85rem;
-           color: var(--color-text-muted);
-           margin-top: 1rem;
-           opacity: 0.8;
+        /* Value Prop */
+        .value-prop {
+           text-align: center;
+        }
+        
+        .value-prop h2 {
+           font-size: 2.5rem;
+           margin-bottom: 1rem;
+           background: linear-gradient(to right, var(--color-primary), #00bcd4);
+           -webkit-background-clip: text;
+           -webkit-text-fill-color: transparent;
+        }
+        
+        .lead {
+           font-size: 1.2rem;
+           max-width: 800px;
+           margin: 0 auto;
+           line-height: 1.8;
         }
 
-        /* RingerSong CTA */
+        /* Ringersong CTA */
         .ringersong-cta {
           text-align: center;
-          padding: 2rem;
           background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(255, 107, 107, 0.05));
-          border-radius: 12px;
           margin-top: 2rem;
         }
 
-        .ringersong-cta h3 {
-          color: #ff6b6b;
-          margin-bottom: 1.5rem;
+        .cta-buttons {
+          display: flex;
+          gap: 1rem;
+          justify-content: center;
+          flex-wrap: wrap;
+          margin-top: 1.5rem;
         }
 
         /* Final CTA */
@@ -655,60 +539,9 @@ const PulseLink = () => {
           border-radius: 16px;
           border: 2px solid var(--color-primary);
         }
+        
+        .final-cta h3 { font-size: 2rem; margin-bottom: 1rem; }
 
-        .final-cta h3 {
-          font-size: 2rem;
-          margin-bottom: 1rem;
-        }
-
-        .final-cta p {
-          font-size: 1.1rem;
-          color: var(--color-text-muted);
-          margin-bottom: 2rem;
-        }
-
-        .cta-buttons {
-          display: flex;
-          gap: 1rem;
-          justify-content: center;
-          flex-wrap: wrap;
-        }
-
-        .btn-large {
-          padding: 1rem 2rem;
-          font-size: 1.1rem;
-        }
-
-        @media (max-width: 768px) {
-          .page-hero h1 {
-            font-size: 2.5rem;
-          }
-
-          .value-prop h2 {
-            font-size: 2rem;
-          }
-
-          .app-section {
-            padding: 1.5rem;
-          }
-
-          .features-grid {
-            grid-template-columns: 1fr;
-          }
-
-          .editions-grid {
-            grid-template-columns: 1fr;
-          }
-
-          .edition-card.featured {
-            transform: scale(1);
-          }
-
-          .app-header {
-            flex-direction: column;
-            text-align: center;
-          }
-        }
       `}</style>
     </div>
   );

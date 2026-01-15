@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const BetaMax = () => {
   return (
     <div className="page-container betamax-page">
-      <section className="page-hero retro-hero">
+      <section className="hero-section retro-hero">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -20,7 +20,7 @@ const BetaMax = () => {
             BETA MAX
           </motion.div>
           <motion.p
-            className="subtitle"
+            className="hero-subtitle"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
@@ -40,7 +40,7 @@ const BetaMax = () => {
       </section>
 
       <div className="content-wrapper">
-        <div className="intro-card">
+        <div className="intro-card section-spacing">
           <h2><Gamepad2 className="inline-icon" /> QC Gamified</h2>
           <p className="lead-text">
             Beta Max is a retro-futuristic platform that transforms QA into a reputation-based economy.
@@ -52,7 +52,7 @@ const BetaMax = () => {
         </div>
 
         {/* Feature Grid */}
-        <div className="grid-features">
+        <div className="grid-cols-2 section-spacing">
 
           {/* Key Concepts */}
           <div className="feature-card">
@@ -129,12 +129,6 @@ const BetaMax = () => {
           background: linear-gradient(45deg, #2b001f, #001f2b);
           border-bottom: 2px solid var(--retro-secondary);
           height: 50vh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          text-align: center;
-          position: relative;
-          overflow: hidden;
         }
         
         .retro-hero::before {
@@ -156,6 +150,10 @@ const BetaMax = () => {
           text-shadow: 2px 2px 0px var(--retro-primary), -2px -2px 0px var(--retro-secondary);
           color: white;
           margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+           .retro-logo { font-size: 3rem; }
         }
 
         .coming-soon-badge {
@@ -187,18 +185,10 @@ const BetaMax = () => {
             border: 1px solid var(--retro-primary);
             padding: 2rem;
             border-radius: 8px;
-            margin-bottom: 3rem;
         }
         
         .intro-card h2 { color: var(--retro-secondary); margin-bottom: 1rem; }
         .intro-card p { font-size: 1.1rem; color: #ccc; }
-
-        .grid-features {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-          gap: 2rem;
-          margin-bottom: 3rem;
-        }
 
         .feature-card {
           background: #0a0a12;
@@ -206,6 +196,7 @@ const BetaMax = () => {
           padding: 2rem;
           border-radius: 12px;
           transition: transform 0.2s;
+          height: 100%;
         }
         
         .feature-card:hover {

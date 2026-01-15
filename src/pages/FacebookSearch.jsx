@@ -4,7 +4,7 @@ import { Search, Users, Filter, Clock, TrendingUp, ExternalLink, Download, Zap, 
 const FacebookSearch = () => {
   return (
     <div className="page-container facebook-search-page">
-      <section className="page-hero">
+      <section className="hero-section page-hero">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -19,6 +19,7 @@ const FacebookSearch = () => {
             <Search size={64} className="hero-icon" />
           </motion.div>
           <motion.h1
+            className="hero-title"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
@@ -26,7 +27,7 @@ const FacebookSearch = () => {
             Facebook Search
           </motion.h1>
           <motion.p
-            className="subtitle"
+            className="hero-subtitle"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
@@ -49,14 +50,14 @@ const FacebookSearch = () => {
       <div className="content-wrapper">
         {/* Value Proposition */}
         <motion.section
-          className="value-prop"
+          className="value-prop section-spacing"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2>Find What You're Looking For</h2>
-          <p className="lead">
+          <h2 className="section-title">Find What You're Looking For</h2>
+          <p className="lead text-muted">
             Facebook Search enhances your Facebook experience with powerful search capabilities.
             Discover people, groups, posts, and content faster with advanced filtering and intelligent search algorithms.
           </p>
@@ -64,20 +65,20 @@ const FacebookSearch = () => {
 
         {/* Main Features Section */}
         <motion.section
-          className="features-section"
+          className="features-section section-spacing"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
           <div className="section-header">
-            <h2>Powerful Search Features</h2>
-            <p>Everything you need to find anything on Facebook</p>
+            <h2 className="section-title">Powerful Search Features</h2>
+            <p className="text-muted">Everything you need to find anything on Facebook</p>
           </div>
 
-          <div className="features-grid-large">
+          <div className="grid-cols-2">
             <motion.div
-              className="feature-card"
+              className="feature-card glass-card"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -88,7 +89,7 @@ const FacebookSearch = () => {
                 <Filter size={40} className="feature-icon" />
               </div>
               <h3>Advanced Filtering</h3>
-              <p>
+              <p className="text-muted">
                 Filter search results by date range, location, post type, and more.
                 Narrow down results to find exactly what you need with precision controls.
               </p>
@@ -101,7 +102,7 @@ const FacebookSearch = () => {
             </motion.div>
 
             <motion.div
-              className="feature-card"
+              className="feature-card glass-card"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -112,7 +113,7 @@ const FacebookSearch = () => {
                 <Users size={40} className="feature-icon" />
               </div>
               <h3>People Discovery</h3>
-              <p>
+              <p className="text-muted">
                 Find friends, colleagues, and connections faster. Search by name, location,
                 workplace, education, and mutual connections.
               </p>
@@ -125,7 +126,7 @@ const FacebookSearch = () => {
             </motion.div>
 
             <motion.div
-              className="feature-card"
+              className="feature-card glass-card"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -136,7 +137,7 @@ const FacebookSearch = () => {
                 <Clock size={40} className="feature-icon" />
               </div>
               <h3>Search History</h3>
-              <p>
+              <p className="text-muted">
                 Keep track of your searches with organized history. Revisit previous searches,
                 save frequent queries, and manage your search activity.
               </p>
@@ -149,7 +150,7 @@ const FacebookSearch = () => {
             </motion.div>
 
             <motion.div
-              className="feature-card"
+              className="feature-card glass-card"
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -160,7 +161,7 @@ const FacebookSearch = () => {
                 <TrendingUp size={40} className="feature-icon" />
               </div>
               <h3>Trending Content</h3>
-              <p>
+              <p className="text-muted">
                 Discover what's popular and trending on Facebook. Stay up to date with
                 the latest conversations, viral posts, and trending topics.
               </p>
@@ -176,16 +177,16 @@ const FacebookSearch = () => {
 
         {/* How It Works Section */}
         <motion.section
-          className="how-it-works"
+          className="how-it-works section-spacing"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2>How It Works</h2>
-          <div className="steps-grid">
+          <h2 className="section-title">How It Works</h2>
+          <div className="grid-cols-3">
             <motion.div
-              className="step-card"
+              className="step-card glass-card"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -193,11 +194,11 @@ const FacebookSearch = () => {
             >
               <div className="step-number">1</div>
               <h3>Enter Your Query</h3>
-              <p>Type what you're looking for - people, posts, groups, or pages.</p>
+              <p className="text-muted">Type what you're looking for - people, posts, groups, or pages.</p>
             </motion.div>
 
             <motion.div
-              className="step-card"
+              className="step-card glass-card"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -205,11 +206,11 @@ const FacebookSearch = () => {
             >
               <div className="step-number">2</div>
               <h3>Apply Filters</h3>
-              <p>Refine your search with advanced filters like date, location, and type.</p>
+              <p className="text-muted">Refine your search with advanced filters like date, location, and type.</p>
             </motion.div>
 
             <motion.div
-              className="step-card"
+              className="step-card glass-card"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -217,63 +218,63 @@ const FacebookSearch = () => {
             >
               <div className="step-number">3</div>
               <h3>Get Results</h3>
-              <p>Browse organized, relevant results with enhanced sorting options.</p>
+              <p className="text-muted">Browse organized, relevant results with enhanced sorting options.</p>
             </motion.div>
           </div>
         </motion.section>
 
         {/* Benefits Section */}
         <motion.section
-          className="benefits-section"
+          className="benefits-section section-spacing"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2>Why Choose Facebook Search?</h2>
-          <div className="benefits-grid">
+          <h2 className="section-title">Why Choose Facebook Search?</h2>
+          <div className="grid-cols-3">
             <motion.div
-              className="benefit-item"
+              className="benefit-item glass-card"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               <Zap className="benefit-icon" />
               <h4>Lightning Fast</h4>
-              <p>Optimized search algorithms deliver results instantly</p>
+              <p className="text-muted">Optimized search algorithms deliver results instantly</p>
             </motion.div>
 
             <motion.div
-              className="benefit-item"
+              className="benefit-item glass-card"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               <Shield className="benefit-icon" />
               <h4>Privacy Focused</h4>
-              <p>Your searches are private and secure</p>
+              <p className="text-muted">Your searches are private and secure</p>
             </motion.div>
 
             <motion.div
-              className="benefit-item"
+              className="benefit-item glass-card"
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
               <Smartphone className="benefit-icon" />
               <h4>Mobile Optimized</h4>
-              <p>Designed for seamless mobile Facebook browsing</p>
+              <p className="text-muted">Designed for seamless mobile Facebook browsing</p>
             </motion.div>
           </div>
         </motion.section>
 
         {/* CTA Section */}
         <motion.section
-          className="cta-section"
+          className="cta-section section-spacing"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2>Ready to Supercharge Your Facebook Experience?</h2>
-          <p>Download Facebook Search and discover content like never before.</p>
+          <h2 className="section-title">Ready to Supercharge Your Facebook Experience?</h2>
+          <p className="hero-subtitle">Download Facebook Search and discover content like never before.</p>
           <div className="cta-buttons">
             <motion.a
               href="https://github.com/DamienLove/FacebookSearch"
@@ -291,18 +292,12 @@ const FacebookSearch = () => {
 
       <style>{`
         .facebook-search-page {
-          width: 100%;
-          min-height: 100vh;
-          padding-bottom: 4rem;
+          --fb-blue: #3b82f6;
+          --fb-purple: #8b5cf6;
         }
 
         .page-hero {
-          min-height: 60vh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
           background: radial-gradient(circle at center, #1a1f3a 0%, #000 100%);
-          text-align: center;
           position: relative;
           overflow: hidden;
         }
@@ -325,30 +320,16 @@ const FacebookSearch = () => {
           50% { opacity: 1; }
         }
 
-        .hero-content {
-          position: relative;
-          z-index: 1;
+        .hero-title {
+          background: linear-gradient(to right, var(--fb-blue), var(--fb-purple));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
 
         .hero-icon {
-          color: #3b82f6;
+          color: var(--fb-blue);
           margin-bottom: 1.5rem;
           filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.5));
-        }
-
-        .page-hero h1 {
-          font-size: 4rem;
-          margin-bottom: 1rem;
-          background: linear-gradient(to right, #3b82f6, #8b5cf6);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          font-weight: 800;
-        }
-
-        .subtitle {
-          font-size: 1.5rem;
-          color: var(--color-text-muted);
-          margin-bottom: 2rem;
         }
 
         .badges {
@@ -356,6 +337,7 @@ const FacebookSearch = () => {
           gap: 1rem;
           justify-content: center;
           flex-wrap: wrap;
+          margin-top: 2rem;
         }
 
         .badge {
@@ -363,80 +345,38 @@ const FacebookSearch = () => {
           padding: 0.5rem 1rem;
           border-radius: 25px;
           font-size: 0.9rem;
-          color: #3b82f6;
+          color: var(--fb-blue);
           border: 1px solid rgba(59, 130, 246, 0.3);
           backdrop-filter: blur(10px);
         }
 
-        .content-wrapper {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 2rem;
-        }
-
-        /* Value Proposition */
         .value-prop {
           text-align: center;
-          padding: 4rem 2rem;
-          margin-bottom: 4rem;
         }
 
         .value-prop h2 {
-          font-size: 3rem;
-          margin-bottom: 1.5rem;
-          background: linear-gradient(to right, #3b82f6, #8b5cf6);
+           background: linear-gradient(to right, var(--fb-blue), var(--fb-purple));
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
         }
-
-        .value-prop .lead {
-          font-size: 1.25rem;
-          color: var(--color-text-muted);
-          max-width: 900px;
-          margin: 0 auto;
-          line-height: 1.8;
-        }
-
-        /* Features Section */
-        .features-section {
-          margin-bottom: 6rem;
-        }
-
+        
         .section-header {
           text-align: center;
-          margin-bottom: 4rem;
-        }
-
-        .section-header h2 {
-          font-size: 2.5rem;
-          margin-bottom: 1rem;
-          color: var(--color-text);
-        }
-
-        .section-header p {
-          font-size: 1.1rem;
-          color: var(--color-text-muted);
-        }
-
-        .features-grid-large {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-          gap: 2rem;
+          margin-bottom: 3rem;
         }
 
         .feature-card {
-          background: rgba(59, 130, 246, 0.05);
-          border: 1px solid rgba(59, 130, 246, 0.2);
-          border-radius: 16px;
           padding: 2.5rem;
-          transition: all 0.3s ease;
+          display: flex;
+          flex-direction: column;
+          height: 100%;
         }
 
         .feature-icon-wrapper {
           width: 80px;
           height: 80px;
           border-radius: 16px;
-          background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+          background: linear-gradient(135deg, var(--fb-blue), var(--fb-purple));
           display: flex;
           align-items: center;
           justify-content: center;
@@ -453,16 +393,10 @@ const FacebookSearch = () => {
           color: var(--color-text);
         }
 
-        .feature-card p {
-          color: var(--color-text-muted);
-          line-height: 1.7;
-          margin-bottom: 1.5rem;
-        }
-
         .feature-list {
           list-style: none;
           padding: 0;
-          margin: 0;
+          margin-top: auto;
         }
 
         .feature-list li {
@@ -476,106 +410,61 @@ const FacebookSearch = () => {
           content: '✓';
           position: absolute;
           left: 0;
-          color: #3b82f6;
+          color: var(--fb-blue);
           font-weight: bold;
         }
 
-        /* How It Works */
-        .how-it-works {
-          margin-bottom: 6rem;
+        .how-it-works, .benefits-section {
           text-align: center;
         }
 
-        .how-it-works h2 {
-          font-size: 2.5rem;
-          margin-bottom: 3rem;
-          color: var(--color-text);
-        }
-
-        .steps-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 2rem;
-        }
-
         .step-card {
-          background: var(--color-surface);
-          border: 1px solid var(--color-border);
-          border-radius: 16px;
           padding: 2rem;
           position: relative;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
         }
 
         .step-number {
           width: 60px;
           height: 60px;
           border-radius: 50%;
-          background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+          background: linear-gradient(135deg, var(--fb-blue), var(--fb-purple));
           color: white;
           display: flex;
           align-items: center;
           justify-content: center;
           font-size: 1.5rem;
           font-weight: bold;
-          margin: 0 auto 1.5rem;
+          margin-bottom: 1.5rem;
         }
 
         .step-card h3 {
-          font-size: 1.25rem;
           margin-bottom: 1rem;
-          color: var(--color-text);
         }
-
-        .step-card p {
-          color: var(--color-text-muted);
-          line-height: 1.6;
-        }
-
-        /* Benefits Section */
-        .benefits-section {
-          margin-bottom: 6rem;
-          text-align: center;
-        }
-
-        .benefits-section h2 {
-          font-size: 2.5rem;
-          margin-bottom: 3rem;
-          color: var(--color-text);
-        }
-
-        .benefits-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 2rem;
-        }
-
+        
         .benefit-item {
-          background: rgba(59, 130, 246, 0.05);
-          border: 1px solid rgba(59, 130, 246, 0.2);
-          border-radius: 12px;
           padding: 2rem;
           cursor: pointer;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
         }
 
         .benefit-icon {
           width: 48px;
           height: 48px;
-          color: #3b82f6;
+          color: var(--fb-blue);
           margin-bottom: 1rem;
         }
 
         .benefit-item h4 {
           font-size: 1.25rem;
           margin-bottom: 0.75rem;
-          color: var(--color-text);
         }
 
-        .benefit-item p {
-          color: var(--color-text-muted);
-          line-height: 1.6;
-        }
-
-        /* CTA Section */
         .cta-section {
           text-align: center;
           padding: 4rem 2rem;
@@ -584,56 +473,17 @@ const FacebookSearch = () => {
           border: 2px solid rgba(59, 130, 246, 0.3);
         }
 
-        .cta-section h2 {
-          font-size: 2.5rem;
-          margin-bottom: 1rem;
-          color: var(--color-text);
-        }
-
-        .cta-section p {
-          font-size: 1.2rem;
-          color: var(--color-text-muted);
-          margin-bottom: 2.5rem;
-        }
-
         .cta-buttons {
           display: flex;
           gap: 1rem;
           justify-content: center;
           flex-wrap: wrap;
+          margin-top: 2rem;
         }
 
         .btn-large {
           padding: 1.25rem 2.5rem;
           font-size: 1.1rem;
-        }
-
-        @media (max-width: 768px) {
-          .page-hero h1 {
-            font-size: 2.5rem;
-          }
-
-          .subtitle {
-            font-size: 1.2rem;
-          }
-
-          .value-prop h2,
-          .section-header h2,
-          .how-it-works h2,
-          .benefits-section h2,
-          .cta-section h2 {
-            font-size: 2rem;
-          }
-
-          .features-grid-large,
-          .steps-grid,
-          .benefits-grid {
-            grid-template-columns: 1fr;
-          }
-
-          .feature-card {
-            padding: 2rem;
-          }
         }
       `}</style>
     </div>

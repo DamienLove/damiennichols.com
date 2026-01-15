@@ -6,7 +6,7 @@ const About = () => {
     <div className="page-container about-page">
       <div className="content-wrapper narrow">
         <motion.div
-          className="profile-section"
+          className="profile-section glass-card"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
         >
@@ -34,100 +34,100 @@ const About = () => {
           </div>
 
           <div className="bio-text">
-            <p>
+            <p className="text-muted">
               I'm a passionate creator who bridges the gap between imagination and technology.
               My work spans two worlds: <strong>software engineering</strong> and <strong>storytelling</strong>.
             </p>
-            <p>
+            <p className="text-muted">
               As a <strong>Software Engineer</strong>, I build applications that solve real problems. From <strong>PulseLink</strong>—a
               voice-activated safety companion that could save lives—to <strong>Beta Max</strong>, a gamified QA platform that makes
               testing feel like an adventure. Every project is driven by a simple question: <em>How can technology make life better?</em>
             </p>
-            <p>
+            <p className="text-muted">
               As an <strong>Author</strong>, I explore the boundaries of reality through science fiction. The <strong>Universe Connected</strong>
               series weaves together multiple dimensions, timelines, and realities into a cohesive narrative that challenges everything
               you thought you knew about existence. My writing style blends logical world-building (thanks to my engineering background)
               with mind-bending concepts that keep readers guessing.
             </p>
-            <p>
+            <p className="text-muted">
               Whether I'm writing code or crafting stories, my goal is the same: <strong>create something meaningful that resonates with people</strong>.
             </p>
           </div>
 
           <motion.div
-            className="experience-section"
+            className="experience-section section-spacing"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h3><Briefcase size={24} className="section-icon" /> Professional Experience</h3>
-            <div className="experience-grid">
+            <h3 className="section-title"><Briefcase size={24} className="section-icon" /> Professional Experience</h3>
+            <div className="grid-cols-2">
               <motion.div
-                className="experience-card"
+                className="feature-card glass-card"
                 whileHover={{ y: -5 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <Award className="exp-icon" />
                 <h4>AAA Game Development</h4>
-                <p>Contributed to multiple <strong>Call of Duty</strong> titles through work with Raven Software, Activision, Infinity Ward, High Moon Studios, and Treyarch. Worked across platforms including Modern Warfare, Infinite Warfare, and WWII.</p>
+                <p className="text-muted">Contributed to multiple <strong>Call of Duty</strong> titles through work with Raven Software, Activision, Infinity Ward, High Moon Studios, and Treyarch. Worked across platforms including Modern Warfare, Infinite Warfare, and WWII.</p>
                 <a href="https://www.mobygames.com/person/586898/damien-nichols/" target="_blank" rel="noopener noreferrer" className="exp-link">
                   View MobyGames Profile →
                 </a>
               </motion.div>
               <motion.div
-                className="experience-card"
+                className="feature-card glass-card"
                 whileHover={{ y: -5 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <Code className="exp-icon" />
                 <h4>Independent Development</h4>
-                <p>Creator of the PulseLink Suite, Beta Max, QA Verify & Track, and Facebook Search. Building innovative Android applications and web platforms that solve real-world problems.</p>
+                <p className="text-muted">Creator of the PulseLink Suite, Beta Max, QA Verify & Track, and Facebook Search. Building innovative Android applications and web platforms that solve real-world problems.</p>
               </motion.div>
             </div>
           </motion.div>
 
           <motion.div
-            className="expertise-section"
+            className="expertise-section section-spacing"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3>What I Do</h3>
-            <div className="expertise-grid">
-              <div className="expertise-item">
+            <h3 className="section-title">What I Do</h3>
+            <div className="grid-cols-3">
+              <div className="feature-card glass-card">
                 <Code size={32} className="expertise-icon" />
                 <h4>Software Development</h4>
-                <p>Full-stack development, mobile apps (Android), and innovative solutions that prioritize user experience.</p>
+                <p className="text-muted">Full-stack development, mobile apps (Android), and innovative solutions that prioritize user experience.</p>
               </div>
-              <div className="expertise-item">
+              <div className="feature-card glass-card">
                 <Rocket size={32} className="expertise-icon" />
                 <h4>Product Innovation</h4>
-                <p>Creating tools that solve real problems—from personal safety to developer productivity.</p>
+                <p className="text-muted">Creating tools that solve real problems—from personal safety to developer productivity.</p>
               </div>
-              <div className="expertise-item">
+              <div className="feature-card glass-card">
                 <BookOpen size={32} className="expertise-icon" />
                 <h4>Creative Writing</h4>
-                <p>Science fiction that challenges perceptions and explores interconnected realities.</p>
+                <p className="text-muted">Science fiction that challenges perceptions and explores interconnected realities.</p>
               </div>
             </div>
           </motion.div>
 
           <motion.div
-            className="connect-section"
+            className="connect-section section-spacing"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <h3>Connect</h3>
-            <div className="social-icons">
+            <h3 className="section-title">Connect</h3>
+            <div className="cta-buttons">
               <motion.a
                 href="https://github.com/DamienLove"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="social-link"
+                className="btn btn-secondary"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -137,7 +137,7 @@ const About = () => {
                 href="https://www.linkedin.com/in/damienmnichols/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="social-link"
+                className="btn btn-secondary"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -147,7 +147,7 @@ const About = () => {
                 href="https://www.facebook.com/damienlove"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="social-link"
+                className="btn btn-secondary"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -174,10 +174,7 @@ const About = () => {
         }
 
         .profile-section {
-          background: var(--surface);
-          border: 1px solid var(--border);
           padding: 3rem;
-          border-radius: 16px;
           text-align: left;
         }
 
@@ -233,7 +230,6 @@ const About = () => {
         .bio-text p {
           font-size: 1.1rem;
           line-height: 1.8;
-          color: var(--color-text-muted);
           margin-bottom: 1.5rem;
         }
 
@@ -252,31 +248,14 @@ const About = () => {
           align-items: center;
           justify-content: center;
           gap: 0.5rem;
-          margin-bottom: 2rem;
-          color: var(--color-primary);
         }
 
         .section-icon {
           color: var(--color-primary);
         }
-
-        .experience-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 2rem;
-        }
-
-        .experience-card {
-          background: rgba(100, 108, 255, 0.05);
-          border: 1px solid var(--color-border);
-          border-radius: 12px;
-          padding: 2rem;
-          transition: all 0.3s ease;
-        }
-
-        .experience-card:hover {
-          border-color: var(--color-primary);
-          box-shadow: 0 8px 24px rgba(100, 108, 255, 0.2);
+        
+        .feature-card {
+           padding: 1.5rem;
         }
 
         .exp-icon {
@@ -286,14 +265,13 @@ const About = () => {
           height: 32px;
         }
 
-        .experience-card h4 {
+        .feature-card h4 {
           font-size: 1.3rem;
           margin: 0 0 1rem 0;
           color: var(--color-text);
         }
 
-        .experience-card p {
-          color: var(--color-text-muted);
+        .feature-card p {
           line-height: 1.7;
           margin-bottom: 1rem;
         }
@@ -316,80 +294,16 @@ const About = () => {
           border-top: 1px solid var(--color-border);
         }
 
-        .expertise-section h3 {
-          text-align: center;
-          margin-bottom: 2rem;
-          color: var(--color-primary);
-        }
-
-        .expertise-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-          gap: 2rem;
-        }
-
-        .expertise-item {
-          text-align: center;
-          padding: 1.5rem;
-          background: rgba(100, 108, 255, 0.05);
-          border-radius: 12px;
-          border: 1px solid var(--color-border);
-          transition: all 0.3s ease;
-        }
-
-        .expertise-item:hover {
-          transform: translateY(-5px);
-          border-color: var(--color-primary);
-          box-shadow: 0 8px 24px rgba(100, 108, 255, 0.15);
-        }
-
         .expertise-icon {
           color: var(--color-primary);
           margin-bottom: 1rem;
-        }
-
-        .expertise-item h4 {
-          margin: 0 0 0.75rem 0;
-          color: var(--color-text);
-        }
-
-        .expertise-item p {
-          color: var(--color-text-muted);
-          font-size: 0.95rem;
-          line-height: 1.6;
-          margin: 0;
         }
 
         .connect-section {
           margin-top: 3rem;
           padding-top: 3rem;
           border-top: 1px solid var(--color-border);
-        }
-
-        .social-icons {
-          display: flex;
-          gap: 1rem;
-          margin-top: 1rem;
-          flex-wrap: wrap;
-          justify-content: center;
-        }
-
-        .social-link {
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          padding: 0.8rem 1.2rem;
-          background: var(--glass-bg);
-          border-radius: 8px;
-          border: 1px solid var(--border);
-          color: var(--color-text);
-          transition: all 0.2s;
-        }
-
-        .social-link:hover {
-          background: var(--color-surface-hover);
-          border-color: var(--color-primary);
-          transform: translateY(-2px);
+          text-align: center;
         }
 
         .cta-container {
@@ -416,16 +330,8 @@ const About = () => {
           .profile-header h1 {
             font-size: 2.2rem;
           }
-
-          .expertise-grid {
-            grid-template-columns: 1fr;
-          }
-
-          .experience-grid {
-            grid-template-columns: 1fr;
-          }
-
-          .social-icons {
+          
+          .cta-buttons {
             flex-direction: column;
           }
         }

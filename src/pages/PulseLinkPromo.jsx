@@ -3,90 +3,90 @@ import { Shield, ChevronRight, Check, Download, Bell, MapPin, Users } from 'luci
 import { Link } from 'react-router-dom';
 
 const PulseLinkPromo = () => {
-    return (
-        <div className="promo-page">
-            <div className="promo-content">
-                <motion.div
-                    className="promo-hero"
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                >
-                    <div className="icon-wrapper">
-                        <Shield size={64} color="#646cff" />
-                    </div>
-                    <h1>PulseLink</h1>
-                    <h2>Your Voice-Activated Safety Companion</h2>
-                    <p className="hero-tagline">
-                        Emergency help, activated with just your voice. No need to touch your phone.
-                    </p>
+  return (
+    <div className="promo-page">
+      <div className="promo-content">
+        <motion.div
+          className="promo-hero glass-card"
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+        >
+          <div className="icon-wrapper">
+            <Shield size={64} color="#646cff" />
+          </div>
+          <h1 className="hero-title">PulseLink</h1>
+          <h2>Your Voice-Activated Safety Companion</h2>
+          <p className="hero-tagline text-muted">
+            Emergency help, activated with just your voice. No need to touch your phone.
+          </p>
 
-                    <div className="features-highlight">
-                        <div className="feature-pill">
-                            <Bell size={20} />
-                            <span>Voice Triggers</span>
-                        </div>
-                        <div className="feature-pill">
-                            <MapPin size={20} />
-                            <span>Real-Time Location</span>
-                        </div>
-                        <div className="feature-pill">
-                            <Users size={20} />
-                            <span>Trusted Network</span>
-                        </div>
-                    </div>
-
-                    <div className="benefits-list">
-                        <h3>Why PulseLink?</h3>
-                        <div className="benefit">
-                            <Check size={20} className="check-icon" />
-                            <div>
-                                <strong>Hands-Free Emergency Alerts</strong>
-                                <p>Use custom voice phrases to trigger alerts when you can't safely use your phone.</p>
-                            </div>
-                        </div>
-                        <div className="benefit">
-                            <Check size={20} className="check-icon" />
-                            <div>
-                                <strong>Instant Location Sharing</strong>
-                                <p>Your trusted contacts receive your real-time location automatically.</p>
-                            </div>
-                        </div>
-                        <div className="benefit">
-                            <Check size={20} className="check-icon" />
-                            <div>
-                                <strong>Always Listening, Low Battery</strong>
-                                <p>Advanced monitoring works in the background without draining your battery.</p>
-                            </div>
-                        </div>
-                        <div className="benefit">
-                            <Check size={20} className="check-icon" />
-                            <div>
-                                <strong>Free to Start</strong>
-                                <p>Get essential safety features with Beacon (Free), or upgrade to Pro for more.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="cta-container">
-                        <a href="https://play.google.com/store/apps/details?id=com.free.pulselink"
-                           target="_blank"
-                           rel="noopener noreferrer"
-                           className="btn btn-primary large">
-                            <Download size={24} /> Download Free on Android
-                        </a>
-                        <p className="sub-cta">No credit card required • 100% Free to start</p>
-                        <Link to="/pulselink" className="learn-more-link">
-                            Explore the Full PulseLink Suite <ChevronRight size={16} />
-                        </Link>
-                    </div>
-
-                    <div className="social-proof">
-                        <p>Trusted by thousands for personal safety</p>
-                    </div>
-                </motion.div>
+          <div className="features-highlight">
+            <div className="feature-pill">
+              <Bell size={20} />
+              <span>Voice Triggers</span>
             </div>
+            <div className="feature-pill">
+              <MapPin size={20} />
+              <span>Real-Time Location</span>
+            </div>
+            <div className="feature-pill">
+              <Users size={20} />
+              <span>Trusted Network</span>
+            </div>
+          </div>
 
-            <style>{`
+          <div className="benefits-list">
+            <h3>Why PulseLink?</h3>
+            <div className="benefit">
+              <Check size={20} className="check-icon" />
+              <div>
+                <strong>Hands-Free Emergency Alerts</strong>
+                <p>Use custom voice phrases to trigger alerts when you can't safely use your phone.</p>
+              </div>
+            </div>
+            <div className="benefit">
+              <Check size={20} className="check-icon" />
+              <div>
+                <strong>Instant Location Sharing</strong>
+                <p>Your trusted contacts receive your real-time location automatically.</p>
+              </div>
+            </div>
+            <div className="benefit">
+              <Check size={20} className="check-icon" />
+              <div>
+                <strong>Always Listening, Low Battery</strong>
+                <p>Advanced monitoring works in the background without draining your battery.</p>
+              </div>
+            </div>
+            <div className="benefit">
+              <Check size={20} className="check-icon" />
+              <div>
+                <strong>Free to Start</strong>
+                <p>Get essential safety features with Beacon (Free), or upgrade to Pro for more.</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="cta-container">
+            <a href="https://play.google.com/store/apps/details?id=com.free.pulselink"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary large">
+              <Download size={24} /> Download Free on Android
+            </a>
+            <p className="sub-cta">No credit card required • 100% Free to start</p>
+            <Link to="/pulselink" className="learn-more-link">
+              Explore the Full PulseLink Suite <ChevronRight size={16} />
+            </Link>
+          </div>
+
+          <div className="social-proof">
+            <p className="text-muted">Trusted by thousands for personal safety</p>
+          </div>
+        </motion.div>
+      </div>
+
+      <style>{`
         .promo-page {
           min-height: 100vh;
           display: flex;
@@ -102,11 +102,7 @@ const PulseLinkPromo = () => {
         }
 
         .promo-hero {
-          background: rgba(255,255,255,0.03);
-          backdrop-filter: blur(20px);
-          border: 1px solid rgba(255,255,255,0.1);
           padding: 3rem;
-          border-radius: 24px;
           text-align: center;
           box-shadow: 0 20px 40px rgba(0,0,0,0.4);
         }
@@ -135,9 +131,6 @@ const PulseLinkPromo = () => {
         .promo-hero h1 {
           font-size: 3rem;
           margin: 0 0 0.5rem 0;
-          background: linear-gradient(to right, #646cff, #00bcd4);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
         }
 
         .promo-hero h2 {
@@ -149,7 +142,6 @@ const PulseLinkPromo = () => {
 
         .hero-tagline {
           font-size: 1.1rem;
-          color: var(--color-text-muted);
           margin-bottom: 2rem;
           line-height: 1.6;
         }
@@ -238,12 +230,6 @@ const PulseLinkPromo = () => {
           justify-content: center;
           gap: 0.5rem;
           font-weight: 600;
-          transition: all 0.3s ease;
-        }
-
-        .btn.large:hover {
-          transform: translateY(-2px);
-          box-shadow: 0 8px 24px rgba(100, 108, 255, 0.4);
         }
 
         .sub-cta {
@@ -272,7 +258,6 @@ const PulseLinkPromo = () => {
         }
 
         .social-proof p {
-          color: var(--color-text-muted);
           font-size: 0.9rem;
           margin: 0;
         }
@@ -296,8 +281,8 @@ const PulseLinkPromo = () => {
           }
         }
       `}</style>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default PulseLinkPromo;

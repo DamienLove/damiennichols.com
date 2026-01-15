@@ -4,13 +4,14 @@ import { CheckCircle, GitBranch, Terminal, ExternalLink, Globe } from 'lucide-re
 const QAVerify = () => {
   return (
     <div className="page-container qa-page">
-      <section className="page-hero">
+      <section className="hero-section page-hero">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           className="hero-content"
         >
           <motion.h1
+            className="hero-title text-scan"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
@@ -18,7 +19,7 @@ const QAVerify = () => {
             QA Verify & Track
           </motion.h1>
           <motion.p
-            className="subtitle"
+            className="hero-subtitle"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
@@ -46,19 +47,19 @@ const QAVerify = () => {
       </section>
 
       <div className="content-wrapper">
-        <div className="highlight-grid">
-          <div className="highlight-item">
+        <div className="grid-cols-2 section-spacing">
+          <div className="highlight-item glass-card">
             <h2>Why?</h2>
-            <p>Built out of need, QA Verify & Track streamlines the bug verification process. Stop wasting valuable dev time tracking what's open or manually entering comments.</p>
+            <p className="text-muted">Built out of need, QA Verify & Track streamlines the bug verification process. Stop wasting valuable dev time tracking what's open or manually entering comments.</p>
           </div>
-          <div className="highlight-item">
+          <div className="highlight-item glass-card">
             <h2>What?</h2>
-            <p>A cross-platform QA assistant that manages repos, issues, and PRs via GitHub & Firebase. Keeps verification tied to specific build numbers.</p>
+            <p className="text-muted">A cross-platform QA assistant that manages repos, issues, and PRs via GitHub & Firebase. Keeps verification tied to specific build numbers.</p>
           </div>
         </div>
 
-        <section className="tech-details">
-          <h3>Key Capabilities</h3>
+        <section className="tech-details section-spacing">
+          <h3 className="section-title">Key Capabilities</h3>
           <div className="tech-list">
             <div className="tech-item">
               <CheckCircle size={24} className="icon-green" />
@@ -103,7 +104,7 @@ const QAVerify = () => {
           --qa-green: #12d622;
         }
 
-        .page-hero h1 {
+        .text-scan {
           color: var(--qa-green);
         }
 
@@ -123,24 +124,17 @@ const QAVerify = () => {
           font-weight: 600;
           box-shadow: 0 4px 20px rgba(18, 214, 34, 0.3);
           border-radius: 8px;
+          cursor: pointer;
+          text-decoration: none;
         }
 
         .btn-portal-qa:hover {
           color: #000;
         }
 
-        .highlight-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 2rem;
-          margin-bottom: 4rem;
-        }
-
         .highlight-item {
-          background: var(--surface);
-          border: 1px solid var(--border);
           padding: 2rem;
-          border-radius: 12px;
+          height: 100%;
         }
         
         .highlight-item h2 {
@@ -153,11 +147,6 @@ const QAVerify = () => {
           padding: 2rem;
           border-radius: 16px;
           border: 1px solid #333;
-        }
-
-        .tech-details h3 {
-          margin-bottom: 2rem;
-          text-align: center;
         }
 
         .tech-list {
@@ -204,18 +193,13 @@ const QAVerify = () => {
           border-radius: 8px;
           font-weight: 600;
           transition: transform 0.2s;
+          text-decoration: none;
         }
 
         .wiki-btn:hover {
           transform: translateY(-2px);
           background: #34e644;
           color: #000;
-        }
-
-        @media (max-width: 768px) {
-          .highlight-grid {
-            grid-template-columns: 1fr;
-          }
         }
       `}</style>
     </div >

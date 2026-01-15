@@ -4,13 +4,14 @@ import { BookOpen, Star, Heart, ExternalLink, Globe, ShoppingCart } from 'lucide
 const Books = () => {
   return (
     <div className="page-container books-page">
-      <section className="page-hero">
+      <section className="hero-section page-hero">
         <motion.div
+          className="hero-content"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="hero-content"
         >
           <motion.h1
+            className="hero-title"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, type: "spring", stiffness: 100 }}
@@ -18,7 +19,7 @@ const Books = () => {
             Universe Connected
           </motion.h1>
           <motion.p
-            className="subtitle"
+            className="hero-subtitle"
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
@@ -32,7 +33,7 @@ const Books = () => {
 
         {/* Universe Connected for Everyone - FEATURED */}
         <motion.section
-          className="book-section"
+          className="book-section section-spacing"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -44,7 +45,7 @@ const Books = () => {
             <span className="status-badge upcoming">Releasing 2026</span>
           </div>
           <motion.div
-            className="book-card featured"
+            className="book-card featured glass-card"
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 300 }}
           >
@@ -58,12 +59,12 @@ const Books = () => {
               <p className="tagline">A journey through connected realms that challenges everything you thought you knew about reality.</p>
 
               <div className="book-description">
-                <p>
+                <p className="text-muted">
                   <strong>Universe Connected for Everyone</strong> represents the complete vision of the Universe Connected saga.
                   This comprehensive manuscript weaves together multiple dimensions, realities, and timelines into a cohesive narrative
                   that will leave you questioning the very fabric of existence.
                 </p>
-                <p>
+                <p className="text-muted">
                   Building upon the foundation of the original Universe Connected, this edition expands the universe with deeper
                   character development, intricate plot threads, and mind-bending revelations that connect everything in unexpected ways.
                 </p>
@@ -86,9 +87,9 @@ const Books = () => {
 
               <div className="book-actions">
                 <a href="https://sites.google.com/dmnlat.com/universeconnected/universe-connected-for-everyone"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   className="btn btn-primary">
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary">
                   <Globe size={18} /> Full Details & Preview
                 </a>
               </div>
@@ -98,7 +99,7 @@ const Books = () => {
 
         {/* Original Universe Connected */}
         <motion.section
-          className="book-section"
+          className="book-section section-spacing"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -109,7 +110,7 @@ const Books = () => {
             <h2>Universe Connected (Original)</h2>
             <span className="status-badge available">Available Now</span>
           </div>
-          <div className="book-card">
+          <div className="book-card glass-card">
             <div className="book-cover-container">
               <div className="book-cover-placeholder gradient-2">
                 <span>UC</span>
@@ -120,11 +121,11 @@ const Books = () => {
               <p className="tagline">The original adventure that introduced readers to the Universe Connected multiverse.</p>
 
               <div className="book-description">
-                <p>
+                <p className="text-muted">
                   The story that started it all. <strong>Universe Connected</strong> introduces you to a world where reality
                   is not what it seems, and the connections between universes run deeper than anyone could imagine.
                 </p>
-                <p>
+                <p className="text-muted">
                   Follow the journey as characters discover that their actions ripple across dimensions, and that every choice
                   matters in ways they never expected. This is science fiction that challenges your perception while keeping
                   you on the edge of your seat.
@@ -141,15 +142,15 @@ const Books = () => {
 
               <div className="book-actions">
                 <a href="https://www.amazon.com/stores/Damien-Nichols/author/B0DVZFKSQW"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   className="btn btn-primary">
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary">
                   <ShoppingCart size={18} /> Buy on Amazon
                 </a>
                 <a href="https://sites.google.com/dmnlat.com/universeconnected/universe-connected-original"
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   className="btn btn-secondary">
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary">
                   <ExternalLink size={18} /> Learn More
                 </a>
               </div>
@@ -159,34 +160,34 @@ const Books = () => {
 
         {/* About the Author Section */}
         <motion.section
-          className="author-section"
+          className="author-section glass-card section-spacing"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <h2>About the Author</h2>
+          <h2 className="section-title">About the Author</h2>
           <div className="author-card">
-            <p>
+            <p className="text-muted">
               <strong>Damien Nichols</strong> is a software engineer by day and a storyteller by passion.
               His unique background in technology informs his writing, bringing a logical yet imaginative approach
               to science fiction that feels both grounded and limitless.
             </p>
-            <p>
+            <p className="text-muted">
               The <strong>Universe Connected</strong> series represents years of world-building, creating an interconnected
               multiverse where every detail matters and every story thread eventually converges.
             </p>
             <div className="author-links">
               <a href="https://www.amazon.com/stores/Damien-Nichols/author/B0DVZFKSQW"
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 className="author-link">
+                target="_blank"
+                rel="noopener noreferrer"
+                className="author-link">
                 <ExternalLink size={16} /> Amazon Author Page
               </a>
               <a href="https://www.romance.io/authors/67a0bb36a21e2f41c4f691f2/damien-nichols"
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 className="author-link">
+                target="_blank"
+                rel="noopener noreferrer"
+                className="author-link">
                 <ExternalLink size={16} /> Romance.io Profile
               </a>
             </div>
@@ -195,25 +196,25 @@ const Books = () => {
 
         {/* Call to Action */}
         <motion.section
-          className="cta-section"
+          className="cta-section section-spacing"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           <h3>Stay Updated</h3>
-          <p>Be the first to know when Universe Connected for Everyone launches. Follow Damien Nichols for updates.</p>
+          <p className="text-muted">Be the first to know when Universe Connected for Everyone launches. Follow Damien Nichols for updates.</p>
           <div className="cta-buttons">
             <a href="https://www.amazon.com/stores/Damien-Nichols/author/B0DVZFKSQW"
-               target="_blank"
-               rel="noopener noreferrer"
-               className="btn btn-primary">
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary">
               Follow on Amazon
             </a>
             <a href="https://www.facebook.com/damienlove"
-               target="_blank"
-               rel="noopener noreferrer"
-               className="btn btn-secondary">
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-secondary">
               Connect on Facebook
             </a>
           </div>
@@ -274,29 +275,15 @@ const Books = () => {
           color: #000;
         }
 
-        .book-section {
-          margin-bottom: 5rem;
-        }
-
         .book-card {
-          background: var(--color-surface);
-          border: 1px solid var(--color-border);
           padding: 2.5rem;
-          border-radius: 16px;
           display: flex;
           gap: 3rem;
-          transition: all 0.3s ease;
         }
-
-        .book-card:hover {
-          transform: translateY(-5px);
-          border-color: var(--color-primary);
-          box-shadow: 0 8px 24px rgba(100, 108, 255, 0.2);
-        }
-
+        
         .book-card.featured {
           border: 2px solid var(--color-primary);
-          background: radial-gradient(circle at top right, rgba(100,108,255,0.15), var(--color-surface));
+          background: radial-gradient(circle at top right, rgba(100,108,255,0.15), var(--glass-bg, rgba(20,20,20,0.7)));
         }
 
         .book-cover-container {
@@ -347,15 +334,11 @@ const Books = () => {
           margin: 0;
         }
 
-        .book-description p {
-          line-height: 1.8;
-          color: var(--color-text-muted);
-          margin-bottom: 1rem;
-        }
-
         .book-description strong {
           color: var(--color-text);
         }
+        
+        .book-description p { margin-bottom: 1rem; line-height: 1.8; }
 
         .author-note {
           padding: 1rem 1.5rem;
@@ -363,6 +346,8 @@ const Books = () => {
           border-left: 3px solid var(--color-primary);
           border-radius: 4px;
           font-style: italic;
+          margin-top: 1rem;
+          color: var(--color-text-muted);
         }
 
         .book-meta {
@@ -425,11 +410,7 @@ const Books = () => {
         }
 
         .author-section {
-          background: var(--color-surface);
           padding: 3rem;
-          border-radius: 16px;
-          border: 1px solid var(--color-border);
-          margin-bottom: 3rem;
         }
 
         .author-section h2 {
@@ -445,7 +426,6 @@ const Books = () => {
 
         .author-card p {
           line-height: 1.8;
-          color: var(--color-text-muted);
           margin-bottom: 1.5rem;
         }
 
@@ -475,7 +455,6 @@ const Books = () => {
           padding: 4rem 2rem;
           background: radial-gradient(circle, rgba(100,108,255,0.1), transparent);
           border-radius: 16px;
-          margin-bottom: 2rem;
         }
 
         .cta-section h3 {
@@ -485,7 +464,6 @@ const Books = () => {
 
         .cta-section p {
           font-size: 1.1rem;
-          color: var(--color-text-muted);
           margin-bottom: 2rem;
         }
 

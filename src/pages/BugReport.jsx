@@ -39,7 +39,7 @@ const BugReport = () => {
 
   return (
     <div className="page-container bug-report-page">
-      <section className="page-hero">
+      <section className="hero-section page-hero">
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -54,6 +54,7 @@ const BugReport = () => {
             <Bug size={64} className="hero-icon" />
           </motion.div>
           <motion.h1
+            className="hero-title"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
@@ -61,7 +62,7 @@ const BugReport = () => {
             Report a Bug
           </motion.h1>
           <motion.p
-            className="subtitle"
+            className="hero-subtitle"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
@@ -71,9 +72,9 @@ const BugReport = () => {
         </motion.div>
       </section>
 
-      <div className="content-wrapper">
+      <div className="content-container">
         <motion.div
-          className="form-container"
+          className="form-container glass-card"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5 }}
@@ -172,20 +173,20 @@ const BugReport = () => {
             >
               <CheckCircle size={64} className="success-icon" />
               <h2>Thank You!</h2>
-              <p>Your bug report has been submitted successfully.</p>
-              <p className="sub-text">We'll investigate and work on a fix.</p>
+              <p className="text-muted">Your bug report has been submitted successfully.</p>
+              <p className="sub-text text-muted">We'll investigate and work on a fix.</p>
             </motion.div>
           )}
         </motion.div>
 
         <motion.section
-          className="info-section"
+          className="info-section section-spacing grid-cols-2"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <div className="info-card">
+          <div className="info-card glass-card">
             <AlertCircle size={32} className="info-icon" />
             <h3>Tips for Better Bug Reports</h3>
             <ul>
@@ -204,7 +205,7 @@ const BugReport = () => {
             </ul>
           </div>
 
-          <div className="info-card">
+          <div className="info-card glass-card">
             <Bug size={32} className="info-icon" />
             <h3>What Happens Next?</h3>
             <ul>
@@ -220,18 +221,12 @@ const BugReport = () => {
 
       <style>{`
         .bug-report-page {
-          width: 100%;
-          min-height: 100vh;
-          padding-bottom: 4rem;
+          --bug-red: #ef4444;
+          --bug-orange: #fb923c;
         }
 
         .page-hero {
-          min-height: 40vh;
-          display: flex;
-          align-items: center;
-          justify-content: center;
           background: radial-gradient(circle at center, #2d1b1b 0%, #000 100%);
-          text-align: center;
           position: relative;
           overflow: hidden;
         }
@@ -254,42 +249,25 @@ const BugReport = () => {
           50% { opacity: 1; }
         }
 
-        .hero-content {
-          position: relative;
-          z-index: 1;
+        .hero-title {
+          background: linear-gradient(to right, var(--bug-red), var(--bug-orange));
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
 
         .hero-icon {
-          color: #ef4444;
+          color: var(--bug-red);
           margin-bottom: 1.5rem;
           filter: drop-shadow(0 0 20px rgba(239, 68, 68, 0.5));
         }
 
-        .page-hero h1 {
-          font-size: 3.5rem;
-          margin-bottom: 1rem;
-          background: linear-gradient(to right, #ef4444, #fb923c);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-          font-weight: 800;
-        }
-
-        .subtitle {
-          font-size: 1.25rem;
-          color: var(--color-text-muted);
-          margin-bottom: 2rem;
-        }
-
-        .content-wrapper {
+        .content-container {
           max-width: 800px;
           margin: 0 auto;
-          padding: 3rem 2rem;
+          padding: 2rem;
         }
 
         .form-container {
-          background: var(--color-surface);
-          border: 1px solid var(--color-border);
-          border-radius: 16px;
           padding: 3rem;
           margin-bottom: 3rem;
         }
@@ -366,27 +344,7 @@ const BugReport = () => {
           color: var(--color-text);
         }
 
-        .success-message p {
-          color: var(--color-text-muted);
-          font-size: 1.1rem;
-          margin-bottom: 0.5rem;
-        }
-
-        .success-message .sub-text {
-          font-size: 0.95rem;
-        }
-
-        .info-section {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 2rem;
-          margin-top: 3rem;
-        }
-
         .info-card {
-          background: var(--color-surface);
-          border: 1px solid var(--color-border);
-          border-radius: 16px;
           padding: 2rem;
         }
 
@@ -423,16 +381,8 @@ const BugReport = () => {
         }
 
         @media (max-width: 768px) {
-          .page-hero h1 {
-            font-size: 2.5rem;
-          }
-
           .form-container {
             padding: 2rem 1.5rem;
-          }
-
-          .info-section {
-            grid-template-columns: 1fr;
           }
         }
       `}</style>
