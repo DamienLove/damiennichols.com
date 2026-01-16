@@ -93,9 +93,15 @@ const router = createBrowserRouter([
   }
 ]);
 
+import { EnvironmentProvider } from './styles/EnvironmentProvider';
+import DynamicBackground from './components/DynamicBackground';
+
 function App() {
   return (
-    <RouterProvider router={router} />
+    <EnvironmentProvider>
+      <DynamicBackground />
+      <RouterProvider router={router} />
+    </EnvironmentProvider>
   );
 }
 

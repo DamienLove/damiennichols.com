@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ArrowRight, Smartphone, BookOpen, Search, Shield } from 'lucide-react';
+import { ArrowRight, Smartphone, BookOpen, Search, Shield, Gamepad2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
@@ -120,6 +120,21 @@ const Home = () => {
               <span className="card-tag">Coming 2026</span>
             </Link>
           </motion.div>
+
+          {/* Mobile Game Promo */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.6 }}
+          >
+            <a href="https://uc4e-the-mobile-game-662518636532.us-west1.run.app" target="_blank" rel="noopener noreferrer" className="highlight-card cosmic glass-card">
+              <Gamepad2 size={40} className="icon" />
+              <h3>Universe Mobile</h3>
+              <p>Dive into the connected universe. Play the official mobile game adaptation now.</p>
+              <span className="card-tag">Play Now</span>
+            </a>
+          </motion.div>
         </div>
       </section>
 
@@ -201,8 +216,10 @@ const Home = () => {
         .highlight-card.books::before { background: linear-gradient(90deg, #ff6b6b, #ffd93d); }
         
         .highlight-card.social .icon { color: #3b82f6; }
-        
         .highlight-card.social::before { background: linear-gradient(90deg, #3b82f6, #8b5cf6); }
+
+        .highlight-card.cosmic .icon { color: #e600ff; }
+        .highlight-card.cosmic::before { background: linear-gradient(90deg, #e600ff, #00d4ff); }
 
         .highlight-card h3 {
           font-size: 1.35rem;
@@ -236,6 +253,7 @@ const Home = () => {
         .highlight-card.dev .card-tag { background: rgba(18, 214, 34, 0.2); color: #12d622; }
         .highlight-card.books .card-tag { background: rgba(255, 217, 61, 0.2); color: #ffd93d; }
         .highlight-card.social .card-tag { background: rgba(59, 130, 246, 0.2); color: #3b82f6; }
+        .highlight-card.cosmic .card-tag { background: rgba(230, 0, 255, 0.2); color: #e600ff; }
 
       `}</style>
     </div>
