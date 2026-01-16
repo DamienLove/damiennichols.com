@@ -19,6 +19,8 @@ import VisionAndLore from './pages/wiki/betamax/VisionAndLore';
 import SystemArchitecture from './pages/wiki/betamax/SystemArchitecture';
 import UserManual from './pages/wiki/betamax/UserManual';
 import DeveloperGuide from './pages/wiki/betamax/DeveloperGuide';
+import QAVerifyWiki from './pages/wiki/qaverify/QAVerifyWiki';
+import FacebookSearchWiki from './pages/wiki/facebooksearch/FacebookSearchWiki';
 
 const router = createBrowserRouter([
   {
@@ -80,6 +82,14 @@ const router = createBrowserRouter([
       {
         path: "betamax/wiki/dev-guide",
         element: <DeveloperGuide />,
+      },
+      {
+        path: "qa-verify/wiki",
+        element: <QAVerifyWiki />,
+      },
+      {
+        path: "facebook-search/wiki",
+        element: <FacebookSearchWiki />,
       },
     ],
   },

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Search, Users, Filter, Clock, TrendingUp, ExternalLink, Download, Zap, Shield, Smartphone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const FacebookSearch = () => {
   return (
@@ -286,6 +287,12 @@ const FacebookSearch = () => {
             >
               <ExternalLink size={20} /> View on GitHub
             </motion.a>
+            <Link
+              to="/facebook-search/wiki"
+              className="btn btn-secondary btn-large"
+            >
+              Documentation
+            </Link>
           </div>
         </motion.section>
       </div>

@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { CheckCircle, GitBranch, Terminal, ExternalLink, Globe } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const QAVerify = () => {
   return (
@@ -93,9 +94,9 @@ const QAVerify = () => {
         </section>
 
         <div className="links-section">
-          <a href="https://github.com/DamienLove/QA-Verify-Track/wiki/QA-Verify-and-Track" target="_blank" rel="noopener noreferrer" className="wiki-btn">
+          <Link to="/qa-verify/wiki" className="wiki-btn">
             <ExternalLink size={18} /> Visit Project Wiki
-          </a>
+          </Link>
         </div>
       </div >
 

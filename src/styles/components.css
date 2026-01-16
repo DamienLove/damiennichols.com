@@ -5,7 +5,8 @@
   justify-content: center;
   gap: 0.5rem;
   padding: 0.8rem 1.6rem;
-  border-radius: 8px; /* Standard border radius */
+  border-radius: 8px;
+  /* Standard border radius */
   font-weight: 600;
   font-size: 1rem;
   cursor: pointer;
@@ -149,7 +150,8 @@
 }
 
 .hero-title {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
+  /* Reduced from 3.5rem */
   font-weight: 800;
   margin-bottom: 1rem;
   line-height: 1.1;
@@ -177,13 +179,15 @@
 
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    /* Reduced from 2.5rem */
   }
-  
-  .grid-cols-2, .grid-cols-3 {
+
+  .grid-cols-2,
+  .grid-cols-3 {
     grid-template-columns: 1fr;
   }
-  
+
   .content-wrapper {
     padding: 0 1.5rem;
   }
