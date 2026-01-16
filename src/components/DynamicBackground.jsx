@@ -53,6 +53,117 @@ const DynamicBackground = () => {
         };
     }, [prompt]);
 
+    // Reactive Mouse Effect
+    const canvasRef = React.useRef(null);
+    useEffect(() => {
+        const canvas = canvasRef.current;
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+        let mouse = { x: -1000, y: -1000 };
+
+        const handleResize = () => {
+            width = canvas.width = window.innerWidth;
+            height = canvas.height = window.innerHeight;
+        };
+
+        const handleMouseMove = (e) => {
+            mouse.x = e.clientX;
+            mouse.y = e.clientY;
+        };
+
+        window.addEventListener('resize', handleResize);
+        window.addEventListener('mousemove', handleMouseMove);
+        handleResize();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = Math.random() * 1 - 0.5;
+                this.speedY = Math.random() * 1 - 0.5;
+                this.origX = this.x;
+                this.origY = this.y;
+            }
+
+            update() {
+                // Ambient movement
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                // Mouse interaction (repel/attract)
+                const dx = mouse.x - this.x;
+                const dy = mouse.y - this.y;
+                const distance = Math.sqrt(dx * dx + dy * dy);
+                const maxDist = 150;
+
+                if (distance < maxDist) {
+                    const force = (maxDist - distance) / maxDist;
+                    const directionX = dx / distance;
+                    const directionY = dy / distance;
+                    this.x -= directionX * force * 2;
+                    this.y -= directionY * force * 2;
+                } else {
+                    // Return to somewhat original if drifted too far (optional, for now just wrap)
+                }
+
+                if (this.x > width) this.x = 0;
+                if (this.x < 0) this.x = width;
+                if (this.y > height) this.y = 0;
+                if (this.y < 0) this.y = height;
+            }
+
+            draw() {
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        const createParticles = () => {
+            particles = [];
+            for (let i = 0; i < 150; i++) {
+                particles.push(new Particle());
+            }
+        };
+
+        createParticles();
+
+        const animate = () => {
+            ctx.clearRect(0, 0, width, height);
+
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+
+            // Draw connections
+            particles.forEach(a => {
+                const dist = Math.hypot(a.x - mouse.x, a.y - mouse.y);
+                if (dist < 150) {
+                    ctx.strokeStyle = `rgba(255, 255, 255, ${1 - dist / 150})`;
+                    ctx.lineWidth = 0.5;
+                    ctx.beginPath();
+                    ctx.moveTo(a.x, a.y);
+                    ctx.lineTo(mouse.x, mouse.y);
+                    ctx.stroke();
+                }
+            });
+
+            requestAnimationFrame(animate);
+        };
+
+        animate();
+
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            window.removeEventListener('mousemove', handleMouseMove);
+        };
+    }, []);
+
     if (loading) return null;
 
     return (
@@ -70,6 +181,9 @@ const DynamicBackground = () => {
                     />
                 )}
             </AnimatePresence>
+
+            {/* Reactive Overlay */}
+            <canvas ref={canvasRef} className="reactive-overlay" />
 
             {/* Weather Effects Overlay */}
             <div className={`weather-overlay ${weather?.condition}`}>
@@ -99,6 +213,16 @@ const DynamicBackground = () => {
                     background-position: center;
                 }
 
+                .reactive-overlay {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 0; /* Between bg (-2) and content (above) */
+                    pointer-events: none;
+                }
+
                 .weather-overlay {
                     position: absolute;
                     top: 0;
@@ -106,7 +230,7 @@ const DynamicBackground = () => {
                     width: 100%;
                     height: 100%;
                     pointer-events: none;
-                    z-index: -1;
+                    z-index: 1; /* Above reactive overlay */
                     /* Glass/Vignette effect */
                     background: radial-gradient(circle, transparent 50%, rgba(0,0,0,0.6) 100%);
                 }
