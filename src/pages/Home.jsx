@@ -21,6 +21,10 @@ const Home = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
+            style={{
+              textShadow: '0 2px 4px rgba(0,0,0,0.8)',
+              fontWeight: 600
+            }}
           >
             Software Engineer. Author. Creator.
           </motion.p>
@@ -154,12 +158,22 @@ const Home = () => {
           background: linear-gradient(to right, #fff, #a5a9ff);
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
+          filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
         }
 
         .hero-description {
           max-width: 700px;
           margin: 0 auto 2.5rem;
           font-size: 1.1rem;
+          font-weight: 500;
+          color: rgba(255, 255, 255, 0.9);
+          text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+          background: rgba(0, 0, 0, 0.4);
+          backdrop-filter: blur(8px);
+          -webkit-backdrop-filter: blur(8px);
+          padding: 1rem;
+          border-radius: 12px;
+          border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .hero-cta {
