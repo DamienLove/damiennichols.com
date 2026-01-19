@@ -29,6 +29,7 @@ const Layout = () => {
           <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
             <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Home</Link>
             <Link to="/pulselink" className={location.pathname === '/pulselink' ? 'active' : ''}>PulseLink</Link>
+            <Link to="/omni-remote" className={location.pathname === '/omni-remote' ? 'active' : ''}>OmniRemote</Link>
             <Link to="/betamax" className={location.pathname === '/betamax' ? 'active' : ''}>Beta Max</Link>
             <Link to="/qa-verify" className={location.pathname === '/qa-verify' ? 'active' : ''}>QA Verify</Link>
             <Link to="/facebook-search" className={location.pathname === '/facebook-search' ? 'active' : ''}>FB Search</Link>

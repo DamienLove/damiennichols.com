@@ -11,6 +11,11 @@ import PulseLinkPromo from './pages/PulseLinkPromo';
 import Privacy from './pages/Privacy';
 import FacebookSearch from './pages/FacebookSearch';
 import BugReport from './pages/BugReport';
+import OmniRemote from './pages/OmniRemote';
+import Login from './pages/Login';
+import Admin from './pages/Admin';
+import UniverseConnectedReader from './pages/UniverseConnectedReader';
+import { AuthProvider } from './context/AuthContext';
 
 // Wiki Pages
 import PulseLinkGuide from './pages/wiki/pulselink/PulseLinkGuide';
@@ -58,6 +63,22 @@ const router = createBrowserRouter([
       {
         path: "bug-report",
         element: <BugReport />,
+      },
+      {
+        path: "omni-remote",
+        element: <OmniRemote />,
+      },
+      {
+        path: "login",
+        element: <Login />,
+      },
+      {
+        path: "admin",
+        element: <Admin />,
+      },
+      {
+        path: "reader/universe-connected",
+        element: <UniverseConnectedReader />,
       },
       {
         path: "pulselink/wiki/guide",
@@ -109,8 +130,10 @@ import DynamicBackground from './components/DynamicBackground';
 function App() {
   return (
     <EnvironmentProvider>
-      <DynamicBackground />
-      <RouterProvider router={router} />
+      <AuthProvider>
+        <DynamicBackground />
+        <RouterProvider router={router} />
+      </AuthProvider>
     </EnvironmentProvider>
   );
 }

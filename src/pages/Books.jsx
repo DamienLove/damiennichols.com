@@ -1,5 +1,8 @@
 import { motion } from 'framer-motion';
-import { BookOpen, Star, Heart, ExternalLink, Globe, ShoppingCart } from 'lucide-react';
+import { BookOpen, Star, Heart, ExternalLink, Globe, ShoppingCart, Play, Pause, Headphones } from 'lucide-react';
+import { useState, useRef } from 'react';
+
+import { Link } from 'react-router-dom';
 
 const Books = () => {
   return (
@@ -39,6 +42,9 @@ const Books = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
+          {/* Audio Review Player */}
+          <AudioPlayer />
+
           <div className="section-header">
             <Star size={32} className="section-icon pulse" />
             <h2>Universe Connected for Everyone</h2>
@@ -141,6 +147,9 @@ const Books = () => {
               </div>
 
               <div className="book-actions">
+                <Link to="/reader/universe-connected" className="btn btn-accent pulse-btn">
+                  <BookOpen size={18} /> Read Now
+                </Link>
                 <a href="https://www.amazon.com/stores/Damien-Nichols/author/B0DVZFKSQW"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -497,6 +506,106 @@ const Books = () => {
           .status-badge {
             align-self: flex-start;
           }
+        }
+      `}</style>
+    </div>
+  );
+};
+
+const AudioPlayer = () => {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(null);
+
+  const togglePlay = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  return (
+    <div className="audio-review-card glass-card">
+      <div className="audio-header">
+        <Headphones size={24} className="audio-icon" />
+        <div>
+          <h4>Listen to the Review</h4>
+          <span className="text-muted text-sm">Universe Connected for Everyone - Sneak Peek</span>
+        </div>
+      </div>
+      <div className="audio-controls">
+        <button onClick={togglePlay} className="play-btn">
+          {isPlaying ? <Pause size={24} fill="white" /> : <Play size={24} fill="white" />}
+        </button>
+        <div className="waveform-visual">
+          {[...Array(20)].map((_, i) => (
+            <div
+              key={i}
+              className={`wave-bar ${isPlaying ? 'animating' : ''}`}
+              style={{ animationDelay: \`\${i * 0.05}s\` }}
+            />
+          ))}
+        </div>
+      </div>
+      <audio ref={audioRef} src="/assets/audio/uc4e_review.wav" onEnded={() => setIsPlaying(false)} />
+
+      <style>{`
+        .audio-review-card {
+          margin-bottom: 2rem;
+          padding: 1.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          background: linear-gradient(90deg, rgba(100,108,255,0.1), rgba(0,0,0,0));
+          border-left: 4px solid var(--color-primary);
+        }
+        .audio-header { display: flex; align-items: center; gap: 1rem; }
+        .audio-icon { color: var(--color-primary); }
+        .audio-header h4 { margin: 0; font-size: 1.1rem; }
+        .text-sm { font-size: 0.85rem; }
+        
+        .audio-controls { display: flex; align-items: center; gap: 1.5rem; }
+        .play-btn {
+          width: 48px;
+          height: 48px;
+          border-radius: 50%;
+          background: var(--color-primary);
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          transition: transform 0.2s;
+        }
+        .play-btn:hover { transform: scale(1.1); }
+        
+        .waveform-visual {
+          display: flex;
+          align-items: center;
+          gap: 3px;
+          height: 30px;
+        }
+        .wave-bar {
+          width: 3px;
+          height: 10px;
+          background: rgba(255,255,255,0.3);
+          border-radius: 2px;
+          transition: height 0.2s;
+        }
+        .wave-bar.animating {
+          animation: wave 1s infinite ease-in-out;
+          background: var(--color-primary);
+        }
+        @keyframes wave {
+          0%, 100% { height: 10px; }
+          50% { height: 25px; }
+        }
+        @media (max-width: 600px) {
+           .audio-review-card { flex-direction: column; align-items: flex-start; gap: 1rem; }
+           .audio-controls { width: 100%; justify-content: space-between; }
         }
       `}</style>
     </div>
