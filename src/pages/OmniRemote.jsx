@@ -41,7 +41,7 @@ const OmniRemote = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.6 }}
                     >
-                        <a href="#" className="btn btn-primary glow-effect">
+                        <a href="/downloads/omniremote/omni-remote-release.apk" download className="btn btn-primary glow-effect">
                             <Download size={20} /> Download APK
                         </a>
                         <a href="#features" className="btn btn-outline">
@@ -70,13 +70,44 @@ const OmniRemote = () => {
                     </p>
 
                     <div className="downloads-grid">
+                        {/* Windows Installer */}
                         <motion.a
-                            href="/downloads/omniremote/OmniRemoteAgentPortable.exe"
+                            href="/downloads/omniremote/OmniRemoteAgentSetup.exe"
                             download
                             className="download-card glass-panel"
                             whileHover={{ scale: 1.02, borderColor: 'var(--cyan)' }}
                         >
                             <div className="dl-icon"><Zap size={24} /></div>
+                            <div className="dl-info">
+                                <h4>Windows Installer</h4>
+                                <span>Setup.exe • Recommended</span>
+                            </div>
+                            <Download size={20} className="dl-arrow" />
+                        </motion.a>
+
+                        {/* Android Studio Plugin */}
+                        <motion.a
+                            href="/downloads/omniremote/omni-remote-studio-plugin-0.1.0.zip"
+                            download
+                            className="download-card glass-panel"
+                            whileHover={{ scale: 1.02, borderColor: '#00ff9d' }}
+                        >
+                            <div className="dl-icon" style={{ color: '#00ff9d' }}><Code size={24} /></div>
+                            <div className="dl-info">
+                                <h4>Android Studio Plugin</h4>
+                                <span>v0.1.0 • Zip Package</span>
+                            </div>
+                            <Download size={20} className="dl-arrow" />
+                        </motion.a>
+
+                        {/* Portable Version */}
+                        <motion.a
+                            href="/downloads/omniremote/OmniRemoteAgentPortable.exe"
+                            download
+                            className="download-card glass-panel"
+                            whileHover={{ scale: 1.02, borderColor: 'var(--purple)' }}
+                        >
+                            <div className="dl-icon"><Layers size={24} /></div>
                             <div className="dl-info">
                                 <h4>Portable EXE</h4>
                                 <span>Single File • No Install</span>
@@ -84,27 +115,14 @@ const OmniRemote = () => {
                             <Download size={20} className="dl-arrow" />
                         </motion.a>
 
-                        <motion.a
-                            href="/downloads/omniremote/OmniRemoteAgent_Folder.zip"
-                            download
-                            className="download-card glass-panel"
-                            whileHover={{ scale: 1.02, borderColor: 'var(--purple)' }}
-                        >
-                            <div className="dl-icon"><Layers size={24} /></div>
-                            <div className="dl-info">
-                                <h4>Full Package (Zip)</h4>
-                                <span>Multi-file • Faster Startup</span>
-                            </div>
-                            <Download size={20} className="dl-arrow" />
-                        </motion.a>
-
+                        {/* Config Template */}
                         <motion.a
                             href="/downloads/omniremote/secrets.env.template"
                             download
                             className="download-card glass-panel"
                             whileHover={{ scale: 1.02, borderColor: '#fff' }}
                         >
-                            <div className="dl-icon"><Code size={24} /></div>
+                            <div className="dl-icon" style={{ color: '#fff' }}><Shield size={24} /></div>
                             <div className="dl-info">
                                 <h4>Config Template</h4>
                                 <span>secrets.env.template</span>

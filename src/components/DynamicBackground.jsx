@@ -6,52 +6,26 @@ const DynamicBackground = () => {
     const { location, weather, timeOfDay, loading } = useEnvironment();
     const [bgImage, setBgImage] = useState(null);
 
-    // Construct the prompt for the AI image generator
-    const prompt = useMemo(() => {
-        if (loading || !location || !weather) return null;
+    // Select background image based on current route
+    useEffect(() => {
+        let newBg = '/assets/backgrounds/home.png'; // Default
 
-        const parts = [];
+        const path = location.pathname;
 
-        // Time
-        parts.push(timeOfDay === 'night' ? 'night time' : 'day time');
-
-        // Location/Terrain hints
-        // We don't have detailed terrain data from IP, so we infer or genericize
-        // If we had region, we could guess. For now, let's mix it up or use city name if safe.
-        // Using city name might yield specific skylines which is cool.
-        if (location.city) {
-            parts.push(`${location.city} city skyline view`);
-        } else {
-            parts.push('beautiful landscape view');
+        if (path.includes('pulselink')) {
+            newBg = '/assets/backgrounds/pulselink.png';
+        } else if (path.includes('betamax')) {
+            newBg = '/assets/backgrounds/betamax.png';
+        } else if (path.includes('books') || path.includes('reader')) {
+            newBg = '/assets/backgrounds/books.png';
+        } else if (path.includes('omni-remote')) {
+            newBg = '/assets/backgrounds/omniremote.png';
+        } else if (path.includes('qa-verify') || path.includes('facebook-search')) {
+            newBg = '/assets/backgrounds/home.png'; // Reuse home or add specific ones later
         }
 
-        // Weather
-        parts.push(weather.condition);
-        if (weather.condition === 'rain') parts.push('rainy');
-        if (weather.condition === 'snow') parts.push('snowy');
-        if (weather.condition === 'clear') parts.push('clear sky');
-        if (weather.condition === 'clouds') parts.push('cloudy');
-
-        // Style
-        parts.push('hyperrealistic', 'cinematic', '8k', 'landscape canvas', 'wide shot', 'no text');
-
-        return parts.join(' ');
-    }, [location, weather, timeOfDay, loading]);
-
-    useEffect(() => {
-        if (!prompt) return;
-
-        // Pollinations.ai URL
-        const encodedPrompt = encodeURIComponent(prompt);
-        const url = `https://image.pollinations.ai/prompt/${encodedPrompt}?width=1920&height=1080&nologo=true&seed=${Math.floor(Math.random() * 1000)}`;
-
-        // Preload image
-        const img = new Image();
-        img.src = url;
-        img.onload = () => {
-            setBgImage(url);
-        };
-    }, [prompt]);
+        setBgImage(newBg);
+    }, [location.pathname]);
 
     // Reactive Mouse Effect
     const canvasRef = React.useRef(null);
