@@ -1,16 +1,18 @@
-import React, { useMemo, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useEnvironment } from '../styles/EnvironmentProvider';
+import { useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const DynamicBackground = () => {
-    const { location, weather, timeOfDay, loading } = useEnvironment();
-    const [bgImage, setBgImage] = useState(null);
+    const { location: geoLocation, weather, timeOfDay, loading } = useEnvironment();
+    const routerLocation = useLocation();
+    const [bgImage, setBgImage] = useState('/assets/backgrounds/home.png?v=2');
 
     // Select background image based on current route
     useEffect(() => {
         let newBg = '/assets/backgrounds/home.png?v=2'; // Default
 
-        const path = location.pathname;
+        const path = routerLocation.pathname || '/';
 
         if (path.includes('pulselink')) {
             newBg = '/assets/backgrounds/pulselink.png?v=2';
@@ -21,11 +23,11 @@ const DynamicBackground = () => {
         } else if (path.includes('omni-remote')) {
             newBg = '/assets/backgrounds/omniremote.png?v=2';
         } else if (path.includes('qa-verify') || path.includes('facebook-search')) {
-            newBg = '/assets/backgrounds/home.png?v=2'; // Reuse home or add specific ones later
+            newBg = '/assets/backgrounds/home.png?v=2';
         }
 
         setBgImage(newBg);
-    }, [location.pathname]);
+    }, [routerLocation.pathname]);
 
     // Reactive Mouse Effect
     const canvasRef = React.useRef(null);

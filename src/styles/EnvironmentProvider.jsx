@@ -8,11 +8,11 @@ export const useEnvironment = () => {
 
 export const EnvironmentProvider = ({ children }) => {
     const [environment, setEnvironment] = useState({
-        location: null, // { city, region, country, lat, lon }
-        weather: null,  // { condition, temp, isDay } (condition: 'clear', 'rain', 'clouds', 'snow')
-        timeOfDay: 'day', // 'morning', 'day', 'evening', 'night'
+        location: { city: 'Unknown', region: '', country: '', lat: 0, lon: 0, pathname: '/' },
+        weather: { condition: 'clear', temp: 20, isDay: true, windSpeed: 0 },
+        timeOfDay: 'day',
         theme: 'default',
-        loading: true,
+        loading: false,
     });
 
     // Helper to determine time of day
