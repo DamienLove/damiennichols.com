@@ -41,7 +41,7 @@ const OmniRemote = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.6 }}
                     >
-                        <a href="/downloads/omniremote/omni-remote-release.apk" download className="btn btn-primary glow-effect">
+                        <a href="https://github.com/DamienLove/ProjectManagerApp/releases/download/v1.0/omni-remote-release.apk" className="btn btn-primary glow-effect">
                             <Download size={20} /> Download APK
                         </a>
                         <a href="#features" className="btn btn-outline">
@@ -72,45 +72,48 @@ const OmniRemote = () => {
                     <div className="downloads-grid">
                         {/* Windows Installer */}
                         <motion.a
-                            href="/downloads/omniremote/OmniRemoteAgentSetup.exe"
-                            download
+                            href="https://github.com/DamienLove/ProjectManagerApp/releases/download/v1.0/OmniRemoteAgentSetup.exe"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="download-card glass-panel"
                             whileHover={{ scale: 1.02, borderColor: 'var(--cyan)' }}
                         >
                             <div className="dl-icon"><Zap size={24} /></div>
                             <div className="dl-info">
                                 <h4>Windows Installer</h4>
-                                <span>Setup.exe • Recommended</span>
+                                <span>Setup.exe • GitHub Release</span>
                             </div>
                             <Download size={20} className="dl-arrow" />
                         </motion.a>
 
                         {/* Android Studio Plugin */}
                         <motion.a
-                            href="/downloads/omniremote/omni-remote-studio-plugin-0.1.0.zip"
-                            download
+                            href="https://github.com/DamienLove/ProjectManagerApp/releases/download/v1.0/omni-remote-studio-plugin-0.1.0.zip"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="download-card glass-panel"
                             whileHover={{ scale: 1.02, borderColor: '#00ff9d' }}
                         >
                             <div className="dl-icon" style={{ color: '#00ff9d' }}><Code size={24} /></div>
                             <div className="dl-info">
                                 <h4>Android Studio Plugin</h4>
-                                <span>v0.1.0 • Zip Package</span>
+                                <span>v0.1.0 • GitHub Release</span>
                             </div>
                             <Download size={20} className="dl-arrow" />
                         </motion.a>
 
                         {/* Portable Version */}
                         <motion.a
-                            href="/downloads/omniremote/OmniRemoteAgentPortable.exe"
-                            download
+                            href="https://github.com/DamienLove/ProjectManagerApp/releases/download/v1.0/OmniRemoteAgentPortable.exe"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="download-card glass-panel"
                             whileHover={{ scale: 1.02, borderColor: 'var(--purple)' }}
                         >
                             <div className="dl-icon"><Layers size={24} /></div>
                             <div className="dl-info">
                                 <h4>Portable EXE</h4>
-                                <span>Single File • No Install</span>
+                                <span>Single File • GitHub Release</span>
                             </div>
                             <Download size={20} className="dl-arrow" />
                         </motion.a>
