@@ -57,7 +57,7 @@ export const EnvironmentProvider = ({ children }) => {
                 if (!locRes.ok) throw new Error('Location fetch failed');
                 const locData = await locRes.json();
 
-                const location = {
+                const loc = {
                     city: locData.city,
                     region: locData.region,
                     country: locData.country_name,
@@ -68,7 +68,7 @@ export const EnvironmentProvider = ({ children }) => {
                 // 2. Get Weather
                 // Using Open-Meteo for free weather data matching lat/lon
                 const weatherRes = await fetch(
-                    `https://api.open-meteo.com/v1/forecast?latitude=${location.lat}&longitude=${location.lon}&current_weather=true`
+                    `https://api.open-meteo.com/v1/forecast?latitude=${loc.lat}&longitude=${loc.lon}&current_weather=true`
                 );
                 if (!weatherRes.ok) throw new Error('Weather fetch failed');
                 const weatherData = await weatherRes.json();
@@ -84,17 +84,11 @@ export const EnvironmentProvider = ({ children }) => {
                 // 3. Set State
                 const timeOfDay = calculateTimeOfDay();
 
-                // Determine theme (simple logic for now)
-                let theme = 'default';
-                if (weather.condition === 'rain') theme = 'rainy';
-                if (weather.condition === 'snow') theme = 'snowy';
-                if (timeOfDay === 'night') theme = 'night';
-
                 setEnvironment({
-                    location,
+                    location: loc,
                     weather,
                     timeOfDay,
-                    theme,
+                    theme: (weather.condition === 'rain' ? 'rainy' : (weather.condition === 'snow' ? 'snowy' : (timeOfDay === 'night' ? 'night' : 'default'))),
                     loading: false,
                 });
 
@@ -103,8 +97,8 @@ export const EnvironmentProvider = ({ children }) => {
                 // Fallback / Defaults
                 setEnvironment(prev => ({
                     ...prev,
-                    location: { city: 'Unknown', region: '', country: '' },
-                    weather: { condition: 'clear', temp: 20, isDay: true },
+                    location: { ...prev.location, city: 'Unknown' },
+                    weather: { condition: 'clear', temp: 20, isDay: true, windSpeed: 0 },
                     timeOfDay: calculateTimeOfDay(),
                     loading: false
                 }));
