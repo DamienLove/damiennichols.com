@@ -16,14 +16,18 @@ if ($LASTEXITCODE -ne 0) {
 $base = Join-Path $PSScriptRoot "dist"
 $files = Get-ChildItem -Path $base -Recurse -File
 
-Write-Host "Starting upload to httpdocs..."
+Write-Host "Starting upload to root and httpdocs..."
 
 foreach ($f in $files) {
     $relative = $f.FullName.Substring($base.Length + 1).Replace('\', '/')
-    $remote_path = "httpdocs/$relative"
     
-    Write-Host "Uploading $relative..."
-    & curl.exe -s --ftp-create-dirs -u "$($user):$($pass)" -T "$($f.FullName)" "$($host_url)/$($remote_path)"
+    # Deploy to Root
+    Write-Host "Uploading $relative to root..."
+    & curl.exe -s --ftp-create-dirs -u "$($user):$($pass)" -T "$($f.FullName)" "$($host_url)/$($relative)"
+    
+    # Deploy to httpdocs
+    Write-Host "Uploading $relative to httpdocs..."
+    & curl.exe -s --ftp-create-dirs -u "$($user):$($pass)" -T "$($f.FullName)" "$($host_url)/httpdocs/$($relative)"
     
     if ($LASTEXITCODE -ne 0) {
         Write-Warning "Failed to upload $relative"
