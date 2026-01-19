@@ -8,20 +8,20 @@ const DynamicBackground = () => {
 
     // Select background image based on current route
     useEffect(() => {
-        let newBg = '/assets/backgrounds/home.png'; // Default
+        let newBg = '/assets/backgrounds/home.png?v=2'; // Default
 
         const path = location.pathname;
 
         if (path.includes('pulselink')) {
-            newBg = '/assets/backgrounds/pulselink.png';
+            newBg = '/assets/backgrounds/pulselink.png?v=2';
         } else if (path.includes('betamax')) {
-            newBg = '/assets/backgrounds/betamax.png';
+            newBg = '/assets/backgrounds/betamax.png?v=2';
         } else if (path.includes('books') || path.includes('reader')) {
-            newBg = '/assets/backgrounds/books.png';
+            newBg = '/assets/backgrounds/books.png?v=2';
         } else if (path.includes('omni-remote')) {
-            newBg = '/assets/backgrounds/omniremote.png';
+            newBg = '/assets/backgrounds/omniremote.png?v=2';
         } else if (path.includes('qa-verify') || path.includes('facebook-search')) {
-            newBg = '/assets/backgrounds/home.png'; // Reuse home or add specific ones later
+            newBg = '/assets/backgrounds/home.png?v=2'; // Reuse home or add specific ones later
         }
 
         setBgImage(newBg);
