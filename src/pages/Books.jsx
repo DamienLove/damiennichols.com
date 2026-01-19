@@ -91,14 +91,7 @@ const Books = () => {
                 </div>
               </div>
 
-              <div className="book-actions">
-                <a href="https://sites.google.com/dmnlat.com/universeconnected/universe-connected-for-everyone"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-primary">
-                  <Globe size={18} /> Full Details & Preview
-                </a>
-              </div>
+
             </div>
           </motion.div>
         </motion.section>
@@ -156,12 +149,7 @@ const Books = () => {
                   className="btn btn-primary">
                   <ShoppingCart size={18} /> Buy on Amazon
                 </a>
-                <a href="https://sites.google.com/dmnlat.com/universeconnected/universe-connected-original"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-secondary">
-                  <ExternalLink size={18} /> Learn More
-                </a>
+
               </div>
             </div>
           </div>
@@ -520,10 +508,20 @@ const AudioPlayer = () => {
     if (audioRef.current) {
       if (isPlaying) {
         audioRef.current.pause();
+        setIsPlaying(false);
       } else {
-        audioRef.current.play();
+        const playPromise = audioRef.current.play();
+        if (playPromise !== undefined) {
+          playPromise
+            .then(() => {
+              setIsPlaying(true);
+            })
+            .catch(error => {
+              console.error("Playback failed:", error);
+              setIsPlaying(false);
+            });
+        }
       }
-      setIsPlaying(!isPlaying);
     }
   };
 
@@ -537,7 +535,7 @@ const AudioPlayer = () => {
         </div>
       </div>
       <div className="audio-controls">
-        <button onClick={togglePlay} className="play-btn">
+        <button onClick={togglePlay} className="play-btn" aria-label={isPlaying ? "Pause" : "Play"}>
           {isPlaying ? <Pause size={24} fill="white" /> : <Play size={24} fill="white" />}
         </button>
         <div className="waveform-visual">
@@ -550,7 +548,15 @@ const AudioPlayer = () => {
           ))}
         </div>
       </div>
-      <audio ref={audioRef} src="/assets/audio/uc4e_review.wav" onEnded={() => setIsPlaying(false)} />
+      <audio
+        ref={audioRef}
+        preload="metadata"
+        onEnded={() => setIsPlaying(false)}
+        onError={(e) => console.error("Audio error:", e)}
+      >
+        <source src="/assets/audio/uc4e_review.wav" type="audio/wav" />
+        Your browser does not support the audio element.
+      </audio>
 
       <style>{`
         .audio-review-card {
