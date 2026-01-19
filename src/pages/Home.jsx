@@ -132,7 +132,7 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.6 }}
           >
-            <a href="https://uc4e-the-mobile-game-662518636532.us-west1.run.app" target="_blank" rel="noopener noreferrer" className="highlight-card cosmic glass-card">
+            <a href="https://universe-connected-4-everyone-the-game-662518636532.us-west1.run.app/" target="_blank" rel="noopener noreferrer" className="highlight-card cosmic glass-card">
               <Gamepad2 size={40} className="icon" />
               <h3>Universe Mobile</h3>
               <p>Dive into the connected universe. Play the official mobile game adaptation now.</p>
