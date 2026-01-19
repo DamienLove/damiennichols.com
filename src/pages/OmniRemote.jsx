@@ -72,7 +72,7 @@ const OmniRemote = () => {
                     <div className="downloads-grid">
                         {/* Windows Installer */}
                         <motion.a
-                            href="https://github.com/DamienLove/ProjectManagerApp/releases/download/v1.0/OmniRemoteAgentSetup.exe"
+                            href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/Windows.Installer"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="download-card glass-panel"
@@ -81,14 +81,14 @@ const OmniRemote = () => {
                             <div className="dl-icon"><Zap size={24} /></div>
                             <div className="dl-info">
                                 <h4>Windows Installer</h4>
-                                <span>Setup.exe • GitHub Release</span>
+                                <span>Setup.exe • V2 Release</span>
                             </div>
                             <Download size={20} className="dl-arrow" />
                         </motion.a>
 
                         {/* Android Studio Plugin */}
                         <motion.a
-                            href="https://github.com/DamienLove/ProjectManagerApp/releases/download/v1.0/omni-remote-studio-plugin-0.1.0.zip"
+                            href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/Android.Studio.Plugin"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="download-card glass-panel"
@@ -97,14 +97,14 @@ const OmniRemote = () => {
                             <div className="dl-icon" style={{ color: '#00ff9d' }}><Code size={24} /></div>
                             <div className="dl-info">
                                 <h4>Android Studio Plugin</h4>
-                                <span>v0.1.0 • GitHub Release</span>
+                                <span>IntelliJ/Android Studio • V2</span>
                             </div>
                             <Download size={20} className="dl-arrow" />
                         </motion.a>
 
                         {/* Portable Version */}
                         <motion.a
-                            href="https://github.com/DamienLove/ProjectManagerApp/releases/download/v1.0/OmniRemoteAgentPortable.exe"
+                            href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/Portable.EXE"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="download-card glass-panel"
@@ -113,12 +113,28 @@ const OmniRemote = () => {
                             <div className="dl-icon"><Layers size={24} /></div>
                             <div className="dl-info">
                                 <h4>Portable EXE</h4>
-                                <span>Single File • GitHub Release</span>
+                                <span>Single File • V2 Release</span>
                             </div>
                             <Download size={20} className="dl-arrow" />
                         </motion.a>
 
-                        {/* Config Template */}
+                        {/* Full Agent */}
+                        <motion.a
+                            href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/Omni.Remote.Agent"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="download-card glass-panel"
+                            whileHover={{ scale: 1.02, borderColor: '#ff00ff' }}
+                        >
+                            <div className="dl-icon" style={{ color: '#ff00ff' }}><Server size={24} /></div>
+                            <div className="dl-info">
+                                <h4>Full Agent</h4>
+                                <span>Zipped Package • V2</span>
+                            </div>
+                            <Download size={20} className="dl-arrow" />
+                        </motion.a>
+
+                        {/* Config Template (hosted locally) */}
                         <motion.a
                             href="/downloads/omniremote/secrets.env.template"
                             download
@@ -495,46 +511,6 @@ const OmniRemote = () => {
           border: 1px solid rgba(0, 243, 255, 0.3);
         }
 
-        @media (max-width: 900px) {
-           .page-hero {
-             flex-direction: column;
-             padding-top: 6rem;
-             text-align: center;
-           }
-           .hero-visual {
-             margin-top: 3rem;
-             width: 100%;
-           }
-           .hero-phone-img {
-             max-height: 400px;
-             transform: rotateY(0);
-           }
-           .hero-actions {
-             justify-content: center;
-           }
-           .grid-cols-2, .tech-container {
-             grid-template-columns: 1fr;
-             flex-direction: column;
-             text-align: center;
-           }
-           .feature-list li {
-             justify-content: center;
-           }
-        }
-           .hero-actions {
-             justify-content: center;
-           }
-           .grid-cols-2, .tech-container {
-             grid-template-columns: 1fr;
-             flex-direction: column;
-             text-align: center;
-           }
-           .feature-list li {
-             justify-content: center;
-           }
-        }
-
-        /* Downloads Grid */
         .downloads-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -583,6 +559,33 @@ const OmniRemote = () => {
 
         .download-card:hover .dl-arrow {
             color: var(--cyan);
+        }
+
+        @media (max-width: 900px) {
+           .page-hero {
+             flex-direction: column;
+             padding-top: 6rem;
+             text-align: center;
+           }
+           .hero-visual {
+             margin-top: 3rem;
+             width: 100%;
+           }
+           .hero-phone-img {
+             max-height: 400px;
+             transform: rotateY(0);
+           }
+           .hero-actions {
+             justify-content: center;
+           }
+           .grid-cols-2, .tech-container {
+             grid-template-columns: 1fr;
+             flex-direction: column;
+             text-align: center;
+           }
+           .feature-list li {
+             justify-content: center;
+           }
         }
       `}</style>
         </div>
