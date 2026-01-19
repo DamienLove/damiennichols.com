@@ -42,7 +42,7 @@ const OmniRemote = () => {
             transition={{ delay: 0.6 }}
           >
             <a href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/OmniProjectRemote.APK" className="btn btn-primary glow-effect">
-              <Download size={20} /> Download APK
+              <Download size={20} /> Download APK (17.2 MB)
             </a>
             <a href="#features" className="btn btn-outline">
               Learn More
@@ -81,7 +81,8 @@ const OmniRemote = () => {
               <div className="dl-icon"><Zap size={24} /></div>
               <div className="dl-info">
                 <h4>Windows Installer</h4>
-                <span>OmniProjectManager.MSI • V2 Release</span>
+                <span>OmniProjectManager.MSI • 28.4 MB</span>
+                <code className="sha-text">sha256:b958d9cc30dff8648acfd2378e7de59778ed74b954a3eac675e426a26abffc61</code>
               </div>
               <Download size={20} className="dl-arrow" />
             </motion.a>
@@ -97,7 +98,8 @@ const OmniRemote = () => {
               <div className="dl-icon" style={{ color: '#00ff9d' }}><Code size={24} /></div>
               <div className="dl-info">
                 <h4>Android Studio Plugin</h4>
-                <span>IntelliJ/Android Studio • V2</span>
+                <span>AndroidStudioPlugin.ZIP • 1.82 MB</span>
+                <code className="sha-text">sha256:4c7cc1d9cb3e35002df3cc0ec122f09801a50486b8aba799f72bea1802958ad2</code>
               </div>
               <Download size={20} className="dl-arrow" />
             </motion.a>
@@ -112,8 +114,9 @@ const OmniRemote = () => {
             >
               <div className="dl-icon"><Layers size={24} /></div>
               <div className="dl-info">
-                <h4>Portable EXE</h4>
-                <span>OmniRemoteAgent.EXE • V2 Release</span>
+                <h4>Portable Agent</h4>
+                <span>OmniRemoteAgent.EXE • 11.6 MB</span>
+                <code className="sha-text">sha256:fb0daa67d2d32bd32f4edd2d7d5f69b68a46cb77e9b648539881ca4e31426112</code>
               </div>
               <Download size={20} className="dl-arrow" />
             </motion.a>
@@ -129,22 +132,24 @@ const OmniRemote = () => {
               <div className="dl-icon" style={{ color: '#ff00ff' }}><Server size={24} /></div>
               <div className="dl-info">
                 <h4>Full Sync Tool</h4>
-                <span>OmniProjectSync.EXE • V2</span>
+                <span>OmniProjectSync.EXE • 36.4 MB</span>
+                <code className="sha-text">sha256:010dd12088d00e1372d4d6a71cecd78ba4f87df129da8a93a5e54604e5d7d48a</code>
               </div>
               <Download size={20} className="dl-arrow" />
             </motion.a>
 
-            {/* Config Template (hosted locally) */}
+            {/* Config Template */}
             <motion.a
-              href="/downloads/omniremote/secrets.env.template"
-              download
+              href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/secrets.env.template"
+              target="_blank"
+              rel="noopener noreferrer"
               className="download-card glass-panel"
               whileHover={{ scale: 1.02, borderColor: '#fff' }}
             >
               <div className="dl-icon" style={{ color: '#fff' }}><Shield size={24} /></div>
               <div className="dl-info">
                 <h4>Config Template</h4>
-                <span>secrets.env.template</span>
+                <span>secrets.env.template • GitHub</span>
               </div>
               <Download size={20} className="dl-arrow" />
             </motion.a>
@@ -439,16 +444,18 @@ const OmniRemote = () => {
         }
 
         .glass-panel {
-          background: rgba(255, 255, 255, 0.02);
-          border: 1px solid rgba(255, 255, 255, 0.05);
+          background: rgba(0, 0, 0, 0.4);
+          border: 1px solid rgba(255, 255, 255, 0.1);
           padding: 2rem;
           border-radius: 16px;
           transition: transform 0.3s ease, border-color 0.3s ease;
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
         }
 
         .glass-panel:hover {
           border-color: var(--cyan);
-          background: rgba(255, 255, 255, 0.04);
+          background: rgba(0, 0, 0, 0.5);
         }
 
         .card-icon-wrapper {
@@ -549,6 +556,22 @@ const OmniRemote = () => {
         .dl-info span {
             font-size: 0.85rem;
             color: #aaa;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .sha-text {
+            font-size: 0.65rem;
+            color: #666;
+            background: rgba(0,0,0,0.3);
+            padding: 2px 4px;
+            border-radius: 4px;
+            display: block;
+            max-width: 250px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            border: 1px solid rgba(255,255,255,0.05);
         }
 
         .dl-arrow {

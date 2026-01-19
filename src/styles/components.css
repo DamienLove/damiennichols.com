@@ -68,9 +68,10 @@
 
 /* Card Styles */
 .glass-card {
-  background: var(--glass-bg, rgba(20, 20, 20, 0.7));
-  backdrop-filter: blur(10px);
-  border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.1));
+  background: var(--glass-bg, rgba(0, 0, 0, 0.45));
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border, rgba(255, 255, 255, 0.12));
   border-radius: 16px;
   padding: 2rem;
   transition: all 0.3s ease;

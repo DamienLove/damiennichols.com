@@ -1,8 +1,8 @@
 :root {
     /* Colors - Premium Dark Theme */
-    --color-background: #0a0a0a;
-    --color-surface: #1a1a1a;
-    --color-surface-hover: #252525;
+    --color-background: rgba(10, 10, 10, 0.5);
+    --color-surface: rgba(26, 26, 26, 0.4);
+    --color-surface-hover: rgba(37, 37, 37, 0.6);
     --color-text: #e0e0e0;
     --color-text-muted: #a0a0a0;
     --color-primary: #646cff;
@@ -10,11 +10,11 @@
     --color-primary-hover: #535bf2;
     --color-accent: #00bcd4;
     /* Cyan accent */
-    --color-border: #333333;
+    --color-border: rgba(255, 255, 255, 0.1);
 
     /* HSL variations for glassmorphism */
-    --glass-bg: hsla(0, 0%, 10%, 0.7);
-    --glass-border: hsla(0, 0%, 100%, 0.1);
+    --glass-bg: rgba(0, 0, 0, 0.45);
+    --glass-border: rgba(255, 255, 255, 0.12);
 
     /* Typography */
     --font-family-body: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;

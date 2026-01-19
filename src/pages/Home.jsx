@@ -168,12 +168,12 @@ const Home = () => {
           font-weight: 500;
           color: rgba(255, 255, 255, 0.9);
           text-shadow: 0 1px 2px rgba(0,0,0,0.8);
-          background: rgba(0, 0, 0, 0.4);
-          backdrop-filter: blur(8px);
-          -webkit-backdrop-filter: blur(8px);
+          background: rgba(0, 0, 0, 0.45);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
           padding: 1rem;
           border-radius: 12px;
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.12);
         }
 
         .hero-cta {
