@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { BookOpen, Star, Heart, ExternalLink, Globe, ShoppingCart, Play, Pause, Headphones, Users, MessageSquare, Lock } from 'lucide-react';
+import { BookOpen, Star, Heart, ExternalLink, ShoppingCart, Play, Pause, Headphones, Users, Lock } from 'lucide-react';
 import { useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
@@ -207,10 +207,6 @@ const Books = () => {
           </div>
         </section>
 
-        <section className="gpt-section section-spacing glass-card">
-          <div className="gpt-header"><MessageSquare size={32} className="gpt-icon" /><h2>Enter the Multiverse AI</h2></div>
-          <a href="https://chatgpt.com/g/g-679de3be95a0819184adb72f1b536d38-universe-connected" target="_blank" rel="noopener noreferrer" className="btn btn-accent gpt-btn">Launch Universe GPT</a>
-        </section>
       </div>
 
       <style>{`
@@ -230,7 +226,6 @@ const Books = () => {
         .profiles-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; }
         .char-profile { display: flex; align-items: center; gap: 1rem; padding: 1rem; }
         .char-profile img { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; border: 2px solid var(--color-primary); }
-        .gpt-section { padding: 3rem; text-align: center; border: 1px solid rgba(100, 108, 255, 0.3); }
         .book-cover-placeholder { width: 220px; height: 330px; background: #333; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 3rem; color: rgba(255,255,255,0.3); }
         .gradient-2 { background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d); }
         .book-actions { display: flex; gap: 1rem; margin-top: 1rem; }
