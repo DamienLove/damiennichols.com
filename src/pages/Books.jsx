@@ -545,7 +545,7 @@ const AudioPlayer = () => {
             <div
               key={i}
               className={`wave-bar ${isPlaying ? 'animating' : ''}`}
-              style={{ animationDelay: \`\${i * 0.05}s\` }}
+              style={{ animationDelay: `${i * 0.05}s` }}
             />
           ))}
         </div>

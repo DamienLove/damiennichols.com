@@ -1,0 +1,31 @@
+
+> damiennichols.com@0.0.0 build
+> vite build
+
+[36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32mΓ£ô[39m 17 modules transformed.
+Γ£ù Build failed in 232ms
+error during build:
+[vite:esbuild] Transform failed with 1 error:
+C:/Projects/damiennichols.com/src/pages/Books.jsx:548:40: ERROR: Syntax error "`"
+file: C:/Projects/damiennichols.com/src/pages/Books.jsx:548:40
+
+Syntax error "`"
+546 |                key={i}
+547 |                className={`wave-bar ${isPlaying ? 'animating' : ''}`}
+548 |                style={{ animationDelay: \`\${i * 0.05}s\` }}
+    |                                          ^
+549 |              />
+550 |            ))}
+
+    at failureErrorWithLog (C:\Projects\damiennichols.com\node_modules\esbuild\lib\main.js:1467:15)
+    at C:\Projects\damiennichols.com\node_modules\esbuild\lib\main.js:736:50
+    at responseCallbacks.<computed> (C:\Projects\damiennichols.com\node_modules\esbuild\lib\main.js:603:9)
+    at handleIncomingPacket (C:\Projects\damiennichols.com\node_modules\esbuild\lib\main.js:658:12)
+    at Socket.readFromStdout (C:\Projects\damiennichols.com\node_modules\esbuild\lib\main.js:581:7)
+    at Socket.emit (node:events:508:28)
+    at addChunk (node:internal/streams/readable:559:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:510:3)
+    at Readable.push (node:internal/streams/readable:390:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)
