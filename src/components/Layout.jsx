@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, Outlet, useLocation } from 'react-router-dom';
 import { Menu, X, Github, Linkedin, Facebook } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import DynamicBackground from './DynamicBackground';
 
 const Layout = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -18,6 +19,7 @@ const Layout = () => {
 
   return (
     <div className="layout-container">
+      <DynamicBackground />
       <header className="main-header">
         <div className="header-content">
           <Link to="/" className="logo">Damien Nichols</Link>
