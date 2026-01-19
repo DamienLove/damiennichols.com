@@ -41,7 +41,7 @@ const OmniRemote = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.6 }}
                     >
-                        <a href="https://github.com/DamienLove/ProjectManagerApp/releases/download/v1.0/omni-remote-release.apk" className="btn btn-primary glow-effect">
+                        <a href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/Android.APP.APK" className="btn btn-primary glow-effect">
                             <Download size={20} /> Download APK
                         </a>
                         <a href="#features" className="btn btn-outline">
