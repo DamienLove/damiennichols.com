@@ -4,275 +4,275 @@ import { Smartphone, Terminal, Wifi, Shield, Zap, Server, Code, Layers, External
 import { Link } from 'react-router-dom';
 
 const OmniRemote = () => {
-    return (
-        <div className="page-container omni-page">
-            {/* Hero Section */}
-            <section className="hero-section page-hero">
-                <div className="hero-bg-overlay"></div>
-                <motion.div
-                    className="hero-content"
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                >
-                    <div className="hero-badge">
-                        <span className="badge-text">v1.0 Now Available</span>
-                    </div>
-                    <motion.h1
-                        className="hero-title glitch-text"
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ delay: 0.2 }}
-                    >
-                        Omni<span className="highlight">Remote</span>
-                    </motion.h1>
-                    <motion.p
-                        className="hero-subtitle"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ delay: 0.4 }}
-                    >
-                        Your Development Environment. In Your Pocket.
-                    </motion.p>
+  return (
+    <div className="page-container omni-page">
+      {/* Hero Section */}
+      <section className="hero-section page-hero">
+        <div className="hero-bg-overlay"></div>
+        <motion.div
+          className="hero-content"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="hero-badge">
+            <span className="badge-text">v1.0 Now Available</span>
+          </div>
+          <motion.h1
+            className="hero-title glitch-text"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            Omni<span className="highlight">Remote</span>
+          </motion.h1>
+          <motion.p
+            className="hero-subtitle"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+          >
+            Your Development Environment. In Your Pocket.
+          </motion.p>
 
-                    <motion.div
-                        className="hero-actions"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.6 }}
-                    >
-                        <a href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/Android.APP.APK" className="btn btn-primary glow-effect">
-                            <Download size={20} /> Download APK
-                        </a>
-                        <a href="#features" className="btn btn-outline">
-                            Learn More
-                        </a>
-                    </motion.div>
-                </motion.div>
+          <motion.div
+            className="hero-actions"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.6 }}
+          >
+            <a href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/OmniProjectRemote.APK" className="btn btn-primary glow-effect">
+              <Download size={20} /> Download APK
+            </a>
+            <a href="#features" className="btn btn-outline">
+              Learn More
+            </a>
+          </motion.div>
+        </motion.div>
 
-                <motion.div
-                    className="hero-visual"
-                    initial={{ opacity: 0, x: 50 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.8, duration: 1 }}
-                >
-                    <img src="/assets/omni_remote_hero.png" alt="OmniRemote Interface" className="hero-phone-img floating" />
-                </motion.div>
-            </section>
+        <motion.div
+          className="hero-visual"
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.8, duration: 1 }}
+        >
+          <img src="/assets/omni_remote_hero.png" alt="OmniRemote Interface" className="hero-phone-img floating" />
+        </motion.div>
+      </section>
 
-            <div className="content-wrapper">
+      <div className="content-wrapper">
 
-                {/* Downloads Section */}
-                <section className="downloads-section section-spacing">
-                    <h2 className="section-title center-text">Download Agent</h2>
-                    <p className="text-muted center-text" style={{ maxWidth: '600px', margin: '0 auto 3rem auto' }}>
-                        Run the agent on your host machine to enable remote control. Available for Windows.
-                    </p>
+        {/* Downloads Section */}
+        <section className="downloads-section section-spacing">
+          <h2 className="section-title center-text">Download Agent</h2>
+          <p className="text-muted center-text" style={{ maxWidth: '600px', margin: '0 auto 3rem auto' }}>
+            Run the agent on your host machine to enable remote control. Available for Windows.
+          </p>
 
-                    <div className="downloads-grid">
-                        {/* Windows Installer */}
-                        <motion.a
-                            href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/Windows.Installer"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="download-card glass-panel"
-                            whileHover={{ scale: 1.02, borderColor: 'var(--cyan)' }}
-                        >
-                            <div className="dl-icon"><Zap size={24} /></div>
-                            <div className="dl-info">
-                                <h4>Windows Installer</h4>
-                                <span>Setup.exe • V2 Release</span>
-                            </div>
-                            <Download size={20} className="dl-arrow" />
-                        </motion.a>
+          <div className="downloads-grid">
+            {/* Windows Installer */}
+            <motion.a
+              href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/OmniProjectManager.MSI"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="download-card glass-panel"
+              whileHover={{ scale: 1.02, borderColor: 'var(--cyan)' }}
+            >
+              <div className="dl-icon"><Zap size={24} /></div>
+              <div className="dl-info">
+                <h4>Windows Installer</h4>
+                <span>OmniProjectManager.MSI • V2 Release</span>
+              </div>
+              <Download size={20} className="dl-arrow" />
+            </motion.a>
 
-                        {/* Android Studio Plugin */}
-                        <motion.a
-                            href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/Android.Studio.Plugin"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="download-card glass-panel"
-                            whileHover={{ scale: 1.02, borderColor: '#00ff9d' }}
-                        >
-                            <div className="dl-icon" style={{ color: '#00ff9d' }}><Code size={24} /></div>
-                            <div className="dl-info">
-                                <h4>Android Studio Plugin</h4>
-                                <span>IntelliJ/Android Studio • V2</span>
-                            </div>
-                            <Download size={20} className="dl-arrow" />
-                        </motion.a>
+            {/* Android Studio Plugin */}
+            <motion.a
+              href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/AndroidStudioPlugin.ZIP"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="download-card glass-panel"
+              whileHover={{ scale: 1.02, borderColor: '#00ff9d' }}
+            >
+              <div className="dl-icon" style={{ color: '#00ff9d' }}><Code size={24} /></div>
+              <div className="dl-info">
+                <h4>Android Studio Plugin</h4>
+                <span>IntelliJ/Android Studio • V2</span>
+              </div>
+              <Download size={20} className="dl-arrow" />
+            </motion.a>
 
-                        {/* Portable Version */}
-                        <motion.a
-                            href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/Portable.EXE"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="download-card glass-panel"
-                            whileHover={{ scale: 1.02, borderColor: 'var(--purple)' }}
-                        >
-                            <div className="dl-icon"><Layers size={24} /></div>
-                            <div className="dl-info">
-                                <h4>Portable EXE</h4>
-                                <span>Single File • V2 Release</span>
-                            </div>
-                            <Download size={20} className="dl-arrow" />
-                        </motion.a>
+            {/* Portable Version */}
+            <motion.a
+              href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/OmniRemoteAgent.EXE"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="download-card glass-panel"
+              whileHover={{ scale: 1.02, borderColor: 'var(--purple)' }}
+            >
+              <div className="dl-icon"><Layers size={24} /></div>
+              <div className="dl-info">
+                <h4>Portable EXE</h4>
+                <span>OmniRemoteAgent.EXE • V2 Release</span>
+              </div>
+              <Download size={20} className="dl-arrow" />
+            </motion.a>
 
-                        {/* Full Agent */}
-                        <motion.a
-                            href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/Omni.Remote.Agent"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="download-card glass-panel"
-                            whileHover={{ scale: 1.02, borderColor: '#ff00ff' }}
-                        >
-                            <div className="dl-icon" style={{ color: '#ff00ff' }}><Server size={24} /></div>
-                            <div className="dl-info">
-                                <h4>Full Agent</h4>
-                                <span>Zipped Package • V2</span>
-                            </div>
-                            <Download size={20} className="dl-arrow" />
-                        </motion.a>
+            {/* Full Agent */}
+            <motion.a
+              href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/OmniProjectSync.EXE"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="download-card glass-panel"
+              whileHover={{ scale: 1.02, borderColor: '#ff00ff' }}
+            >
+              <div className="dl-icon" style={{ color: '#ff00ff' }}><Server size={24} /></div>
+              <div className="dl-info">
+                <h4>Full Sync Tool</h4>
+                <span>OmniProjectSync.EXE • V2</span>
+              </div>
+              <Download size={20} className="dl-arrow" />
+            </motion.a>
 
-                        {/* Config Template (hosted locally) */}
-                        <motion.a
-                            href="/downloads/omniremote/secrets.env.template"
-                            download
-                            className="download-card glass-panel"
-                            whileHover={{ scale: 1.02, borderColor: '#fff' }}
-                        >
-                            <div className="dl-icon" style={{ color: '#fff' }}><Shield size={24} /></div>
-                            <div className="dl-info">
-                                <h4>Config Template</h4>
-                                <span>secrets.env.template</span>
-                            </div>
-                            <Download size={20} className="dl-arrow" />
-                        </motion.a>
-                    </div>
-                </section>
+            {/* Config Template (hosted locally) */}
+            <motion.a
+              href="/downloads/omniremote/secrets.env.template"
+              download
+              className="download-card glass-panel"
+              whileHover={{ scale: 1.02, borderColor: '#fff' }}
+            >
+              <div className="dl-icon" style={{ color: '#fff' }}><Shield size={24} /></div>
+              <div className="dl-info">
+                <h4>Config Template</h4>
+                <span>secrets.env.template</span>
+              </div>
+              <Download size={20} className="dl-arrow" />
+            </motion.a>
+          </div>
+        </section>
 
-                {/* Intro / Value Prop */}
-                <section className="value-prop section-spacing">
-                    <motion.div
-                        className="glass-card full-width"
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                    >
-                        <div className="grid-cols-2 align-center">
-                            <div className="text-content">
-                                <h2 className="section-title">Control Without Limits</h2>
-                                <p className="lead text-muted">
-                                    OmniRemote extends your workspace beyond the desktop. Built for developers who need to manage servers, run scripts, and monitor projects on the go.
-                                </p>
-                                <ul className="feature-list">
-                                    <li><Terminal size={18} className="icon-cyan" /> Remote CLI Access</li>
-                                    <li><Server size={18} className="icon-purple" /> Project Management</li>
-                                    <li><Shield size={18} className="icon-green" /> Secure Tunneling</li>
-                                </ul>
-                            </div>
-                            <div className="image-content rounded-box">
-                                <img src="/assets/omniprojectsync.png" alt="OmniRemote Screenshot" className="feature-screenshot" />
-                            </div>
-                        </div>
-                    </motion.div>
-                </section>
-
-                {/* Core Features Grid */}
-                <section className="features-section section-spacing" id="features">
-                    <h2 className="section-title center-text">System Capabilities</h2>
-                    <div className="grid-cols-3 features-grid">
-                        <motion.div
-                            className="feature-card glass-panel"
-                            whileHover={{ y: -10 }}
-                        >
-                            <div className="card-icon-wrapper cyan">
-                                <Terminal size={32} />
-                            </div>
-                            <h3>Wait-less Terminal</h3>
-                            <p>Execute commands on your host machine instantly via WebSocket. Full shell access with real-time output streaming.</p>
-                        </motion.div>
-
-                        <motion.div
-                            className="feature-card glass-panel"
-                            whileHover={{ y: -10 }}
-                        >
-                            <div className="card-icon-wrapper purple">
-                                <Layers size={32} />
-                            </div>
-                            <h3>Project Manager</h3>
-                            <p>View, activate, and deactivate your projects remotely. seamless integration with OmniProjectSync structure.</p>
-                        </motion.div>
-
-                        <motion.div
-                            className="feature-card glass-panel"
-                            whileHover={{ y: -10 }}
-                        >
-                            <div className="card-icon-wrapper pink">
-                                <Globe size={32} />
-                            </div>
-                            <h3>Cloudflare Tunnel</h3>
-                            <p>Securely expose your local agent to the internet without port forwarding. Access your rig from anywhere in the world.</p>
-                        </motion.div>
-
-                        <motion.div
-                            className="feature-card glass-panel"
-                            whileHover={{ y: -10 }}
-                        >
-                            <div className="card-icon-wrapper blue">
-                                <Wifi size={32} />
-                            </div>
-                            <h3>Firebase Sync</h3>
-                            <p>Automatically sync connection details across devices using Firebase Firestore. Scan, connect, and control.</p>
-                        </motion.div>
-
-                        <motion.div
-                            className="feature-card glass-panel"
-                            whileHover={{ y: -10 }}
-                        >
-                            <div className="card-icon-wrapper green">
-                                <Code size={32} />
-                            </div>
-                            <h3>Copilot / CLI Integration</h3>
-                            <p>Run your favorite AI CLI tools (Code, Gemini, terminal assistants) directly from your mobile interface.</p>
-                        </motion.div>
-
-                        <motion.div
-                            className="feature-card glass-panel"
-                            whileHover={{ y: -10 }}
-                        >
-                            <div className="card-icon-wrapper orange">
-                                <Cpu size={32} />
-                            </div>
-                            <h3>Resource Monitoring</h3>
-                            <p>Keep an eye on system stats and ensuring your environment is healthy and responsive.</p>
-                        </motion.div>
-                    </div>
-                </section>
-
-                {/* Tech Stack / Icon */}
-                <section className="tech-section section-spacing">
-                    <div className="tech-container glass-card">
-                        <div className="app-icon-display">
-                            <img src="/assets/omni_remote_icon.png" alt="OmniRemote Icon" className="app-main-icon" />
-                        </div>
-                        <div className="tech-details">
-                            <h2>Powered by Python & Flutter</h2>
-                            <p>The backend agent runs on a lightweight Python server, while the frontend offers a buttery smooth 60fps experience built with Flutter.</p>
-                            <div className="tech-badges">
-                                <span className="tech-badge">Python 3.10+</span>
-                                <span className="tech-badge">FastAPI</span>
-                                <span className="tech-badge">WebSockets</span>
-                                <span className="tech-badge">Flutter</span>
-                                <span className="tech-badge">Dart</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
+        {/* Intro / Value Prop */}
+        <section className="value-prop section-spacing">
+          <motion.div
+            className="glass-card full-width"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <div className="grid-cols-2 align-center">
+              <div className="text-content">
+                <h2 className="section-title">Control Without Limits</h2>
+                <p className="lead text-muted">
+                  OmniRemote extends your workspace beyond the desktop. Built for developers who need to manage servers, run scripts, and monitor projects on the go.
+                </p>
+                <ul className="feature-list">
+                  <li><Terminal size={18} className="icon-cyan" /> Remote CLI Access</li>
+                  <li><Server size={18} className="icon-purple" /> Project Management</li>
+                  <li><Shield size={18} className="icon-green" /> Secure Tunneling</li>
+                </ul>
+              </div>
+              <div className="image-content rounded-box">
+                <img src="/assets/omniprojectsync.png" alt="OmniRemote Screenshot" className="feature-screenshot" />
+              </div>
             </div>
+          </motion.div>
+        </section>
 
-            <style>{`
+        {/* Core Features Grid */}
+        <section className="features-section section-spacing" id="features">
+          <h2 className="section-title center-text">System Capabilities</h2>
+          <div className="grid-cols-3 features-grid">
+            <motion.div
+              className="feature-card glass-panel"
+              whileHover={{ y: -10 }}
+            >
+              <div className="card-icon-wrapper cyan">
+                <Terminal size={32} />
+              </div>
+              <h3>Wait-less Terminal</h3>
+              <p>Execute commands on your host machine instantly via WebSocket. Full shell access with real-time output streaming.</p>
+            </motion.div>
+
+            <motion.div
+              className="feature-card glass-panel"
+              whileHover={{ y: -10 }}
+            >
+              <div className="card-icon-wrapper purple">
+                <Layers size={32} />
+              </div>
+              <h3>Project Manager</h3>
+              <p>View, activate, and deactivate your projects remotely. seamless integration with OmniProjectSync structure.</p>
+            </motion.div>
+
+            <motion.div
+              className="feature-card glass-panel"
+              whileHover={{ y: -10 }}
+            >
+              <div className="card-icon-wrapper pink">
+                <Globe size={32} />
+              </div>
+              <h3>Cloudflare Tunnel</h3>
+              <p>Securely expose your local agent to the internet without port forwarding. Access your rig from anywhere in the world.</p>
+            </motion.div>
+
+            <motion.div
+              className="feature-card glass-panel"
+              whileHover={{ y: -10 }}
+            >
+              <div className="card-icon-wrapper blue">
+                <Wifi size={32} />
+              </div>
+              <h3>Firebase Sync</h3>
+              <p>Automatically sync connection details across devices using Firebase Firestore. Scan, connect, and control.</p>
+            </motion.div>
+
+            <motion.div
+              className="feature-card glass-panel"
+              whileHover={{ y: -10 }}
+            >
+              <div className="card-icon-wrapper green">
+                <Code size={32} />
+              </div>
+              <h3>Copilot / CLI Integration</h3>
+              <p>Run your favorite AI CLI tools (Code, Gemini, terminal assistants) directly from your mobile interface.</p>
+            </motion.div>
+
+            <motion.div
+              className="feature-card glass-panel"
+              whileHover={{ y: -10 }}
+            >
+              <div className="card-icon-wrapper orange">
+                <Cpu size={32} />
+              </div>
+              <h3>Resource Monitoring</h3>
+              <p>Keep an eye on system stats and ensuring your environment is healthy and responsive.</p>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Tech Stack / Icon */}
+        <section className="tech-section section-spacing">
+          <div className="tech-container glass-card">
+            <div className="app-icon-display">
+              <img src="/assets/omni_remote_icon.png" alt="OmniRemote Icon" className="app-main-icon" />
+            </div>
+            <div className="tech-details">
+              <h2>Powered by Python & Flutter</h2>
+              <p>The backend agent runs on a lightweight Python server, while the frontend offers a buttery smooth 60fps experience built with Flutter.</p>
+              <div className="tech-badges">
+                <span className="tech-badge">Python 3.10+</span>
+                <span className="tech-badge">FastAPI</span>
+                <span className="tech-badge">WebSockets</span>
+                <span className="tech-badge">Flutter</span>
+                <span className="tech-badge">Dart</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+
+      <style>{`
         .omni-page {
           --cyan: #00f3ff;
           --purple: #bc13fe;
@@ -588,8 +588,8 @@ const OmniRemote = () => {
            }
         }
       `}</style>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default OmniRemote;
