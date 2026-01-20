@@ -21,23 +21,23 @@ const OmniRemoteWiki = () => {
                 </section>
 
                 <section className="wiki-section">
-                    <h2>🏗️ System Architecture</h2>
-                    <p>The system consists of three decoupled components communicating over a secure REST and WebSocket API:</p>
+                    <h2>🏗️ Dynamic Dual-Host Architecture</h2>
+                    <p>OmniRemote now supports a <strong>Dual-Host model</strong>, allowing you to choose the best integration for your workflow:</p>
                     <div className="card-grid">
                         <div className="wiki-card">
                             <Server className="card-icon cyan" />
-                            <h3>Remote Agent</h3>
-                            <p>The Windows backend and shell bridge. Manages projects and executes commands.</p>
-                        </div>
-                        <div className="wiki-card">
-                            <Smartphone className="card-icon purple" />
-                            <h3>Android Client</h3>
-                            <p>The mobile management app. Provides a remote dashboard and terminal.</p>
+                            <h3>Standalone Host</h3>
+                            <p>A persistent Python-based background service for 24/7 access to your entire workstation.</p>
                         </div>
                         <div className="wiki-card">
                             <Code className="card-icon green" />
-                            <h3>IDE Plugin / Host</h3>
-                            <p>Android Studio/IntelliJ integration. Can act as a client or a <strong>Host Server</strong> for direct mobile connection.</p>
+                            <h3>IDE Integrated Host</h3>
+                            <p>The Android Studio plugin acts as the server. Zero-setup, project-specific remote control.</p>
+                        </div>
+                        <div className="wiki-card">
+                            <Smartphone className="card-icon purple" />
+                            <h3>Universal Client</h3>
+                            <p>Native Android app with Firebase sync, biometric security, and a Chrome Remote Desktop bridge.</p>
                         </div>
                     </div>
                 </section>
@@ -79,13 +79,13 @@ const OmniRemoteWiki = () => {
                     </div>
 
                     <div className="subsection">
-                        <h3>3. IDE Plugin (Optional Host)</h3>
+                        <h3>3. IDE Plugin (Host Mode)</h3>
                         <ol>
-                            <li>Download <a href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/omni-remote-studio-plugin-0.1.0.zip">omni-remote-studio-plugin-0.1.0.zip</a>.</li>
+                            <li>Download <a href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/AndroidStudioPlugin.zip">AndroidStudioPlugin.zip</a>.</li>
                             <li>In Android Studio, go to <strong>Settings</strong> {'>'} <strong>Plugins</strong>.</li>
                             <li>Click the gear icon and select <strong>Install Plugin from Disk...</strong>.</li>
-                            <li>Select the ZIP file and restart the IDE.</li>
-                            <li><strong>Note:</strong> The plugin can now host the agent service directly, removing the need for the Python Agent on your workstation.</li>
+                            <li>Navigate to the <strong>Omni Remote</strong> tool window in the sidebar.</li>
+                            <li>Go to <strong>Host Mode</strong>, set your token, and click <strong>Start Host</strong>.</li>
                         </ol>
                     </div>
                 </section>
@@ -107,9 +107,9 @@ const OmniRemoteWiki = () => {
                         <h3>Android Client Guide</h3>
                         <p>The mobile interface is a native Jetpack Compose application designed for efficient workstation management on the go.</p>
                         <ul>
-                            <li><strong>Live Dashboard:</strong> Instantly view system health, CPU/RAM usage, and active project states.</li>
-                            <li><strong>Advanced Terminal:</strong> Full-featured terminal emulator with custom keyboard shortcuts for common CLI tasks.</li>
-                            <li><strong>Token Sync:</strong> Securely share and update connection details using your Firebase-backed profile.</li>
+                            <li><strong>Firebase Sync:</strong> Automatically sync host and token details between your PC and phone.</li>
+                            <li><strong>Biometric Unlock:</strong> Secure your remote session with fingerprint or face recognition.</li>
+                            <li><strong>CRD Bridge:</strong> Quick-launch Chrome Remote Desktop directly from the app for full UI control.</li>
                         </ul>
                     </div>
 

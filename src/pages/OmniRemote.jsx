@@ -89,7 +89,7 @@ const OmniRemote = () => {
 
             {/* Android Studio Plugin */}
             <motion.a
-              href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/omni-remote-studio-plugin-0.1.0.zip"
+              href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/AndroidStudioPlugin.zip"
               target="_blank"
               rel="noopener noreferrer"
               className="download-card glass-panel"
@@ -98,8 +98,8 @@ const OmniRemote = () => {
               <div className="dl-icon" style={{ color: '#00ff9d' }}><Code size={24} /></div>
               <div className="dl-info">
                 <h4>IDE Plugin / Host</h4>
-                <span>omni-remote-studio-plugin-0.1.0.zip</span>
-                <span className="text-muted small">v0.1.0 • Now with Host Mode</span>
+                <span>AndroidStudioPlugin.zip</span>
+                <span className="text-muted small">v2.0 Alpha • Direct IDE Hosting</span>
               </div>
               <Download size={20} className="dl-arrow" />
             </motion.a>
@@ -228,8 +228,8 @@ const OmniRemote = () => {
               <div className="card-icon-wrapper blue">
                 <Wifi size={32} />
               </div>
-              <h3>Firebase Sync</h3>
-              <p>Automatically sync connection details across devices using Firebase Firestore. Scan, connect, and control.</p>
+              <h3>Smart Sync & Bridge</h3>
+              <p>Firestore-backed token syncing across devices. One-tap bridge to Chrome Remote Desktop for full UI control.</p>
             </motion.div>
 
             <motion.div
@@ -248,10 +248,10 @@ const OmniRemote = () => {
               whileHover={{ y: -10 }}
             >
               <div className="card-icon-wrapper orange">
-                <Cpu size={32} />
+                <Shield size={32} />
               </div>
-              <h3>Resource Monitoring</h3>
-              <p>Keep an eye on system stats and ensuring your environment is healthy and responsive.</p>
+              <h3>Biometric Security</h3>
+              <p>Modern authentication using native Android biometric APIs. Your workstation remains locked until you verify.</p>
             </motion.div>
           </div>
         </section>
