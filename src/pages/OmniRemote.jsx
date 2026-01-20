@@ -41,12 +41,12 @@ const OmniRemote = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
           >
-            <a href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/OmniProjectRemote.APK" className="btn btn-primary glow-effect">
-              <Download size={20} /> Download APK (17.2 MB)
+            <a href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/OmniProjectRemote.apk" className="btn btn-primary glow-effect">
+              <Download size={20} /> Download APK
             </a>
-            <a href="#features" className="btn btn-outline">
-              Learn More
-            </a>
+            <Link to="/omniremote/wiki" className="btn btn-outline">
+              <Code size={20} /> View Wiki
+            </Link>
           </motion.div>
         </motion.div>
 
@@ -72,7 +72,7 @@ const OmniRemote = () => {
           <div className="downloads-grid">
             {/* Windows Installer */}
             <motion.a
-              href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/OmniProjectManager.MSI"
+              href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/OmniRemoteAgentSetup.exe"
               target="_blank"
               rel="noopener noreferrer"
               className="download-card glass-panel"
@@ -81,15 +81,15 @@ const OmniRemote = () => {
               <div className="dl-icon"><Zap size={24} /></div>
               <div className="dl-info">
                 <h4>Windows Installer</h4>
-                <span>OmniProjectManager.MSI • 28.4 MB</span>
-                <code className="sha-text">sha256:b958d9cc30dff8648acfd2378e7de59778ed74b954a3eac675e426a26abffc61</code>
+                <span>OmniRemoteAgentSetup.exe</span>
+                <span className="text-muted small">Recommended for most users</span>
               </div>
               <Download size={20} className="dl-arrow" />
             </motion.a>
 
             {/* Android Studio Plugin */}
             <motion.a
-              href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/AndroidStudioPlugin.ZIP"
+              href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/AndroidStudioPlugin.zip"
               target="_blank"
               rel="noopener noreferrer"
               className="download-card glass-panel"
@@ -98,15 +98,15 @@ const OmniRemote = () => {
               <div className="dl-icon" style={{ color: '#00ff9d' }}><Code size={24} /></div>
               <div className="dl-info">
                 <h4>Android Studio Plugin</h4>
-                <span>AndroidStudioPlugin.ZIP • 1.82 MB</span>
-                <code className="sha-text">sha256:4c7cc1d9cb3e35002df3cc0ec122f09801a50486b8aba799f72bea1802958ad2</code>
+                <span>AndroidStudioPlugin.zip</span>
+                <span className="text-muted small">v1.2.0 • Plugin for IDE</span>
               </div>
               <Download size={20} className="dl-arrow" />
             </motion.a>
 
             {/* Portable Version */}
             <motion.a
-              href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/OmniRemoteAgent.EXE"
+              href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/OmniRemoteAgentPortable.exe"
               target="_blank"
               rel="noopener noreferrer"
               className="download-card glass-panel"
@@ -115,15 +115,15 @@ const OmniRemote = () => {
               <div className="dl-icon"><Layers size={24} /></div>
               <div className="dl-info">
                 <h4>Portable Agent</h4>
-                <span>OmniRemoteAgent.EXE • 11.6 MB</span>
-                <code className="sha-text">sha256:fb0daa67d2d32bd32f4edd2d7d5f69b68a46cb77e9b648539881ca4e31426112</code>
+                <span>OmniRemoteAgentPortable.exe</span>
+                <span className="text-muted small">No installation required</span>
               </div>
               <Download size={20} className="dl-arrow" />
             </motion.a>
 
-            {/* Full Agent */}
+            {/* Standalone Executable */}
             <motion.a
-              href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/OmniProjectSync.EXE"
+              href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/OmniRemoteAgent.exe"
               target="_blank"
               rel="noopener noreferrer"
               className="download-card glass-panel"
@@ -131,9 +131,9 @@ const OmniRemote = () => {
             >
               <div className="dl-icon" style={{ color: '#ff00ff' }}><Server size={24} /></div>
               <div className="dl-info">
-                <h4>Full Sync Tool</h4>
-                <span>OmniProjectSync.EXE • 36.4 MB</span>
-                <code className="sha-text">sha256:010dd12088d00e1372d4d6a71cecd78ba4f87df129da8a93a5e54604e5d7d48a</code>
+                <h4>Standalone Agent</h4>
+                <span>OmniRemoteAgent.exe</span>
+                <span className="text-muted small">Single file executable</span>
               </div>
               <Download size={20} className="dl-arrow" />
             </motion.a>
@@ -149,7 +149,8 @@ const OmniRemote = () => {
               <div className="dl-icon" style={{ color: '#fff' }}><Shield size={24} /></div>
               <div className="dl-info">
                 <h4>Config Template</h4>
-                <span>secrets.env.template • GitHub</span>
+                <span>secrets.env.template</span>
+                <span className="text-muted small">Required for authentication</span>
               </div>
               <Download size={20} className="dl-arrow" />
             </motion.a>
@@ -275,7 +276,7 @@ const OmniRemote = () => {
           </div>
         </section>
 
-      </div>
+      </div >
 
       <style>{`
         .omni-page {
@@ -611,7 +612,7 @@ const OmniRemote = () => {
            }
         }
       `}</style>
-    </div>
+    </div >
   );
 };
 

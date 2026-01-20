@@ -26,6 +26,7 @@ import UserManual from './pages/wiki/betamax/UserManual';
 import DeveloperGuide from './pages/wiki/betamax/DeveloperGuide';
 import QAVerifyWiki from './pages/wiki/qaverify/QAVerifyWiki';
 import FacebookSearchWiki from './pages/wiki/facebooksearch/FacebookSearchWiki';
+import OmniRemoteWiki from './pages/wiki/omniremote/OmniRemoteWiki';
 
 const router = createBrowserRouter([
   {
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
       },
       {
         path: "omni-remote",
+        element: <OmniRemote />,
+      },
+      {
+        path: "omniremote",
         element: <OmniRemote />,
       },
       {
@@ -111,6 +116,14 @@ const router = createBrowserRouter([
       {
         path: "facebook-search/wiki",
         element: <FacebookSearchWiki />,
+      },
+      {
+        path: "omniremote/wiki",
+        element: <OmniRemoteWiki />,
+      },
+      {
+        path: "omni-remote/wiki",
+        element: <OmniRemoteWiki />,
       },
     ],
   },
