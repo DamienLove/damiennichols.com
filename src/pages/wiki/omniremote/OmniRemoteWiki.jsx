@@ -36,8 +36,8 @@ const OmniRemoteWiki = () => {
                         </div>
                         <div className="wiki-card">
                             <Code className="card-icon green" />
-                            <h3>IDE Plugin</h3>
-                            <p>Android Studio/IntelliJ integration for quick access to remote projects.</p>
+                            <h3>IDE Plugin / Host</h3>
+                            <p>Android Studio/IntelliJ integration. Can act as a client or a <strong>Host Server</strong> for direct mobile connection.</p>
                         </div>
                     </div>
                 </section>
@@ -79,12 +79,13 @@ const OmniRemoteWiki = () => {
                     </div>
 
                     <div className="subsection">
-                        <h3>3. IDE Plugin</h3>
+                        <h3>3. IDE Plugin (Optional Host)</h3>
                         <ol>
-                            <li>Download <a href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/AndroidStudioPlugin.zip">AndroidStudioPlugin.zip</a>.</li>
+                            <li>Download <a href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/omni-remote-studio-plugin-0.1.0.zip">omni-remote-studio-plugin-0.1.0.zip</a>.</li>
                             <li>In Android Studio, go to <strong>Settings</strong> {'>'} <strong>Plugins</strong>.</li>
                             <li>Click the gear icon and select <strong>Install Plugin from Disk...</strong>.</li>
                             <li>Select the ZIP file and restart the IDE.</li>
+                            <li><strong>Note:</strong> The plugin can now host the agent service directly, removing the need for the Python Agent on your workstation.</li>
                         </ol>
                     </div>
                 </section>
@@ -114,12 +115,16 @@ const OmniRemoteWiki = () => {
 
                     <div className="subsection">
                         <h3>IDE Plugin Guide</h3>
-                        <p>Integrate OmniRemote directly into your development workflow with the Android Studio and IntelliJ plugin.</p>
+                        <p>Integrate OmniRemote directly into your development workflow with the Android Studio and IntelliJ plugin. Version 0.1.0 introduces <strong>Host Mode</strong>.</p>
                         <ul>
+                            <li><strong>Host Mode Server:</strong> Run the Omni Agent directly inside your IDE. Your phone connects to the IDE's IP and port, bypassing the standalone Python agent.</li>
                             <li><strong>Remote Launch:</strong> Open local projects in new IDE windows directly from your mobile device.</li>
                             <li><strong>Status Monitoring:</strong> Real-time connection feedback directly in the IDE status bar.</li>
-                            <li><strong>Remote Execution:</strong> Trigger build processes on your workstation while away from your desk.</li>
+                            <li><strong>Embedded Terminal:</strong> Execute shell commands within the IDE's environment remotely.</li>
                         </ul>
+                        <div className="note-box">
+                            <strong>How to use Host Mode:</strong> Open the Omni Remote tool window in your IDE {'>'} Go to <strong>Host Mode</strong> tab {'>'} Set a Port and Token {'>'} Click <strong>Start Host</strong>.
+                        </div>
                     </div>
                 </section>
 

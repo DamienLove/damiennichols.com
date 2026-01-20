@@ -89,7 +89,7 @@ const OmniRemote = () => {
 
             {/* Android Studio Plugin */}
             <motion.a
-              href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/AndroidStudioPlugin.zip"
+              href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/omni-remote-studio-plugin-0.1.0.zip"
               target="_blank"
               rel="noopener noreferrer"
               className="download-card glass-panel"
@@ -97,9 +97,9 @@ const OmniRemote = () => {
             >
               <div className="dl-icon" style={{ color: '#00ff9d' }}><Code size={24} /></div>
               <div className="dl-info">
-                <h4>Android Studio Plugin</h4>
-                <span>AndroidStudioPlugin.zip</span>
-                <span className="text-muted small">v1.2.0 • Plugin for IDE</span>
+                <h4>IDE Plugin / Host</h4>
+                <span>omni-remote-studio-plugin-0.1.0.zip</span>
+                <span className="text-muted small">v0.1.0 • Now with Host Mode</span>
               </div>
               <Download size={20} className="dl-arrow" />
             </motion.a>
@@ -123,7 +123,7 @@ const OmniRemote = () => {
 
             {/* Standalone Executable */}
             <motion.a
-              href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/OmniRemoteAgent.exe"
+              href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/OmniRemoteAgent.EXE"
               target="_blank"
               rel="noopener noreferrer"
               className="download-card glass-panel"
@@ -132,7 +132,7 @@ const OmniRemote = () => {
               <div className="dl-icon" style={{ color: '#ff00ff' }}><Server size={24} /></div>
               <div className="dl-info">
                 <h4>Standalone Agent</h4>
-                <span>OmniRemoteAgent.exe</span>
+                <span>OmniRemoteAgent.EXE</span>
                 <span className="text-muted small">Single file executable</span>
               </div>
               <Download size={20} className="dl-arrow" />
@@ -263,8 +263,8 @@ const OmniRemote = () => {
               <img src="/assets/omni_remote_icon.png" alt="OmniRemote Icon" className="app-main-icon" />
             </div>
             <div className="tech-details">
-              <h2>Powered by Python & Flutter</h2>
-              <p>The backend agent runs on a lightweight Python server, while the frontend offers a buttery smooth 60fps experience built with Flutter.</p>
+              <h2>Powered by Python, Kotlin & Flutter</h2>
+              <p>The backend agent runs on a lightweight Python server or directly within your IDE using the Kotlin-based plugin, while the frontend offers a buttery smooth experience built with Flutter.</p>
               <div className="tech-badges">
                 <span className="tech-badge">Python 3.10+</span>
                 <span className="tech-badge">FastAPI</span>
