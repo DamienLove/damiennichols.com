@@ -15,6 +15,7 @@ import OmniRemote from './pages/OmniRemote';
 import Login from './pages/Login';
 import Admin from './pages/Admin';
 import UniverseConnectedReader from './pages/UniverseConnectedReader';
+import TheMAG from './pages/TheMAG';
 import { AuthProvider } from './context/AuthContext';
 
 // Wiki Pages
@@ -84,6 +85,14 @@ const router = createBrowserRouter([
       {
         path: "reader/universe-connected",
         element: <UniverseConnectedReader />,
+      },
+      {
+        path: "themag",
+        element: <TheMAG />,
+      },
+      {
+        path: "themagdev",
+        element: <TheMAG />,
       },
       {
         path: "pulselink/wiki/guide",
