@@ -16,6 +16,7 @@ import Login from './pages/Login';
 import Admin from './pages/Admin';
 import UniverseConnectedReader from './pages/UniverseConnectedReader';
 import TheMAG from './pages/TheMAG';
+import DiamondDevDuster from './pages/DiamondDevDuster';
 import { AuthProvider } from './context/AuthContext';
 
 // Wiki Pages
@@ -93,6 +94,14 @@ const router = createBrowserRouter([
       {
         path: "themagdev",
         element: <TheMAG />,
+      },
+      {
+        path: "diamond-dev-duster",
+        element: <DiamondDevDuster />,
+      },
+      {
+        path: "duster",
+        element: <DiamondDevDuster />,
       },
       {
         path: "pulselink/wiki/guide",

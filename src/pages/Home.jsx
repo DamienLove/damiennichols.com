@@ -131,12 +131,12 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ delay: 0.6 }}
           >
-            <Link to="/themag" className="highlight-card themag glass-card">
+            <a href="http://magstack.rf.gd" target="_blank" rel="noopener noreferrer" className="highlight-card themag glass-card">
               <Code2 size={40} className="icon" />
               <h3>TheMAG.dev</h3>
-              <p>The Multi-Platform Web-Hosted IDE for Microsoft, Apple, & Google development.</p>
+              <p>The Multi-Platform Web-Hosted IDE. Code, build, and deploy across Windows, macOS, and Android from any browser.</p>
               <span className="card-tag">Cloud IDE</span>
-            </Link>
+            </a>
           </motion.div>
 
           {/* Mobile Game Promo */}
@@ -152,6 +152,24 @@ const Home = () => {
               <p>Dive into the connected universe. Play the official mobile game adaptation now.</p>
               <span className="card-tag">Play Now</span>
             </a>
+          </motion.div>
+
+          {/* Diamond Dev Duster */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.8 }}
+          >
+            <Link to="/diamond-dev-duster" className="highlight-card duster glass-card">
+              <div className="icon-wrapper" style={{ position: 'relative' }}>
+                <Search size={40} className="icon" />
+                <div style={{ position: 'absolute', top: -5, right: -5, background: '#00f3ff', borderRadius: '50%', width: 20, height: 20, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 'bold', color: '#000' }}>D</div>
+              </div>
+              <h3>Diamond Dev Duster</h3>
+              <p>The ultimate Windows dev-junk cleaner. Find, clean, and archive projects to the cloud with ease.</p>
+              <span className="card-tag">System Utility</span>
+            </Link>
           </motion.div>
         </div>
       </section>
@@ -252,6 +270,9 @@ const Home = () => {
         .highlight-card.cosmic .icon { color: #e600ff; }
         .highlight-card.cosmic::before { background: linear-gradient(90deg, #e600ff, #00d4ff); }
 
+        .highlight-card.duster .icon { color: #00f3ff; }
+        .highlight-card.duster::before { background: linear-gradient(90deg, #00f3ff, #bc13fe); }
+
         .highlight-card h3 {
           font-size: 1.35rem;
           margin: 0;
@@ -285,6 +306,7 @@ const Home = () => {
         .highlight-card.books .card-tag { background: rgba(255, 217, 61, 0.2); color: #ffd93d; }
         .highlight-card.social .card-tag { background: rgba(59, 130, 246, 0.2); color: #3b82f6; }
         .highlight-card.themag .card-tag { background: rgba(139, 92, 246, 0.2); color: #8b5cf6; }
+        .highlight-card.duster .card-tag { background: rgba(0, 243, 255, 0.2); color: #00f3ff; }
 
       `}</style>
     </div>

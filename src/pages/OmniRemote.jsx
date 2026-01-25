@@ -16,7 +16,7 @@ const OmniRemote = () => {
           transition={{ duration: 0.8 }}
         >
           <div className="hero-badge">
-            <span className="badge-text">v1.0 Now Available</span>
+            <span className="badge-text">v4.7.0 Release Now Live</span>
           </div>
           <motion.h1
             className="hero-title glitch-text"
@@ -195,8 +195,8 @@ const OmniRemote = () => {
               <div className="card-icon-wrapper cyan">
                 <Terminal size={32} />
               </div>
-              <h3>Wait-less Terminal</h3>
-              <p>Execute commands on your host machine instantly via WebSocket. Full shell access with real-time output streaming.</p>
+              <h3>Android Terminal Routing</h3>
+              <p>Android terminal now routes through OmniProjectSync by default with IDE terminal fallback. Real-time WebSocket streaming with zero lag.</p>
             </motion.div>
 
             <motion.div
@@ -206,8 +206,8 @@ const OmniRemote = () => {
               <div className="card-icon-wrapper purple">
                 <Layers size={32} />
               </div>
-              <h3>Project Manager</h3>
-              <p>View, activate, and deactivate your projects remotely. seamless integration with OmniProjectSync structure.</p>
+              <h3>IDE Auto-Start</h3>
+              <p>IDE plugin restores Firebase login automatically and can auto-start the host on launch, ensuring your environment is always ready.</p>
             </motion.div>
 
             <motion.div
@@ -250,8 +250,8 @@ const OmniRemote = () => {
               <div className="card-icon-wrapper orange">
                 <Shield size={32} />
               </div>
-              <h3>Biometric Security</h3>
-              <p>Modern authentication using native Android biometric APIs. Your workstation remains locked until you verify.</p>
+              <h3>Normalized Sessions</h3>
+              <p>Remote agent session IDs are normalized for IDE terminal proxying, providing a seamless transition between mobile and desktop.</p>
             </motion.div>
           </div>
         </section>

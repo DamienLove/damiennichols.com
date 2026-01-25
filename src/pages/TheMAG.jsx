@@ -94,7 +94,7 @@ const TheMAG = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.5 }}
                     >
-                        <button className="btn btn-primary" onClick={() => window.open('https://themag.dev', '_blank')}>
+                        <button className="btn btn-primary" onClick={() => window.open('http://magstack.rf.gd', '_blank')}>
                             Launch IDE <Terminal size={18} />
                         </button>
                         <button className="btn btn-secondary">
@@ -138,18 +138,18 @@ const TheMAG = () => {
 
                         <motion.div variants={itemVariants} className="feature-card glass-card">
                             <div className="feature-icon-wrapper google-bg">
-                                <Globe className="feature-icon" />
+                                <ShieldCheck className="feature-icon" />
                             </div>
-                            <h3>Android & Cloud</h3>
-                            <p>Native Android Studio capabilities and seamless Firebase connectivity for rapid Google ecosystem deployment.</p>
+                            <h3>SDK Manager</h3>
+                            <p>Integrated platform tabs for Android, Windows, and Apple SDK management with real-time updates and plugin discovery.</p>
                         </motion.div>
 
                         <motion.div variants={itemVariants} className="feature-card glass-card">
                             <div className="feature-icon-wrapper">
-                                <Cloud className="feature-icon" />
+                                <Layers className="feature-icon" />
                             </div>
-                            <h3>Web-Hosted Persistence</h3>
-                            <p>Your entire workspace follows you. No local installation required. Pick up where you left off on any device.</p>
+                            <h3>84+ Workspace Modules</h3>
+                            <p>Extensive marketplace of drag-and-drop modules with persistent layout saving across all your devices.</p>
                         </motion.div>
 
                         <motion.div variants={itemVariants} className="feature-card glass-card">
@@ -164,8 +164,8 @@ const TheMAG = () => {
                             <div className="feature-icon-wrapper">
                                 <Zap className="feature-icon" />
                             </div>
-                            <h3>Real-time Preview</h3>
-                            <p>Interactive hot-reloading that syncs across multiple virtualized device targets simultaneously.</p>
+                            <h3>Guest & Multi-Auth</h3>
+                            <p>Instant guest access for experimentation, or sign in via multi-provider auth to unlock Pro virtual machines and cloud storage.</p>
                         </motion.div>
                     </div>
                 </motion.div>

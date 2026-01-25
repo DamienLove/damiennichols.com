@@ -82,7 +82,7 @@ const About = () => {
               >
                 <Code className="exp-icon" />
                 <h4>Independent Development</h4>
-                <p className="text-muted">Creator of the PulseLink Suite, Beta Max, QA Verify & Track, and Facebook Search. Building innovative Android applications and web platforms that solve real-world problems.</p>
+                <p className="text-muted">Creator of the PulseLink Suite, Beta Max, Diamond Dev Duster, QA Verify & Track, and Facebook Search. Building innovative Android applications and web platforms that solve real-world problems.</p>
               </motion.div>
             </div>
           </motion.div>
