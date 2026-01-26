@@ -11,6 +11,8 @@
         "GitHub.GitHubDesktop",
         "Google.CloudSDK",
         "Google.Antigravity",
-        "Python.Python.3.12"
-    ]
+        "Python.Python.3.12",
+        "Git.Git"
+    ],
+    "app_state_paths": []
 }
