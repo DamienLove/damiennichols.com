@@ -7,9 +7,25 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: var(--color-text);
-  background-color: var(--color-background);
+  color-scheme: dark;
+  /* Force dark mode base */
+
+  /* Modern Palette */
+  --bg-deep: #050510;
+  --bg-card: rgba(20, 20, 30, 0.6);
+
+  /* Neon Accents */
+  --neon-cyan: #00f3ff;
+  --neon-purple: #bc13fe;
+  --neon-pink: #ff0055;
+  --neon-green: #00ff9d;
+  --neon-blue: #0088ff;
+
+  --color-text: rgba(255, 255, 255, 0.92);
+  --color-text-muted: rgba(255, 255, 255, 0.6);
+  --color-background: var(--bg-deep);
+  --color-surface: var(--bg-card);
+  --color-border: rgba(255, 255, 255, 0.1);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -73,6 +89,54 @@ button:hover {
 }
 
 button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+/* Global Glass Card Style override/enhancement */
+.glass-card {
+  background: rgba(10, 10, 25, 0.5);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.glass-card:hover {
+  background: rgba(20, 20, 40, 0.6);
+  border-color: rgba(255, 255, 255, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* Global Animations */
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
 }

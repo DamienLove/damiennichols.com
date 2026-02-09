@@ -301,36 +301,41 @@ const FacebookSearch = () => {
         .facebook-search-page {
           --fb-blue: #3b82f6;
           --fb-purple: #8b5cf6;
+          overflow-x: hidden;
         }
 
         .page-hero {
           background: radial-gradient(circle at center, #1a1f3a 0%, #000 100%);
           position: relative;
           overflow: hidden;
+          min-height: 70vh;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
         }
 
         .page-hero::before {
           content: '';
           position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background:
-            radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-            radial-gradient(circle at 80% 50%, rgba(147, 51, 234, 0.1) 0%, transparent 50%);
-          animation: pulse 8s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-          0%, 100% { opacity: 0.5; }
-          50% { opacity: 1; }
+          inset: 0;
+           background-image: 
+            linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+          background-size: 60px 60px;
+          mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
+          z-index: 0;
         }
 
         .hero-title {
+          font-size: 4rem;
+          font-weight: 800;
+          letter-spacing: -2px;
+          margin-bottom: 1.5rem;
           background: linear-gradient(to right, var(--fb-blue), var(--fb-purple));
           -webkit-background-clip: text;
           -webkit-text-fill-color: transparent;
+          filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.3));
         }
 
         .hero-icon {
@@ -377,6 +382,10 @@ const FacebookSearch = () => {
           display: flex;
           flex-direction: column;
           height: 100%;
+          border: 1px solid rgba(255, 255, 255, 0.1);
+          background: rgba(255, 255, 255, 0.03);
+          backdrop-filter: blur(12px);
+          border-radius: 16px;
         }
 
         .feature-icon-wrapper {
@@ -388,6 +397,7 @@ const FacebookSearch = () => {
           align-items: center;
           justify-content: center;
           margin-bottom: 1.5rem;
+          color: white;
         }
 
         .feature-icon {
@@ -397,7 +407,7 @@ const FacebookSearch = () => {
         .feature-card h3 {
           font-size: 1.5rem;
           margin-bottom: 1rem;
-          color: var(--color-text);
+          color: #fff;
         }
 
         .feature-list {
@@ -408,7 +418,7 @@ const FacebookSearch = () => {
 
         .feature-list li {
           padding: 0.5rem 0;
-          color: var(--color-text-muted);
+          color: rgba(255, 255, 255, 0.6);
           position: relative;
           padding-left: 1.5rem;
         }
@@ -446,6 +456,7 @@ const FacebookSearch = () => {
           font-size: 1.5rem;
           font-weight: bold;
           margin-bottom: 1.5rem;
+          box-shadow: 0 0 20px rgba(59, 130, 246, 0.4);
         }
 
         .step-card h3 {
@@ -475,9 +486,9 @@ const FacebookSearch = () => {
         .cta-section {
           text-align: center;
           padding: 4rem 2rem;
-          background: radial-gradient(circle, rgba(59,130,246,0.15), transparent);
+          background: radial-gradient(circle, rgba(59,130,246,0.1), transparent);
           border-radius: 20px;
-          border: 2px solid rgba(59, 130, 246, 0.3);
+          border: 1px solid rgba(59, 130, 246, 0.2);
         }
 
         .cta-buttons {

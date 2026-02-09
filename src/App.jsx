@@ -17,6 +17,8 @@ import Admin from './pages/Admin';
 import UniverseConnectedReader from './pages/UniverseConnectedReader';
 import TheMAG from './pages/TheMAG';
 import DiamondDevDuster from './pages/DiamondDevDuster';
+import AROS from './pages/AROS';
+import ProxyVend from './pages/ProxyVend';
 import { AuthProvider } from './context/AuthContext';
 
 // Wiki Pages
@@ -42,6 +44,14 @@ const router = createBrowserRouter([
       {
         path: "pulselink",
         element: <PulseLink />,
+      },
+      {
+        path: "aros",
+        element: <AROS />,
+      },
+      {
+        path: "proxy-vend",
+        element: <ProxyVend />,
       },
       {
         path: "betamax",
@@ -143,11 +153,27 @@ const router = createBrowserRouter([
         path: "omni-remote/wiki",
         element: <OmniRemoteWiki />,
       },
+      {
+        path: "sotext",
+        element: <PulseLink />,
+      },
+      {
+        path: "sotext/wiki/guide",
+        element: <PulseLinkGuide />,
+      },
+      {
+        path: "sotext/wiki/ringersong",
+        element: <RingerSongManual />,
+      },
     ],
   },
   {
     path: "/pulselink/promo",
     element: <PulseLinkPromo />, // Landing page without main layout
+  },
+  {
+    path: "/sotext/promo",
+    element: <PulseLinkPromo />, // Alias for sotext promo
   },
   {
     path: "/privacy",

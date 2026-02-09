@@ -5,7 +5,6 @@ import {
     Search,
     Cloud,
     Shield,
-    Zap,
     FileCode,
     Database,
     HardDrive,
@@ -34,7 +33,8 @@ const DiamondDevDuster = () => {
     return (
         <div className="page-container duster-page">
             {/* Hero Section */}
-            <section className="hero-section">
+            <section className="hero-section page-hero">
+                <div className="hero-grid-bg"></div>
                 <div className="hero-content">
                     <motion.div
                         initial={{ scale: 0.8, opacity: 0 }}
@@ -42,7 +42,7 @@ const DiamondDevDuster = () => {
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         className="duster-logo-container"
                     >
-                        <div className="duster-hero-icon">
+                        <div className="duster-hero-icon pulse-shadow">
                             <div className="diamond-shape">D</div>
                         </div>
                     </motion.div>
@@ -53,7 +53,7 @@ const DiamondDevDuster = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.2 }}
                     >
-                        Diamond Dev Duster
+                        DIAMOND <span className="text-highlight">DEV DUSTER</span>
                     </motion.h1>
 
                     <motion.p
@@ -62,11 +62,11 @@ const DiamondDevDuster = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.3 }}
                     >
-                        Find it. Clean it. Cloud it.
+                        FIND IT // CLEAN IT // CLOUD IT
                     </motion.p>
 
                     <motion.p
-                        className="hero-description text-muted"
+                        className="hero-description"
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.4 }}
@@ -82,7 +82,7 @@ const DiamondDevDuster = () => {
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.5 }}
                     >
-                        <button className="btn btn-primary">
+                        <button className="btn btn-primary glow-btn">
                             Download Flutter App <Download size={18} />
                         </button>
                         <button className="btn btn-secondary">
@@ -90,7 +90,6 @@ const DiamondDevDuster = () => {
                         </button>
                     </motion.div>
                 </div>
-                <div className="hero-bg-glow"></div>
             </section>
 
             {/* Core Features */}
@@ -102,13 +101,14 @@ const DiamondDevDuster = () => {
                     whileInView="visible"
                     viewport={{ once: true }}
                 >
-                    <div className="section-header">
-                        <h2 className="section-title">Intelligent Workspace Management</h2>
-                        <p className="section-subtitle">Reclaim GIs of storage and keep your dev environment lean.</p>
+                    <div className="section-header center-text">
+                        <h2 className="section-title">INTELLIGENT MANANGEMENT</h2>
+                        <p className="text-muted">Reclaim space. Keep your environment lean.</p>
                     </div>
 
                     <div className="grid-cols-3">
                         <motion.div variants={itemVariants} className="feature-card glass-card">
+                            <div className="card-bg-glow" style={{ background: 'radial-gradient(circle at center, rgba(0, 243, 255, 0.15), transparent 70%)' }}></div>
                             <div className="feature-icon-wrapper">
                                 <Search className="feature-icon" />
                             </div>
@@ -117,6 +117,7 @@ const DiamondDevDuster = () => {
                         </motion.div>
 
                         <motion.div variants={itemVariants} className="feature-card glass-card">
+                            <div className="card-bg-glow" style={{ background: 'radial-gradient(circle at center, rgba(188, 19, 254, 0.15), transparent 70%)' }}></div>
                             <div className="feature-icon-wrapper">
                                 <Trash2 className="feature-icon" />
                             </div>
@@ -125,6 +126,7 @@ const DiamondDevDuster = () => {
                         </motion.div>
 
                         <motion.div variants={itemVariants} className="feature-card glass-card">
+                            <div className="card-bg-glow" style={{ background: 'radial-gradient(circle at center, rgba(0, 243, 255, 0.15), transparent 70%)' }}></div>
                             <div className="feature-icon-wrapper">
                                 <Cloud className="feature-icon" />
                             </div>
@@ -133,7 +135,7 @@ const DiamondDevDuster = () => {
                         </motion.div>
 
                         <motion.div variants={itemVariants} className="feature-card glass-card">
-                            <div className="feature-icon-wrapper ink-bg">
+                            <div className="feature-icon-wrapper">
                                 <Shield className="feature-icon" />
                             </div>
                             <h3>SHA-256 Verification</h3>
@@ -162,11 +164,11 @@ const DiamondDevDuster = () => {
             {/* Tech Specs */}
             <section className="tech-section section-spacing">
                 <div className="content-wrapper">
-                    <div className="glass-card tech-card">
+                    <div className="glass-card tech-card center-text">
                         <div className="tech-header">
-                            <HardDrive size={32} />
-                            <h2>System Requirements & Compatibility</h2>
+                            <HardDrive size={48} className="center-icon" />
                         </div>
+                        <h2 className="section-title">SYSTEM REQUIREMENTS</h2>
                         <div className="tech-grid">
                             <div className="tech-item">
                                 <strong>Platform</strong>
@@ -195,6 +197,30 @@ const DiamondDevDuster = () => {
                     --duster-secondary: #bc13fe;
                     padding-bottom: 5rem;
                 }
+                
+                .page-hero {
+                    background: radial-gradient(circle at center, #050515 0%, #000 100%);
+                    min-height: 70vh;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    text-align: center;
+                    overflow: hidden;
+                }
+
+                .hero-grid-bg {
+                    position: absolute;
+                    inset: 0;
+                     background-image: 
+                        linear-gradient(rgba(0, 243, 255, 0.05) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(0, 243, 255, 0.05) 1px, transparent 1px);
+                    background-size: 60px 60px;
+                    mask-image: radial-gradient(circle at center, black 30%, transparent 80%);
+                    z-index: 0;
+                }
+                
+                .hero-content { z-index: 2; max-width: 800px; padding: 2rem; }
 
                 .duster-logo-container {
                     margin-bottom: 2rem;
@@ -203,14 +229,24 @@ const DiamondDevDuster = () => {
                 }
 
                 .duster-hero-icon {
-                    width: 120px;
-                    height: 120px;
+                    width: 100px;
+                    height: 100px;
                     background: linear-gradient(135deg, var(--duster-primary), var(--duster-secondary));
-                    border-radius: 24px;
+                    border-radius: 20px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    box-shadow: 0 0 40px rgba(0, 243, 255, 0.3);
+                }
+                
+                .pulse-shadow {
+                    box-shadow: 0 0 0 0 rgba(0, 243, 255, 0.7);
+                    animation: pulse-shadow 2s infinite;
+                }
+                
+                @keyframes pulse-shadow {
+                    0% { box-shadow: 0 0 0 0 rgba(0, 243, 255, 0.7); }
+                    70% { box-shadow: 0 0 0 20px rgba(0, 243, 255, 0); }
+                    100% { box-shadow: 0 0 0 0 rgba(0, 243, 255, 0); }
                 }
 
                 .diamond-shape {
@@ -220,6 +256,33 @@ const DiamondDevDuster = () => {
                     text-shadow: 0 2px 10px rgba(0,0,0,0.3);
                 }
 
+                .hero-title {
+                     font-size: 3.5rem;
+                     font-weight: 900;
+                     letter-spacing: -1px;
+                     margin-bottom: 1rem;
+                }
+                
+                .text-highlight {
+                    background: linear-gradient(to right, var(--duster-primary), var(--duster-secondary));
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+                
+                .hero-subtitle {
+                    font-size: 1.2rem;
+                    letter-spacing: 2px;
+                    color: #aaa;
+                    margin-bottom: 2rem;
+                }
+                
+                .glow-btn {
+                    box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
+                    border: 1px solid rgba(255,255,255,0.2);
+                }
+                
+                .hero-cta { display: flex; gap: 1rem; justify-content: center; }
+
                 .feature-icon-wrapper {
                     width: 50px;
                     height: 50px;
@@ -227,51 +290,30 @@ const DiamondDevDuster = () => {
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    background: rgba(0, 243, 255, 0.1);
+                    background: rgba(255,255,255,0.05);
                     margin-bottom: 1.5rem;
                     color: var(--duster-primary);
+                    border: 1px solid rgba(255,255,255,0.1);
                 }
+                
+                .feature-card { padding: 2rem; position: relative; overflow: hidden; }
+                .card-bg-glow { position: absolute; inset: -50%; pointer-events: none; }
+                
+                .feature-card h3 { font-size: 1.25rem; margin-bottom: 0.75rem; color: #fff; font-weight: 700; }
+                .feature-card p { font-size: 0.95rem; line-height: 1.6; color: #aaa; }
 
-                .feature-card {
-                    padding: 2.5rem;
-                    text-align: left;
-                    transition: transform 0.3s ease, border-color 0.3s ease;
-                }
+                .section-header { margin-bottom: 4rem; }
+                .section-title { font-size: 2rem; font-weight: 800; letter-spacing: 1px; }
+                .center-text { text-align: center; }
+                .center-icon { display: block; margin: 0 auto 1.5rem auto; color: var(--duster-primary); }
 
-                .feature-card:hover {
-                    transform: translateY(-5px);
-                    border-color: var(--duster-primary);
-                }
-
-                .section-header {
-                    text-align: center;
-                    margin-bottom: 4rem;
-                }
-
-                .section-title {
-                    font-size: 2.5rem;
-                    margin-bottom: 1rem;
-                    background: linear-gradient(to right, #fff, var(--duster-primary));
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                }
-
-                .tech-card {
-                    padding: 3rem;
-                }
-
-                .tech-header {
-                    display: flex;
-                    align-items: center;
-                    gap: 1rem;
-                    margin-bottom: 2rem;
-                    color: var(--duster-primary);
-                }
-
+                .tech-card { padding: 3rem; }
+                
                 .tech-grid {
                     display: grid;
                     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
                     gap: 2rem;
+                    margin-top: 2rem;
                 }
 
                 .tech-item {
@@ -290,18 +332,15 @@ const DiamondDevDuster = () => {
                 .tech-item span {
                     font-size: 1.1rem;
                     color: #fff;
+                    font-weight: 600;
                 }
 
                 @media (max-width: 768px) {
-                    .grid-cols-3 {
+                    .grid-cols-3, .tech-grid {
                         grid-template-columns: 1fr;
                     }
-                    .section-title {
-                        font-size: 2rem;
-                    }
-                    .tech-grid {
-                        grid-template-columns: 1fr 1fr;
-                    }
+                    .hero-title { font-size: 2.5rem; }
+                    .hero-cta { flex-direction: column; }
                 }
             `}</style>
         </div>

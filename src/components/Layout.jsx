@@ -30,7 +30,9 @@ const Layout = () => {
 
           <nav className={`main-nav ${isMenuOpen ? 'open' : ''}`}>
             <Link to="/" className={location.pathname === '/' ? 'active' : ''}>Home</Link>
-            <Link to="/pulselink" className={location.pathname === '/pulselink' ? 'active' : ''}>PulseLink</Link>
+            <Link to="/pulselink" className={location.pathname === '/pulselink' ? 'active' : ''}>SoText</Link>
+            <Link to="/aros" className={location.pathname === '/aros' ? 'active' : ''}>AROS</Link>
+            <Link to="/proxy-vend" className={location.pathname === '/proxy-vend' ? 'active' : ''}>ProxyVend</Link>
             <Link to="/themag" className={location.pathname === '/themag' ? 'active' : ''}>TheMAG</Link>
             <Link to="/omni-remote" className={location.pathname === '/omni-remote' ? 'active' : ''}>OmniRemote</Link>
             <Link to="/betamax" className={location.pathname === '/betamax' ? 'active' : ''}>Beta Max</Link>

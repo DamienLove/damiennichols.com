@@ -1,4 +1,3 @@
-
 import { motion } from 'framer-motion';
 import { Smartphone, Terminal, Wifi, Shield, Zap, Server, Code, Layers, ExternalLink, Download, Cpu, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -8,15 +7,16 @@ const OmniRemote = () => {
     <div className="page-container omni-page">
       {/* Hero Section */}
       <section className="hero-section page-hero">
-        <div className="hero-bg-overlay"></div>
+        <div className="hero-grid-bg"></div>
         <motion.div
           className="hero-content"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="hero-badge">
-            <span className="badge-text">v4.7.0 Release Now Live</span>
+          <div className="status-badge">
+            <span className="status-dot animate-pulse"></span>
+            v5.0.0 SYSTEM ONLINE
           </div>
           <motion.h1
             className="hero-title glitch-text"
@@ -24,7 +24,7 @@ const OmniRemote = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2 }}
           >
-            Omni<span className="highlight">Remote</span>
+            Omni<span className="text-highlight">Remote</span>
           </motion.h1>
           <motion.p
             className="hero-subtitle"
@@ -41,7 +41,7 @@ const OmniRemote = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6 }}
           >
-            <a href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/OmniProjectRemote.apk" className="btn btn-primary glow-effect">
+            <a href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V5/OmniProjectRemote.apk" className="btn btn-primary glow-btn">
               <Download size={20} /> Download APK
             </a>
             <Link to="/omniremote/wiki" className="btn btn-outline">
@@ -56,6 +56,7 @@ const OmniRemote = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.8, duration: 1 }}
         >
+          <div className="phone-glow"></div>
           <img src="/assets/omni_remote_hero.png" alt="OmniRemote Interface" className="hero-phone-img floating" />
         </motion.div>
       </section>
@@ -69,13 +70,13 @@ const OmniRemote = () => {
             Run the agent on your host machine to enable remote control. Available for Windows.
           </p>
 
-          <div className="downloads-grid">
+          <div className="downloads-grid grid-cols-2">
             {/* Windows Installer */}
             <motion.a
-              href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/OmniRemoteAgentSetup.exe"
+              href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V5/OmniRemoteAgentSetup.exe"
               target="_blank"
               rel="noopener noreferrer"
-              className="download-card glass-panel"
+              className="download-card glass-card"
               whileHover={{ scale: 1.02, borderColor: 'var(--cyan)' }}
             >
               <div className="dl-icon"><Zap size={24} /></div>
@@ -89,27 +90,27 @@ const OmniRemote = () => {
 
             {/* Android Studio Plugin */}
             <motion.a
-              href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/AndroidStudioPlugin.zip"
+              href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V5/AndroidStudioPlugin.zip"
               target="_blank"
               rel="noopener noreferrer"
-              className="download-card glass-panel"
+              className="download-card glass-card"
               whileHover={{ scale: 1.02, borderColor: '#00ff9d' }}
             >
               <div className="dl-icon" style={{ color: '#00ff9d' }}><Code size={24} /></div>
               <div className="dl-info">
                 <h4>IDE Plugin / Host</h4>
                 <span>AndroidStudioPlugin.zip</span>
-                <span className="text-muted small">v2.0 Alpha • Direct IDE Hosting</span>
+                <span className="text-muted small">v5.0 • Direct IDE Hosting</span>
               </div>
               <Download size={20} className="dl-arrow" />
             </motion.a>
 
             {/* Portable Version */}
             <motion.a
-              href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/OmniRemoteAgentPortable.exe"
+              href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V5/OmniRemoteAgentPortable.exe"
               target="_blank"
               rel="noopener noreferrer"
-              className="download-card glass-panel"
+              className="download-card glass-card"
               whileHover={{ scale: 1.02, borderColor: 'var(--purple)' }}
             >
               <div className="dl-icon"><Layers size={24} /></div>
@@ -123,10 +124,10 @@ const OmniRemote = () => {
 
             {/* Standalone Executable */}
             <motion.a
-              href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/OmniRemoteAgent.EXE"
+              href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V5/OmniRemoteAgent.EXE"
               target="_blank"
               rel="noopener noreferrer"
-              className="download-card glass-panel"
+              className="download-card glass-card"
               whileHover={{ scale: 1.02, borderColor: '#ff00ff' }}
             >
               <div className="dl-icon" style={{ color: '#ff00ff' }}><Server size={24} /></div>
@@ -140,11 +141,12 @@ const OmniRemote = () => {
 
             {/* Config Template */}
             <motion.a
-              href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/secrets.env.template"
+              href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V5/secrets.env.template"
               target="_blank"
               rel="noopener noreferrer"
-              className="download-card glass-panel"
+              className="download-card glass-card col-span-2"
               whileHover={{ scale: 1.02, borderColor: '#fff' }}
+              style={{ width: '100%' }}
             >
               <div className="dl-icon" style={{ color: '#fff' }}><Shield size={24} /></div>
               <div className="dl-info">
@@ -165,6 +167,7 @@ const OmniRemote = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
+            <div className="card-bg-glow" style={{ background: 'radial-gradient(circle at center, rgba(188, 19, 254, 0.1), transparent 70%)' }}></div>
             <div className="grid-cols-2 align-center">
               <div className="text-content">
                 <h2 className="section-title">Control Without Limits</h2>
@@ -172,13 +175,13 @@ const OmniRemote = () => {
                   OmniRemote extends your workspace beyond the desktop. Built for developers who need to manage servers, run scripts, and monitor projects on the go.
                 </p>
                 <ul className="feature-list">
-                  <li><Terminal size={18} className="icon-cyan" /> Remote CLI Access</li>
-                  <li><Server size={18} className="icon-purple" /> Project Management</li>
-                  <li><Shield size={18} className="icon-green" /> Secure Tunneling</li>
+                  <li><Terminal size={18} className="icon-cyan" /> Remote CLI Access & Control</li>
+                  <li><Server size={18} className="icon-purple" /> Full Project Management Suite</li>
+                  <li><Shield size={18} className="icon-green" /> Secure Cloudflare Tunnels</li>
                 </ul>
               </div>
-              <div className="image-content rounded-box">
-                <img src="/assets/omniprojectsync.png" alt="OmniRemote Screenshot" className="feature-screenshot" />
+              <div className="image-content">
+                <img src="/assets/omniprojectsync.png" alt="OmniRemote Screenshot" className="feature-screenshot glass-border" />
               </div>
             </div>
           </motion.div>
@@ -188,79 +191,67 @@ const OmniRemote = () => {
         <section className="features-section section-spacing" id="features">
           <h2 className="section-title center-text">System Capabilities</h2>
           <div className="grid-cols-3 features-grid">
-            <motion.div
-              className="feature-card glass-panel"
-              whileHover={{ y: -10 }}
-            >
+            <motion.div className="feature-card glass-card" whileHover={{ y: -10 }}>
+              <div className="card-bg-glow" style={{ background: 'radial-gradient(circle at center, rgba(0, 243, 255, 0.15), transparent 70%)' }}></div>
               <div className="card-icon-wrapper cyan">
                 <Terminal size={32} />
               </div>
               <h3>Android Terminal Routing</h3>
-              <p>Android terminal now routes through OmniProjectSync by default with IDE terminal fallback. Real-time WebSocket streaming with zero lag.</p>
+              <p>Android terminal routes through OmniProjectSync. Real-time WebSocket streaming with zero lag.</p>
             </motion.div>
 
-            <motion.div
-              className="feature-card glass-panel"
-              whileHover={{ y: -10 }}
-            >
+            <motion.div className="feature-card glass-card" whileHover={{ y: -10 }}>
+              <div className="card-bg-glow" style={{ background: 'radial-gradient(circle at center, rgba(188, 19, 254, 0.15), transparent 70%)' }}></div>
               <div className="card-icon-wrapper purple">
                 <Layers size={32} />
               </div>
               <h3>IDE Auto-Start</h3>
-              <p>IDE plugin restores Firebase login automatically and can auto-start the host on launch, ensuring your environment is always ready.</p>
+              <p>Plugin restores Firebase login automatically and can auto-start the host on launch.</p>
             </motion.div>
 
-            <motion.div
-              className="feature-card glass-panel"
-              whileHover={{ y: -10 }}
-            >
+            <motion.div className="feature-card glass-card" whileHover={{ y: -10 }}>
+              <div className="card-bg-glow" style={{ background: 'radial-gradient(circle at center, rgba(255, 0, 255, 0.15), transparent 70%)' }}></div>
               <div className="card-icon-wrapper pink">
                 <Globe size={32} />
               </div>
               <h3>Cloudflare Tunnel</h3>
-              <p>Securely expose your local agent to the internet without port forwarding. Access your rig from anywhere in the world.</p>
+              <p>Expose your agent securely without port forwarding. Access your rig from anywhere.</p>
             </motion.div>
 
-            <motion.div
-              className="feature-card glass-panel"
-              whileHover={{ y: -10 }}
-            >
+            <motion.div className="feature-card glass-card" whileHover={{ y: -10 }}>
+              <div className="card-bg-glow" style={{ background: 'radial-gradient(circle at center, rgba(0, 136, 255, 0.15), transparent 70%)' }}></div>
               <div className="card-icon-wrapper blue">
                 <Wifi size={32} />
               </div>
               <h3>Smart Sync & Bridge</h3>
-              <p>Firestore-backed token syncing across devices. One-tap bridge to Chrome Remote Desktop for full UI control.</p>
+              <p>Firestore-backed token syncing across devices. One-tap bridge to Chrome Remote Desktop.</p>
             </motion.div>
 
-            <motion.div
-              className="feature-card glass-panel"
-              whileHover={{ y: -10 }}
-            >
+            <motion.div className="feature-card glass-card" whileHover={{ y: -10 }}>
+              <div className="card-bg-glow" style={{ background: 'radial-gradient(circle at center, rgba(0, 255, 157, 0.15), transparent 70%)' }}></div>
               <div className="card-icon-wrapper green">
                 <Code size={32} />
               </div>
               <h3>Copilot / CLI Integration</h3>
-              <p>Run your favorite AI CLI tools (Code, Gemini, terminal assistants) directly from your mobile interface.</p>
+              <p>Run your favorite AI CLI tools (Code, Gemini, terminal assistants) from mobile.</p>
             </motion.div>
 
-            <motion.div
-              className="feature-card glass-panel"
-              whileHover={{ y: -10 }}
-            >
+            <motion.div className="feature-card glass-card" whileHover={{ y: -10 }}>
+              <div className="card-bg-glow" style={{ background: 'radial-gradient(circle at center, rgba(255, 170, 0, 0.15), transparent 70%)' }}></div>
               <div className="card-icon-wrapper orange">
                 <Shield size={32} />
               </div>
               <h3>Normalized Sessions</h3>
-              <p>Remote agent session IDs are normalized for IDE terminal proxying, providing a seamless transition between mobile and desktop.</p>
+              <p>Session IDs are normalized for IDE terminal proxying, providing a seamless transition.</p>
             </motion.div>
           </div>
         </section>
 
         {/* Tech Stack / Icon */}
         <section className="tech-section section-spacing">
-          <div className="tech-container glass-card">
+          <div className="tech-container glass-card center-text">
             <div className="app-icon-display">
-              <img src="/assets/omni_remote_icon.png" alt="OmniRemote Icon" className="app-main-icon" />
+              <img src="/assets/omni_remote_icon.png" alt="OmniRemote Icon" className="app-main-icon floating" />
             </div>
             <div className="tech-details">
               <h2>Powered by Python, Kotlin & Flutter</h2>
@@ -282,10 +273,6 @@ const OmniRemote = () => {
         .omni-page {
           --cyan: #00f3ff;
           --purple: #bc13fe;
-          --dark-bg: #0a0a12;
-          background-color: var(--dark-bg);
-          color: #fff;
-          overflow-x: hidden;
         }
 
         .page-hero {
@@ -295,321 +282,122 @@ const OmniRemote = () => {
           align-items: center;
           justify-content: space-between;
           padding: 4rem 10%;
+           background: radial-gradient(circle at center, #101025 0%, #000 100%);
           overflow: hidden;
-          background: radial-gradient(circle at 20% 50%, #1a1a2e 0%, #000 100%);
         }
 
-        .hero-bg-overlay {
+        .hero-grid-bg {
           position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background: 
-            linear-gradient(45deg, transparent 48%, rgba(0, 243, 255, 0.05) 50%, transparent 52%),
-            linear-gradient(-45deg, transparent 48%, rgba(188, 19, 254, 0.05) 50%, transparent 52%);
+          inset: 0;
+           background-image: 
+            linear-gradient(rgba(188, 19, 254, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(188, 19, 254, 0.05) 1px, transparent 1px);
           background-size: 60px 60px;
+          mask-image: radial-gradient(circle at center, black 40%, transparent 80%);
           z-index: 0;
         }
 
-        .hero-content {
-          z-index: 2;
-          max-width: 600px;
-        }
-
-        .hero-title {
-          font-size: 5rem;
-          font-weight: 800;
-          line-height: 1;
-          margin-bottom: 1rem;
-          font-family: 'Outfit', sans-serif;
-          letter-spacing: -2px;
-        }
-
-        .hero-title .highlight {
-          color: var(--cyan);
-          text-shadow: 0 0 20px rgba(0, 243, 255, 0.5);
-        }
-
-        .hero-subtitle {
-          font-size: 1.5rem;
-          color: #aaa;
-          margin-bottom: 2.5rem;
-          font-weight: 300;
-        }
-
-        .hero-actions {
-          display: flex;
-          gap: 1rem;
-        }
-
-        .btn-primary.glow-effect {
-          background: linear-gradient(90deg, var(--purple), var(--cyan));
-          box-shadow: 0 0 20px rgba(188, 19, 254, 0.4);
-          border: none;
-        }
-
-        .hero-visual {
-          z-index: 2;
-          flex: 1;
-          display: flex;
-          justify-content: center;
-          perspective: 1000px;
-        }
-
-        .hero-phone-img {
-          max-height: 700px;
-          filter: drop-shadow(0 0 50px rgba(0, 243, 255, 0.2));
-          transform: rotateY(-15deg) rotateX(5deg);
-        }
-
-        .floating {
-          animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-          0% { transform: translateY(0px) rotateY(-15deg); }
-          50% { transform: translateY(-20px) rotateY(-15deg); }
-          100% { transform: translateY(0px) rotateY(-15deg); }
-        }
-
-        .section-spacing {
-          padding: 6rem 5%;
-        }
-
-        .full-width {
-          width: 100%;
-        }
-
-        .glass-card {
-          background: rgba(255, 255, 255, 0.03);
-          backdrop-filter: blur(10px);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          border-radius: 24px;
-          padding: 3rem;
-        }
-
-        .align-center {
+        .hero-content { z-index: 2; max-width: 600px; }
+        
+        .status-badge {
+          display: inline-flex;
           align-items: center;
-        }
-
-        .grid-cols-2 {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 3rem;
-        }
-
-        .section-title {
-          font-size: 2.5rem;
-          margin-bottom: 1.5rem;
-          background: linear-gradient(to right, #fff, #aaa);
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
-        }
-
-        .lead {
-          font-size: 1.2rem;
-          line-height: 1.6;
+          gap: 0.5rem;
+          padding: 0.5rem 1rem;
+          background: rgba(188, 19, 254, 0.1);
+          border: 1px solid rgba(188, 19, 254, 0.3);
+          border-radius: 20px;
+          color: var(--purple);
+          font-size: 0.8rem;
+          letter-spacing: 2px;
           margin-bottom: 2rem;
-        }
-
-        .feature-list {
-          list-style: none;
-          padding: 0;
-        }
-
-        .feature-list li {
-          display: flex;
-          align-items: center;
-          gap: 1rem;
-          font-size: 1.1rem;
-          margin-bottom: 1rem;
-          color: #ddd;
+          font-weight: 600;
         }
         
+        .status-dot { width: 8px; height: 8px; background: var(--purple); border-radius: 50%; box-shadow: 0 0 10px var(--purple); }
+
+        .hero-title { font-size: 5rem; font-weight: 900; line-height: 1; margin-bottom: 1rem; letter-spacing: -3px; }
+        .text-highlight { color: var(--cyan); text-shadow: 0 0 30px rgba(0, 243, 255, 0.4); }
+
+        .hero-subtitle { font-size: 1.5rem; color: #aaa; margin-bottom: 2.5rem; font-weight: 300; letter-spacing: 1px; }
+
+        .hero-actions { display: flex; gap: 1rem; align-items: center; }
+
+        .glow-btn {
+          box-shadow: 0 0 20px rgba(188, 19, 254, 0.3);
+          border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .hero-visual { z-index: 2; flex: 1; display: flex; justify-content: center; position: relative; }
+        
+        .phone-glow {
+           position: absolute;
+           top: 50%; left: 50%; transform: translate(-50%, -50%);
+           width: 300px; height: 500px;
+           background: radial-gradient(circle, rgba(0, 243, 255, 0.2), transparent 70%);
+           filter: blur(40px);
+           z-index: -1;
+        }
+
+        .hero-phone-img { max-height: 650px; filter: drop-shadow(0 20px 50px rgba(0,0,0,0.5)); transform: rotateY(-15deg) rotateX(5deg); }
+        .floating { animation: float 6s ease-in-out infinite; }
+        @keyframes float { 0% { transform: translateY(0px) rotateY(-15deg); } 50% { transform: translateY(-20px) rotateY(-15deg); } 100% { transform: translateY(0px) rotateY(-15deg); } }
+
+        .section-spacing { padding: 6rem 5%; }
+        .full-width { width: 100%; position: relative; overflow: hidden; }
+
+        .align-center { align-items: center; }
+        .grid-cols-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+        .grid-cols-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+
+        .section-title { font-size: 2.5rem; margin-bottom: 1.5rem; }
+        .lead { font-size: 1.2rem; line-height: 1.6; margin-bottom: 2rem; color: #ccc; }
+
+        .feature-list { list-style: none; padding: 0; }
+        .feature-list li { display: flex; align-items: center; gap: 1rem; font-size: 1.1rem; margin-bottom: 1rem; color: #ddd; }
         .icon-cyan { color: var(--cyan); }
         .icon-purple { color: var(--purple); }
         .icon-green { color: #00ff9d; }
 
-        .feature-screenshot {
-          width: 100%;
-          border-radius: 12px;
-          box-shadow: 0 20px 40px rgba(0,0,0,0.5);
-          border: 1px solid rgba(255,255,255,0.1);
-        }
+        .feature-screenshot { width: 100%; border-radius: 12px; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        .glass-border { border: 1px solid rgba(255,255,255,0.1); }
 
-        .grid-cols-3 {
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-          gap: 2rem;
-        }
+        .feature-card { padding: 2rem; position: relative; overflow: hidden; }
+        .feature-card h3 { font-size: 1.4rem; margin-bottom: 0.5rem; z-index: 1; }
+        .feature-card p { color: #aaa; font-size: 0.95rem; line-height: 1.5; z-index: 1; }
 
-        .glass-panel {
-          background: rgba(0, 0, 0, 0.4);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          padding: 2rem;
-          border-radius: 16px;
-          transition: transform 0.3s ease, border-color 0.3s ease;
-          backdrop-filter: blur(12px);
-          -webkit-backdrop-filter: blur(12px);
-        }
-
-        .glass-panel:hover {
-          border-color: var(--cyan);
-          background: rgba(0, 0, 0, 0.5);
-        }
-
-        .card-icon-wrapper {
-          width: 60px;
-          height: 60px;
-          border-radius: 12px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          margin-bottom: 1.5rem;
-          background: rgba(255,255,255,0.05);
-        }
+        .card-icon-wrapper { width: 60px; height: 60px; border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; background: rgba(255,255,255,0.05); z-index: 1; }
+        .cyan { color: var(--cyan); }
+        .purple { color: var(--purple); }
+        .pink { color: #ff00ff; }
+        .blue { color: #0088ff; }
+        .green { color: #00ff9d; }
+        .orange { color: #ffaa00; }
         
-        .cyan { color: var(--cyan); box-shadow: 0 0 15px rgba(0, 243, 255, 0.2); }
-        .purple { color: var(--purple); box-shadow: 0 0 15px rgba(188, 19, 254, 0.2); }
-        .pink { color: #ff00ff; box-shadow: 0 0 15px rgba(255, 0, 255, 0.2); }
-        .blue { color: #0088ff; box-shadow: 0 0 15px rgba(0, 136, 255, 0.2); }
-        .green { color: #00ff9d; box-shadow: 0 0 15px rgba(0, 255, 157, 0.2); }
-        .orange { color: #ffaa00; box-shadow: 0 0 15px rgba(255, 170, 0, 0.2); }
+        .downloads-grid { max-width: 900px; margin: 0 auto; }
+        
+        .download-card { display: flex; align-items: center; gap: 1.25rem; text-decoration: none; color: #fff; padding: 1.5rem; }
+        .dl-icon { background: rgba(255,255,255,0.1); width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--cyan); }
+        .dl-info h4 { margin: 0 0 0.25rem 0; font-size: 1.1rem; }
+        .dl-info span { font-size: 0.85rem; color: #aaa; display: block; }
+        .dl-arrow { margin-left: auto; color: #444; transition: color 0.3s; }
+        .download-card:hover .dl-arrow { color: var(--cyan); }
+        
+        .col-span-2 { grid-column: span 2; }
 
-        .glass-panel h3 {
-          font-size: 1.4rem;
-          margin-bottom: 0.5rem;
-        }
-
-        .glass-panel p {
-          color: #aaa;
-          font-size: 0.95rem;
-          line-height: 1.5;
-        }
-
-        .center-text { text-align: center; }
-
-        .tech-container {
-          display: flex;
-          align-items: center;
-          gap: 3rem;
-        }
-
-        .app-main-icon {
-          width: 150px;
-          height: 150px;
-          filter: drop-shadow(0 0 30px rgba(0, 243, 255, 0.3));
-        }
-
-        .tech-badges {
-          display: flex;
-          gap: 1rem;
-          flex-wrap: wrap;
-          margin-top: 1.5rem;
-        }
-
-        .tech-badge {
-          background: rgba(255,255,255,0.1);
-          padding: 0.5rem 1rem;
-          border-radius: 20px;
-          font-size: 0.9rem;
-          font-weight: 500;
-          color: var(--cyan);
-          border: 1px solid rgba(0, 243, 255, 0.3);
-        }
-
-        .downloads-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .download-card {
-            display: flex;
-            align-items: center;
-            gap: 1.25rem;
-            text-decoration: none;
-            color: #fff;
-            padding: 1.5rem;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        .dl-icon {
-            background: rgba(255,255,255,0.1);
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--cyan);
-        }
-
-        .dl-info h4 {
-            margin: 0 0 0.25rem 0;
-            font-size: 1.1rem;
-        }
-
-        .dl-info span {
-            font-size: 0.85rem;
-            color: #aaa;
-            display: block;
-            margin-bottom: 4px;
-        }
-
-        .sha-text {
-            font-size: 0.65rem;
-            color: #666;
-            background: rgba(0,0,0,0.3);
-            padding: 2px 4px;
-            border-radius: 4px;
-            display: block;
-            max-width: 250px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            border: 1px solid rgba(255,255,255,0.05);
-        }
-
-        .dl-arrow {
-            margin-left: auto;
-            color: #444;
-            transition: color 0.3s;
-        }
-
-        .download-card:hover .dl-arrow {
-            color: var(--cyan);
-        }
+        .tech-container { display: flex; flex-direction: column; align-items: center; gap: 2rem; padding: 4rem 2rem; }
+        .app-main-icon { width: 120px; height: 120px; filter: drop-shadow(0 0 30px rgba(0, 243, 255, 0.3)); }
+        .tech-badges { display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem; justify-content: center; }
+        .tech-badge { background: rgba(255,255,255,0.05); padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem; font-weight: 500; color: var(--cyan); border: 1px solid rgba(0, 243, 255, 0.2); }
 
         @media (max-width: 900px) {
-           .page-hero {
-             flex-direction: column;
-             padding-top: 6rem;
-             text-align: center;
-           }
-           .hero-visual {
-             margin-top: 3rem;
-             width: 100%;
-           }
-           .hero-phone-img {
-             max-height: 400px;
-             transform: rotateY(0);
-           }
-           .hero-actions {
-             justify-content: center;
-           }
-           .grid-cols-2, .tech-container {
-             grid-template-columns: 1fr;
-             flex-direction: column;
-             text-align: center;
-           }
-           .feature-list li {
-             justify-content: center;
-           }
+           .page-hero { flex-direction: column; padding-top: 6rem; text-align: center; }
+           .hero-visual { margin-top: 3rem; width: 100%; transform: scale(0.9); }
+           .hero-phone-img { transform: rotateY(0); }
+           .hero-actions { justify-content: center; }
+           .grid-cols-2 { grid-template-columns: 1fr; }
+           .downloads-grid { grid-template-columns: 1fr; }
+           .col-span-2 { grid-column: span 1; }
         }
       `}</style>
     </div >

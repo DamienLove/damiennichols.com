@@ -39,7 +39,7 @@ const About = () => {
               My work spans two worlds: <strong>software engineering</strong> and <strong>storytelling</strong>.
             </p>
             <p className="text-muted">
-              As a <strong>Software Engineer</strong>, I build applications that solve real problems. From <strong>PulseLink</strong>—a
+              As a <strong>Software Engineer</strong>, I build applications that solve real problems. From <strong>SoText.app</strong>—a
               voice-activated safety companion that could save lives—to <strong>Beta Max</strong>, a gamified QA platform that makes
               testing feel like an adventure. Every project is driven by a simple question: <em>How can technology make life better?</em>
             </p>
@@ -82,7 +82,7 @@ const About = () => {
               >
                 <Code className="exp-icon" />
                 <h4>Independent Development</h4>
-                <p className="text-muted">Creator of the PulseLink Suite, Beta Max, Diamond Dev Duster, QA Verify & Track, and Facebook Search. Building innovative Android applications and web platforms that solve real-world problems.</p>
+                <p className="text-muted">Creator of SoText.app, Beta Max, Diamond Dev Duster, QA Verify & Track, and Facebook Search. Building innovative Android applications and web platforms that solve real-world problems.</p>
               </motion.div>
             </div>
           </motion.div>

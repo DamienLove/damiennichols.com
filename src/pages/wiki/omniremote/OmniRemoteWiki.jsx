@@ -51,7 +51,7 @@ const OmniRemoteWiki = () => {
                         <div className="installation-steps">
                             <h4>Option A: Windows Installer (Recommended)</h4>
                             <ol>
-                                <li>Download <a href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/OmniRemoteAgentSetup.exe">OmniRemoteAgentSetup.exe</a>.</li>
+                                <li>Download <a href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V5/OmniRemoteAgentSetup.exe">OmniRemoteAgentSetup.exe</a>.</li>
                                 <li>Run the installer and follow the on-screen instructions.</li>
                                 <li>Navigate to the installation directory (usually <code>C:\Program Files (x86)\OmniRemoteAgent</code>).</li>
                                 <li>Copy <code>secrets.env.template</code> to <code>secrets.env</code>.</li>
@@ -60,7 +60,7 @@ const OmniRemoteWiki = () => {
 
                             <h4>Option B: Portable Executable</h4>
                             <ol>
-                                <li>Download <a href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/OmniRemoteAgentPortable.exe">OmniRemoteAgentPortable.exe</a>.</li>
+                                <li>Download <a href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V5/OmniRemoteAgentPortable.exe">OmniRemoteAgentPortable.exe</a>.</li>
                                 <li>Place it in a folder of your choice.</li>
                                 <li>Create a <code>secrets.env</code> file in the same folder with your configuration.</li>
                                 <li>Run the executable.</li>
@@ -71,7 +71,7 @@ const OmniRemoteWiki = () => {
                     <div className="subsection">
                         <h3>2. Android App</h3>
                         <ol>
-                            <li>Download <a href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/OmniProjectRemote.apk">OmniProjectRemote.apk</a>.</li>
+                            <li>Download <a href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V5/OmniProjectRemote.apk">OmniProjectRemote.apk</a>.</li>
                             <li>Enable "Install from Unknown Sources" in your Android settings.</li>
                             <li>Install and launch the app.</li>
                             <li>Go to <strong>Setup</strong> and enter your PC's IP or Cloudflare URL, port, and access token.</li>
@@ -81,7 +81,7 @@ const OmniRemoteWiki = () => {
                     <div className="subsection">
                         <h3>3. IDE Plugin (Host Mode)</h3>
                         <ol>
-                            <li>Download <a href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V2/AndroidStudioPlugin.zip">AndroidStudioPlugin.zip</a>.</li>
+                            <li>Download <a href="https://github.com/DamienLove/ProjectManagerApp/releases/download/V5/AndroidStudioPlugin.zip">AndroidStudioPlugin.zip</a>.</li>
                             <li>In Android Studio, go to <strong>Settings</strong> {'>'} <strong>Plugins</strong>.</li>
                             <li>Click the gear icon and select <strong>Install Plugin from Disk...</strong>.</li>
                             <li>Navigate to the <strong>Omni Remote</strong> tool window in the sidebar.</li>

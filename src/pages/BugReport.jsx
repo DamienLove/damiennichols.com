@@ -91,7 +91,7 @@ const BugReport = () => {
                   required
                 >
                   <option value="">Select an application...</option>
-                  <option value="pulselink">PulseLink / Beacon</option>
+                  <option value="sotext">SoText.app / Beacon</option>
                   <option value="ringersong">RingerSong</option>
                   <option value="betamax">Beta Max</option>
                   <option value="qaverify">QA Verify & Track</option>

@@ -20,7 +20,7 @@ const Privacy = () => {
         <div className="policy-section glass-card">
           <h2><Shield className="inline-icon" /> Introduction</h2>
           <p className="text-muted">
-            Damien Nichols ("we", "our", or "us") operates the website damiennichols.com and the PulseLink application suite (including Beacon, PulseLink Pro, and RingerSong), as well as the QA Verify & Track and Beta Max applications.
+            Damien Nichols ("we", "our", or "us") operates the website damiennichols.com and the SoText.app application suite (including Beacon, PulseLink, and RingerSong), as well as the QA Verify & Track and Beta Max applications.
             We are committed to protecting your privacy and ensuring you have control over your data.
           </p>
         </div>
@@ -28,9 +28,9 @@ const Privacy = () => {
         <div className="policy-section glass-card">
           <h2><Eye className="inline-icon" /> Data Collection & Usage</h2>
 
-          <h3>PulseLink & Beacon</h3>
+          <h3>SoText.app & Beacon</h3>
           <p className="text-muted">
-            <strong>Location Data:</strong> PulseLink collects location data only when you explicitly activate a safety alert (e.g., "Panic Mode") to share your position with your trusted contacts. This data is not stored on our servers permanently and is used solely for the purpose of the immediate safety alert.
+            <strong>Location Data:</strong> SoText.app collects location data only when you explicitly activate a safety alert (e.g., "Panic Mode") to share your position with your trusted contacts. This data is not stored on our servers permanently and is used solely for the purpose of the immediate safety alert.
           </p>
           <p className="text-muted">
             <strong>Microphone Usage:</strong> The app uses the microphone to listen for specific voice triggers (if enabled) in the background. Audio is processed locally on your device and is never uploaded to the cloud.
